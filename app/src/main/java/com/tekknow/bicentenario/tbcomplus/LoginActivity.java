@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
 
+
 public class LoginActivity extends BaseActivity {
 
     @Override
@@ -22,7 +23,12 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void onUserPinRequestResult(int status, Bundle data) {
         super.onUserPinRequestResult(status, data);
-        sendHostRequest();
+
+        if(status == GlobalConstants.STATUS_CANCEL){
+            cancel();
+        }else{
+            sendHostRequest();
+        }
     }
 
     @Override
@@ -41,6 +47,11 @@ public class LoginActivity extends BaseActivity {
         super.onDisplayMessageResult(status, data);
 
         setResult(RESULT_OK, new Intent());
+        finish();
+    }
+
+    public void cancel(){
+        setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_CANCEL));
         finish();
     }
 

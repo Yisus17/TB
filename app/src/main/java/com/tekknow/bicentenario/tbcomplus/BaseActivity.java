@@ -100,40 +100,45 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         int status = data.getIntExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_OK);
 
-        switch (requestCode) {
-            case ACCOUNT_TYPE_REQUEST:
-                onAccountTypeSelectResult(status, data.getExtras());
-                break;
-            case AMOUNT_TYPE_REQUEST:
-                onAmountTypeSelectResult(status, data.getExtras());
-                break;
-            case CARD_TYPE_REQUEST: //FIXME Solo para el Prototipo
-                onCardTypeSelectResult(status, data.getExtras());
-                break;
-            case CUSTOMER_CARD_REQUEST:
-                onCustomerCardRequestResult(status, data.getExtras());
-                break;
-            case CUSTOMER_PIN_REQUEST:
-                onCustomerPinRequestResult(status, data.getExtras());
-                break;
-            case DISPLAY_MESSAGE_REQUEST:
-                onDisplayMessageResult(status, data.getExtras());
-                break;
-            case HOST_REQUEST:
-                onHostRequestResult(status, data.getExtras());
-                break;
-            case PAYMENT_TYPE_REQUEST:
-                onPaymentTypeSelectResult(status, data.getExtras());
-                break;
-            case TRANSFER_TYPE_REQUEST:
-                onTransferTypeRequestResult(status, data.getExtras());
-                break;
-            case USER_CARD_REQUEST:
-                onUserCardRequestResult(status, data.getExtras());
-                break;
-            case USER_PIN_REQUEST:
-                onUserPinRequestResult(status, data.getExtras());
-                break;
+        if(status == GlobalConstants.STATUS_CANCEL){
+            setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_CANCEL));
+            finish();
+        }else{
+            switch (requestCode) {
+                case ACCOUNT_TYPE_REQUEST:
+                    onAccountTypeSelectResult(status, data.getExtras());
+                    break;
+                case AMOUNT_TYPE_REQUEST:
+                    onAmountTypeSelectResult(status, data.getExtras());
+                    break;
+                case CARD_TYPE_REQUEST: //FIXME Solo para el Prototipo
+                    onCardTypeSelectResult(status, data.getExtras());
+                    break;
+                case CUSTOMER_CARD_REQUEST:
+                    onCustomerCardRequestResult(status, data.getExtras());
+                    break;
+                case CUSTOMER_PIN_REQUEST:
+                    onCustomerPinRequestResult(status, data.getExtras());
+                    break;
+                case DISPLAY_MESSAGE_REQUEST:
+                    onDisplayMessageResult(status, data.getExtras());
+                    break;
+                case HOST_REQUEST:
+                    onHostRequestResult(status, data.getExtras());
+                    break;
+                case PAYMENT_TYPE_REQUEST:
+                    onPaymentTypeSelectResult(status, data.getExtras());
+                    break;
+                case TRANSFER_TYPE_REQUEST:
+                    onTransferTypeRequestResult(status, data.getExtras());
+                    break;
+                case USER_CARD_REQUEST:
+                    onUserCardRequestResult(status, data.getExtras());
+                    break;
+                case USER_PIN_REQUEST:
+                    onUserPinRequestResult(status, data.getExtras());
+                    break;
+            }
         }
     }
 
