@@ -20,6 +20,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected static final int TRANSFER_TYPE_REQUEST = 9;
     protected static final int PAYMENT_TYPE_REQUEST = 10;
     protected static final int CARD_TYPE_REQUEST = 11; //FIXME Solo para el Prototipo
+    protected static final int ORIGIN_ACCOUNT_REQUEST=12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +96,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), TransferTypeActivity.class);
         startActivityForResult(intent, TRANSFER_TYPE_REQUEST);
     }
+    protected void selectOriginAccount() { //Pantalla para seleccionar cuenta origen transferencia
+        Intent intent = new Intent(getApplicationContext(), OriginAccountActivity.class);
+        startActivityForResult(intent, ORIGIN_ACCOUNT_REQUEST);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -132,6 +137,9 @@ public abstract class BaseActivity extends AppCompatActivity {
                 case TRANSFER_TYPE_REQUEST:
                     onTransferTypeRequestResult(status, data.getExtras());
                     break;
+                case ORIGIN_ACCOUNT_REQUEST:
+                    onOriginAccountRequestResult(status, data.getExtras());
+                    break;
                 case USER_CARD_REQUEST:
                     onUserCardRequestResult(status, data.getExtras());
                     break;
@@ -160,6 +168,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onPaymentTypeSelectResult(int status, Bundle data) {}
 
     protected void onTransferTypeRequestResult(int status, Bundle data) {}
+
+    protected void onOriginAccountRequestResult(int status, Bundle data) {}
 
     protected void onUserCardRequestResult(int status, Bundle data) {}
 

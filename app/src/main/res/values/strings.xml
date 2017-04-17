@@ -24,6 +24,7 @@
     <string name="txt_transfer_type_1">Ahorro a Corriente</string>
     <string name="txt_transfer_type_2">Corriente a Corriente</string>
 
+
     <!-- MENSAJES -->
     <string name="msg_success_login">Su inicio de operaciones fue exitoso</string>
     <string name="msg_success_transaction">Transacción procesada exitosamente</string>
@@ -53,6 +54,7 @@
     <string name="action_account_type_select">Seleccione el tipo de cuenta</string>
     <string name="action_amount_type_select">Seleccione el monto a pagar</string>
     <string name="action_transfer_type_select">Seleccione tipo de transferencia</string>
+    <string name="action_origin_accoun_select">Seleccione Cuenta Origen</string>
 
     <!-- Transacciones POS -->
     <string name="action_close_pos_sure">¿Desea realizar el cierre del POS?</string>
