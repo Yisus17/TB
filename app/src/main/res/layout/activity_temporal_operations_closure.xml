@@ -3,48 +3,26 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.tekknow.bicentenario.tbcomplus.DepositActivity">
+    android:layout_height="match_parent">
 
     <!-- Footer -->
-    <include layout="@layout/_footer" />
+    <include
+        android:id="@+id/footer"
+        layout="@layout/_footer" />
 
     <RelativeLayout
         android:layout_above="@id/footer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        android:layout_margin="16dp">
 
         <TextView
-            android:id="@+id/label_account"
+            android:id="@+id/label_are_you_sure"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
             style="@style/Label"
-            android:text="@string/action_deposit_enter_account" />
-
-        <EditText
-            android:id="@+id/txt_account"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/label_account"
-            android:inputType="number" />
-
-        <TextView
-            android:id="@+id/label_amount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_account"
-            android:layout_marginTop="32dp"
-            style="@style/Label"
-            android:text="@string/action_deposit_amount_enter" />
-
-        <EditText
-            android:id="@+id/txt_amount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/label_amount"
-            android:inputType="numberDecimal" />
+            android:text="@string/action_temporal_operations_closure_sure" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,7 +32,7 @@
             android:layout_alignParentBottom="true">
 
             <Button
-                android:id="@+id/btn_execute"
+                android:id="@+id/btn_yes"
                 style="@style/HomeButton"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -63,15 +41,13 @@
                 android:text="@string/txt_accept" />
 
             <Button
-                android:id="@+id/btn_back"
+                android:id="@+id/btn_no"
                 style="@style/HomeButton"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:onClick="onReturn"
                 android:text="@string/txt_back" />
-
-
 
         </LinearLayout>
 

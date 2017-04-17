@@ -38,13 +38,15 @@
     <!--        ACCIONES        -->
 
     <!-- Tarjeta -->
-    <string name="action_card_cnb_read">Introduzca la Tarjeta del CNB en el BBPOS</string>
+    <string name="action_card_cnb_read">Introduzca la Tarjeta del Corresponsal no Bancario en el BBPOS</string>
     <string name="action_card_client_read">Introduzca la Tarjeta del Cliente en el BBPOS</string>
-    <string name="action_pin_entry">Ingrese su pin en el BBPOS</string>
+    <string name="action_pin_entry">Ingrese el pin del Corresponsal no Bancario en el BBPOS</string>
     <string name="action_pin_client_entry">Ingrese el pin del cliente en BBPOS</string>
 
     <!-- Transacciones TBCOM -->
     <string name="action_amount_enter">Ingrese el monto</string>
+    <string name="action_deposit_amount_enter">Ingrese monto del depósito</string>
+    <string name="action_withdrawal_amount_enter">Ingrese monto del retiro</string>
     <string name="action_creditcard_number">Ingrese Número de Tarjeta</string>
     <string name="action_transfer_amount_enter">Ingrese el monto a transferir</string>
     <string name="action_deposit_execute">Ejecutándo depósito</string>
@@ -53,8 +55,16 @@
     <string name="action_account_type_select">Seleccione el tipo de cuenta</string>
     <string name="action_amount_type_select">Seleccione el monto a pagar</string>
     <string name="action_transfer_type_select">Seleccione tipo de transferencia</string>
+    <string name="action_ci_custumer_enter">Ingrese número de cédula del cliente</string>
+    <string name="action_email_customer_enter">Ingrese el correo electrónico del cliente</string>
+    <string name="action_sale_amount_enter">Ingrese monto de la venta</string>
 
     <!-- Transacciones POS -->
     <string name="action_close_pos_sure">¿Desea realizar el cierre del POS?</string>
+
+    <string name="txt_last_query_info">Venta Debito\n 41412*****5256\n Banco Bicentenario\n Fecha 04/06/2017 Hora:09:41:42 AM\n Monto: xx.xxx,xx</string>
+    <string name="action_temporal_operations_closure_sure">¿Desea realizar el Cierre Temporal de Operaciones?</string>
+    <string name="action_operations_closure_sure">¿Desea realizar el Cierre Definitivo de Operaciones?</string>
+
 
 </resources>

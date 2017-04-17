@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
-
 public class WithdrawalActivity extends BaseActivity {
 
     @Override
@@ -17,7 +15,7 @@ public class WithdrawalActivity extends BaseActivity {
     @Override
     protected void onAccountTypeSelectResult(int status, Bundle data) {
         super.onAccountTypeSelectResult(status, data);
-        setContentView(R.layout.activity_enter_customer_data);
+        setContentView(R.layout.activity_withdrawal);
     }
 
     @Override
@@ -51,7 +49,7 @@ public class WithdrawalActivity extends BaseActivity {
         selectAccountType();
     }
 
-    public void execute(View view) {
+    public void onAccept(View view) {
         requestCustomerCard();
     }
 

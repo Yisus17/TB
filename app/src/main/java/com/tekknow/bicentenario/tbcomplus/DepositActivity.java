@@ -42,7 +42,7 @@ public class DepositActivity extends BaseActivity {
         finish();
     }
 
-    public void execute(View view) {
+    public void onAccept(View view) {
         requestUserCard();
     }
 

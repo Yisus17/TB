@@ -4,15 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
-
-public class InfoQueryActivity extends BaseActivity {
+public class LastQueryInfoActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_info_query);
+        setContentView(R.layout.activity_last_query_info);
         getSupportActionBar().setTitle(getString(R.string.title_activity_deposit));
     }
 
@@ -30,7 +28,7 @@ public class InfoQueryActivity extends BaseActivity {
         finish();
     }
 
-    public void execute(View view) {
+    public void onPrint(View view) {
         sendHostRequest();
     }
 }

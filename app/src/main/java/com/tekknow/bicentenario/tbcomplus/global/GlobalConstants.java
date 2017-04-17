@@ -30,5 +30,6 @@ public class GlobalConstants {
     public static final int STATUS_OK = 0;
     public static final int STATUS_ERROR = 1;
     public static final int STATUS_CANCEL = 2;
+    public static final int STATUS_BACK = 3;
 
 }

@@ -20,6 +20,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected static final int TRANSFER_TYPE_REQUEST = 9;
     protected static final int PAYMENT_TYPE_REQUEST = 10;
     protected static final int CARD_TYPE_REQUEST = 11; //FIXME Solo para el Prototipo
+    protected static final int CUSTOMER_CI_REQUEST = 12;
+    protected static final int CUSTOMER_EMAIL_REQUEST = 13;
+    protected static final int SALE_AMOUNT_REQUEST = 14;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +59,21 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void requestCustomerPin() { //Ingreso del pin del Cliente
         Intent intent = new Intent(getApplicationContext(), CustomerPinEntryActivity.class);
         startActivityForResult(intent, CUSTOMER_PIN_REQUEST);
+    }
+
+    protected void requestCustomerCI(){
+        Intent intent = new Intent(getApplicationContext(), CustomerCIEntryActivity.class);
+        startActivityForResult(intent, CUSTOMER_CI_REQUEST);
+    }
+
+    protected void requestCustomerEmail(){
+        Intent intent = new Intent(getApplicationContext(), CustomerEmailEntryActivity.class);
+        startActivityForResult(intent, CUSTOMER_EMAIL_REQUEST);
+    }
+
+    protected void requestSaleAmount(){
+        Intent intent = new Intent(getApplicationContext(), SaleAmountActivity.class);
+        startActivityForResult(intent, SALE_AMOUNT_REQUEST);
     }
 
     protected void sendHostRequest(Bundle data) { //Solicitud al host
@@ -117,6 +135,12 @@ public abstract class BaseActivity extends AppCompatActivity {
                 case CUSTOMER_CARD_REQUEST:
                     onCustomerCardRequestResult(status, data.getExtras());
                     break;
+                case CUSTOMER_CI_REQUEST:
+                    onCustomerCIRequestResult(status, data.getExtras());
+                    break;
+                case CUSTOMER_EMAIL_REQUEST:
+                    onCustomerEmailRequestResult(status, data.getExtras());
+                    break;
                 case CUSTOMER_PIN_REQUEST:
                     onCustomerPinRequestResult(status, data.getExtras());
                     break;
@@ -128,6 +152,9 @@ public abstract class BaseActivity extends AppCompatActivity {
                     break;
                 case PAYMENT_TYPE_REQUEST:
                     onPaymentTypeSelectResult(status, data.getExtras());
+                    break;
+                case SALE_AMOUNT_REQUEST:
+                    onSaleAmountRequestResult(status, data.getExtras());
                     break;
                 case TRANSFER_TYPE_REQUEST:
                     onTransferTypeRequestResult(status, data.getExtras());
@@ -151,6 +178,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected void onCustomerCardRequestResult(int status, Bundle data) {}
 
+    protected void onCustomerCIRequestResult(int status, Bundle extras) {}
+
+    protected void onCustomerEmailRequestResult(int status, Bundle extras) {}
+
     protected void onCustomerPinRequestResult(int status, Bundle data) {}
 
     protected void onDisplayMessageResult(int status, Bundle data) {}
@@ -158,6 +189,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onHostRequestResult(int status, Bundle data) {}
 
     protected void onPaymentTypeSelectResult(int status, Bundle data) {}
+
+    protected void onSaleAmountRequestResult(int status, Bundle extras) {}
 
     protected void onTransferTypeRequestResult(int status, Bundle data) {}
 

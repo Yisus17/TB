@@ -1,25 +1,25 @@
 package com.tekknow.bicentenario.tbcomplus;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
 
-public class ClosePosActivity extends BaseActivity {
+public class OperationsClosureActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_close_pos);
-        getSupportActionBar().setTitle(getString(R.string.title_activity_close_pos));
+        setContentView(R.layout.activity_operations_closure);
     }
 
-    public void accept(View view) {
+    public void onAccept(View view) {
         sendHostRequest();
     }
 
-    public void decline(View view) {
+    public void onReturn(View view) {
         setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_CANCEL));
         finish();
     }
@@ -37,5 +37,4 @@ public class ClosePosActivity extends BaseActivity {
         setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_OK));
         finish();
     }
-
 }

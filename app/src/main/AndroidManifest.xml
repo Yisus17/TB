@@ -63,7 +63,7 @@
             android:name=".AccountTypeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".InfoQueryActivity"
+            android:name=".LastQueryInfoActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".CardTypeActivity"
@@ -72,10 +72,25 @@
             android:name=".SaleActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".CustomerCIEntryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CustomerEmailEntryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SaleAmountActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".TransferOwnAccountActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".TransferTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TemporalOperationsClosureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OperationsClosureActivity"
             android:screenOrientation="portrait" />
     </application>
 

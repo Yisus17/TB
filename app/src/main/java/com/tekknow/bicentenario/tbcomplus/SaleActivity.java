@@ -15,7 +15,26 @@ public class SaleActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         cardType = -1;
-        requestCustomerCard();
+
+        requestCustomerCI();
+    }
+
+    @Override
+    protected void onCustomerCIRequestResult(int status, Bundle extras) {
+        super.onCustomerCIRequestResult(status, extras);
+        requestCustomerEmail();
+    }
+
+    @Override
+    protected void onCustomerEmailRequestResult(int status, Bundle extras) {
+        super.onCustomerEmailRequestResult(status, extras);
+
+        if(status == GlobalConstants.STATUS_BACK){
+            requestCustomerCI();
+        }else{
+            requestCustomerCard();
+        }
+
     }
 
     @Override
@@ -36,7 +55,7 @@ public class SaleActivity extends BaseActivity {
                     selectAccountType();
                     break;
                 case GlobalConstants.CARD_TYPE_2: //CREDITO
-                    setContentView(R.layout.activity_enter_customer_data);
+                    requestSaleAmount();
                     break;
             }
         }
@@ -45,7 +64,13 @@ public class SaleActivity extends BaseActivity {
     @Override
     protected void onAccountTypeSelectResult(int status, Bundle data) {
         super.onAccountTypeSelectResult(status, data);
-        setContentView(R.layout.activity_enter_customer_data);
+        requestSaleAmount();
+    }
+
+    @Override
+    protected void onSaleAmountRequestResult(int status, Bundle extras) {
+        super.onSaleAmountRequestResult(status, extras);
+        requestCustomerPin();
     }
 
     @Override
@@ -68,6 +93,7 @@ public class SaleActivity extends BaseActivity {
         finish();
     }
 
+
     @Override
     public void onReturn(View view) {
         if (cardType == GlobalConstants.CARD_TYPE_1) {
@@ -77,9 +103,4 @@ public class SaleActivity extends BaseActivity {
             finish();
         }
     }
-
-    public void execute(View view) {
-        requestCustomerPin();
-    }
-
 }

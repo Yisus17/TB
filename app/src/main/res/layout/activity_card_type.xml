@@ -41,8 +41,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_margin="10dp"
-            android:onClick="cancel"
-            android:text="@string/txt_back" />
+            android:onClick="onCancel"
+            android:text="@string/txt_cancel" />
 
         <ListView
             android:id="@+id/lst_card_options"

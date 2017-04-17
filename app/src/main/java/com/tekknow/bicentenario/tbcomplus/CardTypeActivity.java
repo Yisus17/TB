@@ -47,7 +47,7 @@ public class CardTypeActivity extends AppCompatActivity {
         });
     }
 
-    public void cancel (View view) {
+    public void onCancel (View view) {
         setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_CANCEL));
         finish();
     }

@@ -1,30 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <!-- Footer -->
-    <include
-        android:id="@+id/footer"
-        layout="@layout/_footer" />
+    <include layout="@layout/_footer" />
 
     <RelativeLayout
         android:layout_above="@id/footer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp">
-
-        <TextView
-            android:id="@+id/label_are_you_sure"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal|center_vertical"
-            style="@style/Label"
-            android:text="@string/action_close_pos_sure" />
+        android:layout_margin="10dp">
 
         <LinearLayout
+            android:id="@+id/btn_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -32,24 +22,33 @@
             android:layout_alignParentBottom="true">
 
             <Button
-                android:id="@+id/btn_yes"
+                android:id="@+id/btn_execute"
                 style="@style/HomeButton"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:onClick="accept"
-                android:text="@string/txt_accept" />
+                android:onClick="onPrint"
+                android:text="@string/txt_print" />
 
             <Button
-                android:id="@+id/btn_no"
+                android:id="@+id/btn_back"
                 style="@style/HomeButton"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:onClick="decline"
+                android:onClick="onReturn"
                 android:text="@string/txt_back" />
-
         </LinearLayout>
+
+        <TextView
+            android:layout_above="@id/btn_content"
+            android:id="@+id/label_amount"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="32dp"
+            style="@style/Message"
+            android:text="@string/txt_last_query_info" />
 
     </RelativeLayout>
 

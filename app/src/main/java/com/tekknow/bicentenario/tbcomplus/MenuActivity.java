@@ -64,7 +64,7 @@ public class MenuActivity extends AppCompatActivity {
             case "POS":
                 options.add(new MenuOption("Ventas", SaleActivity.class));
                 options.add(new MenuOption("Devoluciones", ""));
-                options.add(new MenuOption("Consulta de Ultimo Movimiento", InfoQueryActivity.class));
+                options.add(new MenuOption("Consulta de Ultimo Movimiento", LastQueryInfoActivity.class));
                 options.add(new MenuOption("Cierre de POS", ClosePosActivity.class));
                 break;
             case "CNB":
@@ -78,9 +78,9 @@ public class MenuActivity extends AppCompatActivity {
             case "CONTROL":
                 options.add(new MenuOption("Consulta de Totales", ""));
                 options.add(new MenuOption("Consulta de Transacciones", ""));
-                options.add(new MenuOption("Cierre Temporal de Operaciones", ""));
+                options.add(new MenuOption("Cierre Temporal de Operaciones", TemporalOperationsClosureActivity.class));
                 options.add(new MenuOption("Reapertura de Operaciones", ""));
-                options.add(new MenuOption("Cierre de Operaciones", ""));
+                options.add(new MenuOption("Cierre de Operaciones", OperationsClosureActivity.class));
                 break;
             case "TRANSFERENCIAS":
                 options.add(new MenuOption("Transferencias Cuenta Propias", TransferOwnAccountActivity.class));
