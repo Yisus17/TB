@@ -23,6 +23,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected static final int CUSTOMER_CI_REQUEST = 12;
     protected static final int CUSTOMER_EMAIL_REQUEST = 13;
     protected static final int SALE_AMOUNT_REQUEST = 14;
+    protected static final int ORIGIN_ACCOUNT_REQUEST=15;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +115,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), TransferTypeActivity.class);
         startActivityForResult(intent, TRANSFER_TYPE_REQUEST);
     }
+    protected void selectOriginAccount() { //Pantalla para seleccionar cuenta origen transferencia
+        Intent intent = new Intent(getApplicationContext(), OriginAccountActivity.class);
+        startActivityForResult(intent, ORIGIN_ACCOUNT_REQUEST);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -159,6 +165,9 @@ public abstract class BaseActivity extends AppCompatActivity {
                 case TRANSFER_TYPE_REQUEST:
                     onTransferTypeRequestResult(status, data.getExtras());
                     break;
+                case ORIGIN_ACCOUNT_REQUEST:
+                    onOriginAccountRequestResult(status, data.getExtras());
+                    break;
                 case USER_CARD_REQUEST:
                     onUserCardRequestResult(status, data.getExtras());
                     break;
@@ -193,6 +202,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onSaleAmountRequestResult(int status, Bundle extras) {}
 
     protected void onTransferTypeRequestResult(int status, Bundle data) {}
+
+    protected void onOriginAccountRequestResult(int status, Bundle data) {}
 
     protected void onUserCardRequestResult(int status, Bundle data) {}
 

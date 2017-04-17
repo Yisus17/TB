@@ -1,21 +1,22 @@
 package com.tekknow.bicentenario.tbcomplus;
 
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class WithdrawalActivity extends BaseActivity {
+public class TransferThirdActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        selectAccountType();
+        selectOriginAccount();
     }
 
     @Override
-    protected void onAccountTypeSelectResult(int status, Bundle data) {
-        super.onAccountTypeSelectResult(status, data);
-        setContentView(R.layout.activity_withdrawal);
+    protected void onOriginAccountRequestResult(int status, Bundle data) {
+        super.onTransferTypeRequestResult(status, data);
+        setContentView(R.layout.fragment_transfer_third_data);
     }
 
     @Override
@@ -23,7 +24,6 @@ public class WithdrawalActivity extends BaseActivity {
         super.onCustomerCardRequestResult(status, data);
         requestCustomerPin();
     }
-
     @Override
     protected void onCustomerPinRequestResult(int status, Bundle data) {
         super.onCustomerPinRequestResult(status, data);
@@ -43,12 +43,12 @@ public class WithdrawalActivity extends BaseActivity {
         finish();
     }
 
-    @Override
+
     public void onReturn(View view) {
-        selectAccountType();
+        selectOriginAccount();
     }
 
-    public void onAccept(View view) {
+    public void execute(View view) {
         requestCustomerCard();
     }
 

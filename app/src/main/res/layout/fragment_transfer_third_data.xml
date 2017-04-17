@@ -16,12 +16,12 @@
         android:layout_margin="10dp">
 
         <TextView
-        android:id="@+id/label_amount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        style="@style/Label"
-        android:text="@string/action_transfer_amount_enter" />
+            android:id="@+id/label_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            style="@style/Label"
+            android:text="@string/action_transfer_amount_enter" />
 
         <EditText
             android:id="@+id/txt_amount"
@@ -30,13 +30,28 @@
             android:layout_below="@id/label_amount"
             android:inputType="numberDecimal" />
 
+        <TextView
+            android:id="@+id/label_account_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            style="@style/Label"
+            android:layout_below="@id/txt_amount"
+            android:text="@string/action_deposit_enter_account" />
+
+        <EditText
+            android:id="@+id/txt_acount_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_account_number"
+            android:inputType="numberDecimal" />
 
         <TextView
             android:id="@+id/label_ci"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:layout_below="@id/txt_amount"
+            android:layout_below="@id/txt_acount_number"
             style="@style/Label"
             android:text="@string/action_ci_enter" />
 
