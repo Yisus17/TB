@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tekknow.bicentenario.tbcomplus.AccountTypeActivity">
+
+    <!-- Footer -->
+    <include layout="@layout/_footer" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/footer"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/lst_payment_options"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+
+        <Button
+            android:id="@+id/btn_back"
+            style="@style/HomeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:onClick="cancel"
+            android:text="@string/txt_back" />
+
+    </RelativeLayout>
+</RelativeLayout>

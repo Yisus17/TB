@@ -1,0 +1,54 @@
+package com.tekknow.bicentenario.tbcomplus;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
+import com.tekknow.bicentenario.tbcomplus.model.MenuPair;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PaymentTypeActivity extends AppCompatActivity {
+
+    ListView paymentOptions;
+    Intent result;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_account_type);
+
+        result = new Intent();
+
+        paymentOptions = (ListView) findViewById(R.id.lst_payment_options);
+
+        List<MenuPair> options = new ArrayList<>();
+        options.add(new MenuPair(getString(R.string.txt_payment_type_1), GlobalConstants.PAYMENT_TYPE_1));
+        options.add(new MenuPair(getString(R.string.txt_payment_type_2), GlobalConstants.PAYMENT_TYPE_2));
+
+        ArrayAdapter<MenuPair> adapter = new ArrayAdapter<MenuPair>(this, android.R.layout.simple_list_item_1, android.R.id.text1, options);
+        paymentOptions.setAdapter(adapter);
+
+        paymentOptions.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                MenuPair option = (MenuPair) paymentOptions.getItemAtPosition(position);
+                result.putExtra(GlobalConstants.PAYMENT_TYPE, option.getValue());
+                setResult(RESULT_OK, result);
+                finish();
+            }
+        });
+    }
+
+    public void cancel(View view) {
+        setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_CANCEL));
+        finish();
+    }
+
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tekknow.bicentenario.tbcomplus.AccountTypeActivity">
+
+    <!-- Footer -->
+    <include layout="@layout/_footer" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/footer"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_select_account_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            style="@style/Message"
+            android:paddingTop="6dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/action_account_type_select"/>
+
+        <Button
+            android:id="@+id/btn_back"
+            style="@style/HomeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:onClick="cancel"
+            android:text="@string/txt_back" />
+
+        <ListView
+            android:layout_below="@id/txt_select_account_type"
+            android:layout_above="@id/btn_back"
+            android:id="@+id/lst_account_options"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+
+
+    </RelativeLayout>
+</RelativeLayout>

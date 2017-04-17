@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tekknow.bicentenario.tbcomplus.HomeActivity">
+
+    <!-- Footer -->
+    <include layout="@layout/_footer" />
+
+    <RelativeLayout
+        android:layout_above="@id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp">
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/logo_bicentenario" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_below="@id/img_logo"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_pos"
+                style="@style/HomeButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@drawable/icon_pos"
+                android:onClick="launchPOS"
+                android:text="@string/category_pos" />
+
+            <Button
+                android:id="@+id/btn_cnb"
+                style="@style/HomeButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@drawable/icon_cnb"
+                android:onClick="launchCNB"
+                android:text="@string/category_cnb" />
+
+            <Button
+                android:id="@+id/btn_control"
+                style="@style/HomeButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@drawable/icon_control"
+                android:onClick="launchControl"
+                android:text="@string/category_control" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

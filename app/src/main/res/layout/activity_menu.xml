@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tekknow.bicentenario.tbcomplus.MenuActivity">
+
+    <!-- Footer -->
+    <include layout="@layout/_footer" />
+
+    <RelativeLayout
+        android:layout_above="@id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txt_category"
+            style="@style/Category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:gravity="center"
+            android:text="" />
+
+        <Button
+            android:id="@+id/btn_back"
+            style="@style/HomeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:onClick="onReturn"
+            android:text="@string/txt_back" />
+
+        <ListView
+            android:layout_below="@id/txt_category"
+            android:layout_above="@id/btn_back"
+            android:id="@+id/lst_menu_options"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

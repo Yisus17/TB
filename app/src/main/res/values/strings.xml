@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">TBCom Plus</string>
+    <string name="footer">©2017 Banco Bicentenario Banco Universal C.A.\nRIF: G-20009148-7</string>
+
+    <!-- CATEGORIAS -->
+    <string name="category_pos">PUNTO DE VENTA</string>
+    <string name="category_cnb">TBCOM</string>
+    <string name="category_control">CONTROL DE OPERACIONES</string>
+
+    <!-- TEXTOS -->
+    <string name="txt_accept">Aceptar</string>
+    <string name="txt_account_type_1">Cuenta Ahorro</string>
+    <string name="txt_account_type_2">Cuenta Corriente</string>
+    <string name="txt_back">Regresar</string>
+    <string name="txt_cancel">Cancelar</string>
+    <string name="txt_option_no">No</string>
+    <string name="txt_option_yes">Si</string>
+    <string name="txt_payment_type_1">Efectivo</string>
+    <string name="txt_payment_type_2">Cargo en Cuenta</string>
+    <string name="txt_please_wait">Por favor espere</string>
+    <string name="txt_print">Imprimir</string>
+    <string name="txt_process">Procesar</string>
+    <string name="txt_send_email">Enviar al email</string>
+    <string name="txt_transfer_type_1">Ahorro a Corriente</string>
+    <string name="txt_transfer_type_2">Corriente a Corriente</string>
+
+    <!-- MENSAJES -->
+    <string name="msg_success_login">Su inicio de operaciones fue exitoso</string>
+    <string name="msg_success_transaction">Transacción procesada exitosamente</string>
+
+    <!-- TITULOS ACTIVITIES -->
+    <string name="title_activity_creditcard_payment">Pago de TDC</string>
+    <string name="title_activity_deposit">Depósito</string>
+    <string name="title_activity_withdrawal">Retiro</string>
+    <string name="title_account_type">Seleccione el tipo de cuenta</string>
+    <string name="title_activity_close_pos">Cierre POS</string>
+
+    <!--        ACCIONES        -->
+
+    <!-- Tarjeta -->
+    <string name="action_card_cnb_read">Introduzca la Tarjeta del CNB en el BBPOS</string>
+    <string name="action_card_client_read">Introduzca la Tarjeta del Cliente en el BBPOS</string>
+    <string name="action_pin_entry">Ingrese su pin en el BBPOS</string>
+    <string name="action_pin_client_entry">Ingrese el pin del cliente en BBPOS</string>
+
+    <!-- Transacciones TBCOM -->
+    <string name="action_amount_enter">Ingrese el monto</string>
+    <string name="action_creditcard_number">Ingrese Número de Tarjeta</string>
+    <string name="action_transfer_amount_enter">Ingrese el monto a transferir</string>
+    <string name="action_deposit_execute">Ejecutándo depósito</string>
+    <string name="action_deposit_enter_account">Ingrese el número de cuenta (10 dígitos)</string>
+    <string name="action_ci_enter">Ingrese cédula de identidad</string>
+    <string name="action_account_type_select">Seleccione el tipo de cuenta</string>
+    <string name="action_amount_type_select">Seleccione el monto a pagar</string>
+    <string name="action_transfer_type_select">Seleccione tipo de transferencia</string>
+
+    <!-- Transacciones POS -->
+    <string name="action_close_pos_sure">¿Desea realizar el cierre del POS?</string>
+
+</resources>

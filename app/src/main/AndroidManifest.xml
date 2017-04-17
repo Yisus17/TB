@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tekknow.bicentenario.tbcomplus">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/launcher_bicentenario"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DisplayMessageActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CustomerCardReadActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UserCardReadActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UserPinEntryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CustomerPinEntryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DepositActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".WithdrawalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ClosePosActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HostRequestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AccountTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InfoQueryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CardTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SaleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TransferOwnAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TransferTypeActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>
