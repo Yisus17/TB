@@ -102,6 +102,9 @@
             android:name=".SaleAmountActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".OperationClosureActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".OperationTemporalClosureActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -118,12 +121,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".UserPinEntryActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" />/>
         <activity
             android:name=".WithdrawalActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".OperationClosureActivity"
             android:screenOrientation="portrait" />
     </application>
 

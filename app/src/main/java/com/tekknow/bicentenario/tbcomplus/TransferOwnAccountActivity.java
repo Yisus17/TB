@@ -11,6 +11,7 @@ public class TransferOwnAccountActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         selectTransferType();
     }
 

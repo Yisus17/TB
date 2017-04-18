@@ -1,11 +1,22 @@
 package com.tekknow.bicentenario.tbcomplus;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+import android.widget.TextView;
+import android.widget.LinearLayout;
+
+import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
 
 public class WithdrawalActivity extends BaseActivity {
-
+    EditText fieldAmount;
+    LinearLayout layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +61,20 @@ public class WithdrawalActivity extends BaseActivity {
 
     @Override
     public void onAccept(View view) {
-        requestCustomerCard();
+        fieldAmount=(EditText)findViewById(R.id.txt_amount);
+        float amount= Float.parseFloat(fieldAmount.getText().toString());
+        if ((amount> GlobalConstants.MIN_AMOUNT_WITHDRAWAL)&&(amount<GlobalConstants.MAX_AMOUNT_WITHDRAWAL)){
+            requestCustomerCard();
+        }else{
+            Toast toast = Toast.makeText(this, "El monto debe ser minimo de "+GlobalConstants.MIN_AMOUNT_WITHDRAWAL+" y maximo de "+GlobalConstants.MAX_AMOUNT_WITHDRAWAL, Toast.LENGTH_SHORT);
+            layout = (LinearLayout) toast.getView();
+            if (layout.getChildCount() > 0) {
+                TextView tv = (TextView) layout.getChildAt(0);
+                tv.setGravity(Gravity.CENTER);
+            }
+            toast.setGravity(Gravity.CENTER,0,0);
+            toast.show();
+        }
+
     }
 }

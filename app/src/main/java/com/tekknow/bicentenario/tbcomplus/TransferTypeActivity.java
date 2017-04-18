@@ -2,6 +2,7 @@ package com.tekknow.bicentenario.tbcomplus;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -24,7 +25,6 @@ public class TransferTypeActivity extends GenericActivity {
         setContentView(R.layout.list_own_transfer_type);
 
         transferOptions = (ListView) findViewById(R.id.lst_transfer_options);
-
         List<MenuPair> options = new ArrayList<>();
         options.add(new MenuPair(getString(R.string.txt_transfer_type_1), GlobalConstants.ACCOUNT_TYPE_1));
         options.add(new MenuPair(getString(R.string.txt_account_type_2), GlobalConstants.ACCOUNT_TYPE_2));
