@@ -84,6 +84,9 @@
             android:name=".MovilnetPaymentActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".MovilnetRechargeActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".OperationsClosureActivity"
             android:screenOrientation="portrait" />
         <activity

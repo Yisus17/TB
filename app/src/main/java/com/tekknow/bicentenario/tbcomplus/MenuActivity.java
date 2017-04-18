@@ -93,7 +93,7 @@ public class MenuActivity extends AppCompatActivity {
             case "PAGOS_EXTERNOS":
                 options.add(new MenuOption("Pago CANTV", CantvPaymentActivity.class));
                 options.add(new MenuOption("Pago Movilnet Postpago", MovilnetPaymentActivity.class));
-                options.add(new MenuOption("Recarga Movilnet", ""));
+                options.add(new MenuOption("Recarga Movilnet", MovilnetRechargeActivity.class));
                 options.add(new MenuOption("SAREN", ""));
                 options.add(new MenuOption("DirecTV", DirectvPaymentActivity.class));
                 break;
