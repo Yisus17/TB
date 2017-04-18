@@ -17,10 +17,10 @@ public class AmountTypeActivity extends AppCompatActivity {
 
         switch (amountType) {
             case GlobalConstants.AMOUNT_TYPE_FIXED:
-                setContentView(R.layout.activity_amount_type_balance);
+                setContentView(R.layout.activity_amount_type_fixed);
                 break;
             case GlobalConstants.AMOUNT_TYPE_BALANCE:
-                setContentView(R.layout.activity_amount_type_fixed);
+                setContentView(R.layout.activity_amount_type_balance);
                 break;
         }
     }

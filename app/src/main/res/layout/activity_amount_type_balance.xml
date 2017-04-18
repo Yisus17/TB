@@ -20,22 +20,11 @@
         android:layout_alignParentStart="true">
 
         <TextView
-            android:id="@+id/txt_balance"
-            style="@style/Message"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="center"
-            android:paddingTop="6dp"
-            android:text="Saldo Actual: 25,00" />
-
-        <TextView
             android:id="@+id/txt_select_account_type"
             style="@style/Message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:layout_below="@+id/txt_balance"
             android:gravity="center"
             android:paddingTop="6dp"
             android:text="@string/action_amount_type_select" />
@@ -46,30 +35,36 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_select_account_type"
             android:orientation="vertical">
-
             <RadioButton
-                android:id="@+id/opt_1"
+                android:id="@+id/opt_partial"
                 style="@style/Message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="100,00" />
-
+                android:text="Vigente: 250,00" />
             <RadioButton
-                android:id="@+id/opt_2"
+                android:id="@+id/opt_total"
                 style="@style/Message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/opt_1"
-                android:text="200,00" />
-
+                android:layout_below="@+id/opt_partial"
+                android:text="Total: 1.500,00" />
             <RadioButton
-                android:id="@+id/opt_3"
+                android:id="@+id/opt_other"
                 style="@style/Message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/opt_2"
-                android:text="500,00" />
+                android:layout_below="@+id/opt_total"
+                android:text="Otro:" />
         </RadioGroup>
+
+        <EditText
+            android:id="@+id/txt_other"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/grp_amount"
+            android:ems="10"
+            android:hint="Monto"
+            android:inputType="textPersonName" />
 
         <LinearLayout
             android:layout_width="match_parent"
