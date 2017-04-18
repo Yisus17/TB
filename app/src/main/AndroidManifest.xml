@@ -78,6 +78,9 @@
             android:name=".MenuActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".MicrocreditPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".MovilnetPaymentActivity"
             android:screenOrientation="portrait" />
         <activity

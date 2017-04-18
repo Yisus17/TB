@@ -34,6 +34,7 @@
     <string name="title_activity_creditcard_payment">Pago de TDC</string>
     <string name="title_activity_directv_payment">Pago DIRECTV</string>
     <string name="title_activity_deposit">Depósito</string>
+    <string name="title_activity_microcredit_payment">Pago de Microcrédito</string>
     <string name="title_activity_movilnet_payment">Pago Movilnet Postpago</string>
     <string name="title_activity_withdrawal">Retiro</string>
     <string name="title_account_type">Seleccione el tipo de cuenta</string>

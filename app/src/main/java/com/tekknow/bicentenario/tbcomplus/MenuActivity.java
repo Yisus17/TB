@@ -88,7 +88,7 @@ public class MenuActivity extends AppCompatActivity {
                 break;
             case "PAGOS_INTERNOS":
                 options.add(new MenuOption("Pago de TDC", CreditCardPaymentActivity.class));
-                options.add(new MenuOption("Pago de Microcrédito", ""));
+                options.add(new MenuOption("Pago de Microcrédito", MicrocreditPaymentActivity.class));
                 break;
             case "PAGOS_EXTERNOS":
                 options.add(new MenuOption("Pago CANTV", CantvPaymentActivity.class));

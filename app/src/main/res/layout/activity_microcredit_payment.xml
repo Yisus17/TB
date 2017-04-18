@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Footer -->
+    <include layout="@layout/_footer" />
+
+    <RelativeLayout
+        android:layout_above="@id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/lbl_contract_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            style="@style/Label"
+            android:text="@string/action_contract_number" />
+
+        <EditText
+            android:id="@+id/txt_contract_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_contract_number"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/lbl_customer_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_below="@id/txt_contract_number"
+            style="@style/Label"
+            android:text="@string/action_ci_enter" />
+
+        <EditText
+            android:id="@+id/txt_customer_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_customer_id"
+            android:inputType="number" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="32dp"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:id="@+id/btn_accept"
+                style="@style/HomeButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_accept" />
+
+            <Button
+                android:id="@+id/btn_back"
+                style="@style/HomeButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:onClick="onReturn"
+                android:text="@string/txt_back" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
