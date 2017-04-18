@@ -57,6 +57,9 @@
             android:name=".DepositActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".DirectvPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".DisplayMessageActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -75,7 +78,13 @@
             android:name=".MenuActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".MicrocreditPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".MovilnetPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MovilnetRechargeActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".OperationsClosureActivity"
