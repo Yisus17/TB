@@ -24,7 +24,7 @@ public abstract class InternalPaymentActivity extends BaseActivity {
         setContentView(getPaymentView());
         getSupportActionBar().setTitle(getPaymentTitle());
 
-        findViewById(R.id.btn_execute).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_accept).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Bundle request = buildInquiryRequest();

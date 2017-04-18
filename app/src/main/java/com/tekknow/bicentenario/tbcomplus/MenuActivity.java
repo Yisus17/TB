@@ -91,7 +91,7 @@ public class MenuActivity extends AppCompatActivity {
                 options.add(new MenuOption("Pago de Microcrédito", ""));
                 break;
             case "PAGOS_EXTERNOS":
-                options.add(new MenuOption("Pago CANTV", ""));
+                options.add(new MenuOption("Pago CANTV", CantvPaymentActivity.class));
                 options.add(new MenuOption("Pago Movilnet Postpago", ""));
                 options.add(new MenuOption("Recarga Movilnet", ""));
                 options.add(new MenuOption("SAREN", ""));

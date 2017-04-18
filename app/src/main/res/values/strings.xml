@@ -30,6 +30,7 @@
     <string name="msg_success_transaction">Transacción procesada exitosamente</string>
 
     <!-- TITULOS ACTIVITIES -->
+    <string name="title_activity_cantv_payment">Pago CANTV</string>
     <string name="title_activity_creditcard_payment">Pago de TDC</string>
     <string name="title_activity_deposit">Depósito</string>
     <string name="title_activity_withdrawal">Retiro</string>
@@ -49,6 +50,7 @@
     <string name="action_deposit_amount_enter">Ingrese monto del depósito</string>
     <string name="action_withdrawal_amount_enter">Ingrese monto del retiro</string>
     <string name="action_creditcard_number">Ingrese Número de Tarjeta</string>
+    <string name="action_phone_number">Ingrese Número de Teléfono</string>
     <string name="action_transfer_amount_enter">Ingrese el monto a transferir</string>
     <string name="action_deposit_execute">Ejecutándo depósito</string>
     <string name="action_deposit_enter_account">Ingrese el número de cuenta (10 dígitos)</string>
