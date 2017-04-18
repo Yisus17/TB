@@ -99,6 +99,8 @@
             android:name=".OriginAccountActivity"
             android:screenOrientation="portrait"/>
 
+
+
     </application>
 
 </manifest>

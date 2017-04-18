@@ -32,4 +32,8 @@ public class GlobalConstants {
     public static final int STATUS_CANCEL = 2;
     public static final int STATUS_BACK = 3;
 
+    public static final int MIN_AMOUNT_WITHDRAWAL=1000; //Montos minimos y maximos de prueba
+    public static final int MAX_AMOUNT_WITHDRAWAL=10000;
+
+
 }
