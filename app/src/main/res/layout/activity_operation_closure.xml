@@ -16,19 +16,12 @@
         android:layout_height="match_parent"
         android:layout_margin="16dp">
 
-        <TextView
-            android:id="@+id/label_are_you_sure"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal|center_vertical"
-            style="@style/Label"
-            android:text="@string/action_close_pos_sure" />
-
         <LinearLayout
+            android:id="@id/btn_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="10dp"
             android:layout_alignParentBottom="true">
 
             <Button
@@ -37,7 +30,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:onClick="accept"
+                android:onClick="onAccept"
                 android:text="@string/txt_accept" />
 
             <Button
@@ -46,10 +39,19 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:onClick="decline"
+                android:onClick="onCancel"
                 android:text="@string/txt_back" />
 
         </LinearLayout>
+
+        <TextView
+            android:layout_above="@id/btn_content"
+            android:id="@+id/label_are_you_sure"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            style="@style/Label"
+            android:text="@string/action_operations_closure_sure" />
 
     </RelativeLayout>
 

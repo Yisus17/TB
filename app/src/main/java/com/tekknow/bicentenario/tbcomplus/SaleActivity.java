@@ -51,10 +51,10 @@ public class SaleActivity extends BaseActivity {
             cardType = data.getInt(CARD_TYPE);
 
             switch (cardType){
-                case CARD_TYPE_1: //DEBITO
+                case CARD_TDD: //DEBITO
                     selectAccountType();
                     break;
-                case CARD_TYPE_2: //CREDITO
+                case CARD_TDC: //CREDITO
                     requestSaleAmount();
                     break;
             }
@@ -96,7 +96,7 @@ public class SaleActivity extends BaseActivity {
 
     @Override
     public void onReturn(View view) {
-        if (cardType == CARD_TYPE_1) {
+        if (cardType == CARD_TDD) {
             selectAccountType();
         } else {
             setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_CANCEL));

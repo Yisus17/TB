@@ -12,10 +12,14 @@ import com.tekknow.bicentenario.tbcomplus.model.MenuOption;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
+
 public class MenuActivity extends GenericActivity {
 
     public static final String MENU_CATEGORY_ID = "com.tekknow.bicentenario.tbcomplus.MENU_CATEGORY_ID";
     public static final String MENU_CATEGORY_TITLE = "com.tekknow.bicentenario.tbcomplus.MENU_CATEGORY_TITLE";
+
+    protected static final int MENU_REQUEST = 1;
 
     ListView menuOptions;
 
@@ -44,12 +48,12 @@ public class MenuActivity extends GenericActivity {
 
             if (option.getActivity() != null) {
                 Intent intent = new Intent(getApplicationContext(), option.getActivity());
-                startActivity(intent);
+                startActivityForResult(intent, MENU_REQUEST);
             } else if (option.getCategoryId() != null) {
                 Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
                 intent.putExtra(MENU_CATEGORY_ID, option.getCategoryId());
                 intent.putExtra(MENU_CATEGORY_TITLE, option.getTitle());
-                startActivity(intent);
+                startActivityForResult(intent, MENU_REQUEST);
             }
             }
         });
@@ -64,7 +68,7 @@ public class MenuActivity extends GenericActivity {
                 options.add(new MenuOption("Ventas", SaleActivity.class));
                 options.add(new MenuOption("Devoluciones", ""));
                 options.add(new MenuOption("Consulta de Ultimo Movimiento", LastQueryInfoActivity.class));
-                options.add(new MenuOption("Cierre de POS", ClosePosActivity.class));
+                options.add(new MenuOption("Cierre de POS", OperationPosClosureActivity.class));
                 break;
             case "CNB":
                 options.add(new MenuOption("Retiros", WithdrawalActivity.class));
@@ -77,9 +81,9 @@ public class MenuActivity extends GenericActivity {
             case "CONTROL":
                 options.add(new MenuOption("Consulta de Totales", ""));
                 options.add(new MenuOption("Consulta de Transacciones", ""));
-                options.add(new MenuOption("Cierre Temporal de Operaciones", TemporalOperationsClosureActivity.class));
+                options.add(new MenuOption("Cierre Temporal de Operaciones", OperationTemporalClosureActivity.class));
                 options.add(new MenuOption("Reapertura de Operaciones", ""));
-                options.add(new MenuOption("Cierre de Operaciones", OperationsClosureActivity.class));
+                options.add(new MenuOption("Cierre de Operaciones", OperationClosureActivity.class));
                 break;
             case "TRANSFERENCIAS":
                 options.add(new MenuOption("Transferencias Cuenta Propias", TransferOwnAccountActivity.class));
@@ -101,4 +105,11 @@ public class MenuActivity extends GenericActivity {
         return options;
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        int status = data.getIntExtra(EXTRA_STATUS, STATUS_OK);
+
+        setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, status));
+        finish();
+    }
 }

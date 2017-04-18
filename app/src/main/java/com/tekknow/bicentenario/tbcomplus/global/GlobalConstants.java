@@ -17,8 +17,8 @@ public class GlobalConstants {
 
     public static final String TDD = "Tarjeta de Débito";
     public static final String TDC = "Tarjeta de Crédito";
-    public static final int CARD_TYPE_1 = 1; //Debito
-    public static final int CARD_TYPE_2 = 2; //Credito
+    public static final int CARD_TDD = 1; //Debito
+    public static final int CARD_TDC = 2; //Credito
 
     public static final int ACCOUNT_TYPE_1 = 1; //Ahorro
     public static final int ACCOUNT_TYPE_2 = 2; //Corriente
@@ -35,5 +35,6 @@ public class GlobalConstants {
     public static final int STATUS_ERROR = 1;
     public static final int STATUS_CANCEL = 2;
     public static final int STATUS_BACK = 3;
+    public static final int STATUS_CLOSE = 4;
 
 }

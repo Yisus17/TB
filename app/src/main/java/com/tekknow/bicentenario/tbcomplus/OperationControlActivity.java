@@ -1,27 +1,23 @@
 package com.tekknow.bicentenario.tbcomplus;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
 
-public class ClosePosActivity extends BaseActivity {
+public abstract class OperationControlActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_close_pos);
-        getSupportActionBar().setTitle(getString(R.string.title_activity_close_pos));
+        setContentView(getOperationClosureView());
     }
 
-    public void accept(View view) {
+    @Override
+    public void onAccept(View view) {
         sendHostRequest();
-    }
-
-    public void decline(View view) {
-        setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_CANCEL));
-        finish();
     }
 
     @Override
@@ -34,8 +30,13 @@ public class ClosePosActivity extends BaseActivity {
     protected void onDisplayMessageResult(int status, Bundle data) {
         super.onDisplayMessageResult(status, data);
 
-        setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_OK));
+        setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, getOperationStatus()));
         finish();
     }
 
+    protected abstract String getOperationClosureTitle();
+
+    protected abstract int getOperationClosureView();
+
+    protected abstract int getOperationStatus();
 }

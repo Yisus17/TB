@@ -29,8 +29,8 @@ public class CardTypeActivity extends GenericActivity {
         accountOptions = (ListView) findViewById(R.id.lst_card_options);
 
         List<MenuPair> options = new ArrayList<>();
-        options.add(new MenuPair(GlobalConstants.TDD, GlobalConstants.CARD_TYPE_1));
-        options.add(new MenuPair(GlobalConstants.TDC, GlobalConstants.CARD_TYPE_2));
+        options.add(new MenuPair(GlobalConstants.TDD, GlobalConstants.CARD_TDD));
+        options.add(new MenuPair(GlobalConstants.TDC, GlobalConstants.CARD_TDC));
 
         ArrayAdapter<MenuPair> adapter = new ArrayAdapter<MenuPair>(this, android.R.layout.simple_list_item_1, android.R.id.text1, options);
         accountOptions.setAdapter(adapter);
