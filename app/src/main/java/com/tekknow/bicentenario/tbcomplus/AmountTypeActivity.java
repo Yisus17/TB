@@ -12,7 +12,17 @@ public class AmountTypeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_amount_type);
+
+        int amountType = getIntent().getIntExtra(GlobalConstants.EXTRA_AMOUNT_TYPE, GlobalConstants.AMOUNT_TYPE_BALANCE);
+
+        switch (amountType) {
+            case GlobalConstants.AMOUNT_TYPE_FIXED:
+                setContentView(R.layout.activity_amount_type_fixed);
+                break;
+            case GlobalConstants.AMOUNT_TYPE_BALANCE:
+                setContentView(R.layout.activity_amount_type_balance);
+                break;
+        }
     }
 
     public void accept(View view) {

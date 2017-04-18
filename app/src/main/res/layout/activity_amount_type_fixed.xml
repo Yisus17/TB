@@ -20,46 +20,56 @@
         android:layout_alignParentStart="true">
 
         <TextView
-            android:id="@+id/txt_select_account_type"
+            android:id="@+id/txt_balance"
             style="@style/Message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:gravity="center"
             android:paddingTop="6dp"
-            android:text="@string/action_amount_type_select" />
+            android:text="Saldo Actual: 25,00" />
 
-        <RadioButton
-            android:id="@+id/opt_partial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_select_account_type"
-            android:text="Vigente: 250,00" />
-
-        <RadioButton
-            android:id="@+id/opt_total"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/opt_partial"
-            android:text="RadioButton"
-            tools:text="Total: 1.500,00" />
-
-        <RadioButton
-            android:id="@+id/opt_other"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/opt_total"
-            android:text="RadioButton"
-            tools:text="Otro:" />
-
-        <EditText
-            android:id="@+id/txt_other"
+        <TextView
+            android:id="@+id/txt_select_account_type"
+            style="@style/Message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/opt_other"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Monto" />
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/txt_balance"
+            android:gravity="center"
+            android:paddingTop="6dp"
+            android:text="@string/action_amount_type_select" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/grp_amount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_select_account_type"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/opt_1"
+                style="@style/Message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100,00" />
+
+            <RadioButton
+                android:id="@+id/opt_2"
+                style="@style/Message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/opt_1"
+                android:text="200,00" />
+
+            <RadioButton
+                android:id="@+id/opt_3"
+                style="@style/Message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/opt_2"
+                android:text="500,00" />
+        </RadioGroup>
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -95,9 +95,16 @@ public abstract class BaseActivity extends AppCompatActivity {
         startActivityForResult(intent, ACCOUNT_TYPE_REQUEST);
     }
 
-    protected void selectAmountType() { //Pantalla para seleccionar el monto a pagar (parcial, total, otro)
+    protected void selectAmountType(Bundle data) {
         Intent intent = new Intent(getApplicationContext(), AmountTypeActivity.class);
+        if (data != null) {
+            intent.putExtras(data);
+        }
         startActivityForResult(intent, AMOUNT_TYPE_REQUEST);
+    }
+
+    protected void selectAmountType() { //Pantalla para seleccionar el monto a pagar (parcial, total, otro)
+        selectAmountType(null);
     }
 
     //FIXME Solo para el Prototipo

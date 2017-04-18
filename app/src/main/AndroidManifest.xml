@@ -24,52 +24,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DisplayMessageActivity"
+            android:name=".AccountTypeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".AmountTypeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".CardTypeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".LoginActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".CustomerCardReadActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".MenuActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".UserCardReadActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".UserPinEntryActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".CustomerPinEntryActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".DepositActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".WithdrawalActivity"
+            android:name=".CantvPaymentActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ClosePosActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HostRequestActivity"
-            android:screenOrientation="portrait" />
+            android:name=".CreditCardPaymentActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".AccountTypeActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".LastQueryInfoActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".CardTypeActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".SaleActivity"
+            android:name=".CustomerCardReadActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".CustomerCIEntryActivity"
@@ -78,19 +51,40 @@
             android:name=".CustomerEmailEntryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SaleAmountActivity"
+            android:name=".CustomerPinEntryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TransferOwnAccountActivity"
+            android:name=".DepositActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TransferTypeActivity"
+            android:name=".DirectvPaymentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TransferThirdActivity"
+            android:name=".DisplayMessageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TemporalOperationsClosureActivity"
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HostRequestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LastQueryInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MicrocreditPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MovilnetPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MovilnetRechargeActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".OperationsClosureActivity"
@@ -98,8 +92,36 @@
         <activity
             android:name=".OriginAccountActivity"
             android:screenOrientation="portrait"/>
-
-
+        <activity
+            android:name=".PaymentTypeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".SaleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SaleAmountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TemporalOperationsClosureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TransferOwnAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TransferThirdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TransferTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UserCardReadActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UserPinEntryActivity"
+            android:screenOrientation="portrait" />/>
+        <activity
+            android:name=".WithdrawalActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 

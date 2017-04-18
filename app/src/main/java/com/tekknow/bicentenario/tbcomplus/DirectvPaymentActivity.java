@@ -6,16 +6,16 @@ import android.os.Bundle;
  * Created by Alejandro on 4/16/2017.
  */
 
-public class CreditCardPaymentActivity extends InternalPaymentActivity {
+public class DirectvPaymentActivity extends InternalPaymentActivity {
 
     @Override
     protected String getPaymentTitle() {
-        return getString(R.string.title_activity_creditcard_payment);
+        return getString(R.string.title_activity_directv_payment);
     }
 
     @Override
     protected int getPaymentView() {
-        return R.layout.activity_creditcard_payment;
+        return R.layout.activity_contract_number;
     }
 
     @Override
