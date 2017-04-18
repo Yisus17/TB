@@ -57,6 +57,9 @@
             android:name=".DepositActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".DirectvPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".DisplayMessageActivity"
             android:screenOrientation="portrait" />
         <activity

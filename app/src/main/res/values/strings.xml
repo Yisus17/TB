@@ -32,6 +32,7 @@
     <!-- TITULOS ACTIVITIES -->
     <string name="title_activity_cantv_payment">Pago CANTV</string>
     <string name="title_activity_creditcard_payment">Pago de TDC</string>
+    <string name="title_activity_directv_payment">Pago DIRECTV</string>
     <string name="title_activity_deposit">Depósito</string>
     <string name="title_activity_movilnet_payment">Pago Movilnet Postpago</string>
     <string name="title_activity_withdrawal">Retiro</string>
@@ -48,6 +49,7 @@
 
     <!-- Transacciones TBCOM -->
     <string name="action_amount_enter">Ingrese el monto</string>
+    <string name="action_contract_number">Ingrese número de contrato</string>
     <string name="action_deposit_amount_enter">Ingrese monto del depósito</string>
     <string name="action_withdrawal_amount_enter">Ingrese monto del retiro</string>
     <string name="action_creditcard_number">Ingrese Número de Tarjeta</string>

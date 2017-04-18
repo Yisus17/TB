@@ -95,7 +95,7 @@ public class MenuActivity extends AppCompatActivity {
                 options.add(new MenuOption("Pago Movilnet Postpago", MovilnetPaymentActivity.class));
                 options.add(new MenuOption("Recarga Movilnet", ""));
                 options.add(new MenuOption("SAREN", ""));
-                options.add(new MenuOption("DirecTV", ""));
+                options.add(new MenuOption("DirecTV", DirectvPaymentActivity.class));
                 break;
         }
 
