@@ -2,7 +2,6 @@ package com.tekknow.bicentenario.tbcomplus;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,7 +13,7 @@ import com.tekknow.bicentenario.tbcomplus.model.MenuPair;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PaymentTypeActivity extends AppCompatActivity {
+public class PaymentTypeActivity extends GenericActivity {
 
     ListView paymentOptions;
     Intent result;
@@ -45,10 +44,4 @@ public class PaymentTypeActivity extends AppCompatActivity {
             }
         });
     }
-
-    public void cancel(View view) {
-        setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_CANCEL));
-        finish();
-    }
-
 }

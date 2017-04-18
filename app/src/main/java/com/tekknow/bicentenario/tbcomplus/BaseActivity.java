@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
+import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
@@ -122,10 +122,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        int status = data.getIntExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_OK);
+        int status = data.getIntExtra(EXTRA_STATUS, STATUS_OK);
 
-        if(status == GlobalConstants.STATUS_CANCEL){
-            setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_CANCEL));
+        if(status == STATUS_CANCEL){
+            setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_CANCEL));
             finish();
         }else{
             switch (requestCode) {
@@ -209,7 +209,18 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected void onUserPinRequestResult(int status, Bundle data) {}
 
-    public void onReturn(View view) {
+    public void onAccept(View view) {
+        setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_OK));
+        finish();
+    }
+
+    public void onReturn(View view){
+        setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_BACK));
+        finish();
+    }
+
+    public void onCancel(View view){
+        setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_CANCEL));
         finish();
     }
 

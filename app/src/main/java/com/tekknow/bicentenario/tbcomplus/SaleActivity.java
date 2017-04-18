@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
+import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class SaleActivity extends BaseActivity {
 
@@ -29,7 +29,7 @@ public class SaleActivity extends BaseActivity {
     protected void onCustomerEmailRequestResult(int status, Bundle extras) {
         super.onCustomerEmailRequestResult(status, extras);
 
-        if(status == GlobalConstants.STATUS_BACK){
+        if(status == STATUS_BACK){
             requestCustomerCI();
         }else{
             requestCustomerCard();
@@ -47,14 +47,14 @@ public class SaleActivity extends BaseActivity {
     protected void onCardTypeSelectResult(int status, Bundle data) {
         super.onCardTypeSelectResult(status, data);
 
-        if (data.containsKey(GlobalConstants.CARD_TYPE)) {
-            cardType = data.getInt(GlobalConstants.CARD_TYPE);
+        if (data.containsKey(CARD_TYPE)) {
+            cardType = data.getInt(CARD_TYPE);
 
             switch (cardType){
-                case GlobalConstants.CARD_TYPE_1: //DEBITO
+                case CARD_TYPE_1: //DEBITO
                     selectAccountType();
                     break;
-                case GlobalConstants.CARD_TYPE_2: //CREDITO
+                case CARD_TYPE_2: //CREDITO
                     requestSaleAmount();
                     break;
             }
@@ -96,10 +96,10 @@ public class SaleActivity extends BaseActivity {
 
     @Override
     public void onReturn(View view) {
-        if (cardType == GlobalConstants.CARD_TYPE_1) {
+        if (cardType == CARD_TYPE_1) {
             selectAccountType();
         } else {
-            setResult(RESULT_OK, new Intent());
+            setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_CANCEL));
             finish();
         }
     }

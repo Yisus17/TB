@@ -50,7 +50,8 @@ public class TransferOwnAccountActivity extends BaseActivity {
         selectTransferType();
     }
 
-    public void execute(View view) {
+    @Override
+    public void onAccept(View view) {
         requestCustomerCard();
     }
 

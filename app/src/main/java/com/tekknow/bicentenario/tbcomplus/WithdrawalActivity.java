@@ -48,8 +48,8 @@ public class WithdrawalActivity extends BaseActivity {
         selectAccountType();
     }
 
+    @Override
     public void onAccept(View view) {
         requestCustomerCard();
     }
-
 }

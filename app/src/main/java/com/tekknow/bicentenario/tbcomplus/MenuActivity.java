@@ -2,7 +2,6 @@ package com.tekknow.bicentenario.tbcomplus;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,7 +12,7 @@ import com.tekknow.bicentenario.tbcomplus.model.MenuOption;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuActivity extends AppCompatActivity {
+public class MenuActivity extends GenericActivity {
 
     public static final String MENU_CATEGORY_ID = "com.tekknow.bicentenario.tbcomplus.MENU_CATEGORY_ID";
     public static final String MENU_CATEGORY_TITLE = "com.tekknow.bicentenario.tbcomplus.MENU_CATEGORY_TITLE";
@@ -101,11 +100,5 @@ public class MenuActivity extends AppCompatActivity {
 
         return options;
     }
-
-    public void onReturn(View view) {
-        finish();
-    }
-
-
 
 }

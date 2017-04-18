@@ -1,7 +1,6 @@
 package com.tekknow.bicentenario.tbcomplus;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
@@ -44,12 +43,13 @@ public class TransferThirdActivity extends BaseActivity {
     }
 
 
+    @Override
     public void onReturn(View view) {
         selectOriginAccount();
     }
 
-    public void execute(View view) {
+    @Override
+    public void onAccept(View view) {
         requestCustomerCard();
     }
-
 }

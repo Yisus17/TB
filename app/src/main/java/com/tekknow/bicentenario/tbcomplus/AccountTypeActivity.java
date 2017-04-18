@@ -1,7 +1,6 @@
 package com.tekknow.bicentenario.tbcomplus;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,7 +13,7 @@ import com.tekknow.bicentenario.tbcomplus.model.MenuPair;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AccountTypeActivity extends AppCompatActivity {
+public class AccountTypeActivity extends GenericActivity {
 
     ListView accountOptions;
     Intent result;
@@ -44,11 +43,6 @@ public class AccountTypeActivity extends AppCompatActivity {
                 finish();
             }
         });
-    }
-
-    public void onCancel(View view) {
-        setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_CANCEL));
-        finish();
     }
 
 }

@@ -15,13 +15,9 @@ public class OperationsClosureActivity extends BaseActivity {
         setContentView(R.layout.activity_operations_closure);
     }
 
+    @Override
     public void onAccept(View view) {
         sendHostRequest();
-    }
-
-    public void onReturn(View view) {
-        setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_CANCEL));
-        finish();
     }
 
     @Override

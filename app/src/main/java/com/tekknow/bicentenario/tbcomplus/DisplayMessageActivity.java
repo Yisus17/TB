@@ -2,7 +2,6 @@ package com.tekknow.bicentenario.tbcomplus;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -10,7 +9,7 @@ import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
 
 //TODO Hacer manejo de diferentes tipos de mensaje (exito, info, error, warning)
 
-public class DisplayMessageActivity extends AppCompatActivity {
+public class DisplayMessageActivity extends GenericActivity {
 
     int requestCode;
 
@@ -28,9 +27,9 @@ public class DisplayMessageActivity extends AppCompatActivity {
         txt_message.setText(message);
     }
 
+    @Override
     public void onAccept(View view) {
         setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_REQUEST_CODE, requestCode));
         finish();
     }
-
 }

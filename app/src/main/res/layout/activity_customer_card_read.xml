@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="10dp"
-            android:onClick="cancel"
+            android:onClick="onCancel"
             android:text="@string/txt_cancel" />
 
         <TextView
