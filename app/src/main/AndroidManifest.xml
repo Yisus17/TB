@@ -24,6 +24,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".AmountTypeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".CreditCardPaymentActivity"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".DisplayMessageActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -97,6 +103,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".OriginAccountActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".PaymentTypeActivity"
             android:screenOrientation="portrait"/>
 
     </application>

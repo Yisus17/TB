@@ -22,15 +22,15 @@ public class PaymentTypeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_account_type);
+        setContentView(R.layout.activity_payment_type);
 
         result = new Intent();
 
         paymentOptions = (ListView) findViewById(R.id.lst_payment_options);
 
         List<MenuPair> options = new ArrayList<>();
-        options.add(new MenuPair(getString(R.string.txt_payment_type_1), GlobalConstants.PAYMENT_TYPE_1));
-        options.add(new MenuPair(getString(R.string.txt_payment_type_2), GlobalConstants.PAYMENT_TYPE_2));
+        options.add(new MenuPair(getString(R.string.txt_payment_type_1), GlobalConstants.PAYMENT_TYPE_CASH));
+        options.add(new MenuPair(getString(R.string.txt_payment_type_2), GlobalConstants.PAYMENT_TYPE_ACCOUNT));
 
         ArrayAdapter<MenuPair> adapter = new ArrayAdapter<MenuPair>(this, android.R.layout.simple_list_item_1, android.R.id.text1, options);
         paymentOptions.setAdapter(adapter);
@@ -39,7 +39,7 @@ public class PaymentTypeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MenuPair option = (MenuPair) paymentOptions.getItemAtPosition(position);
-                result.putExtra(GlobalConstants.PAYMENT_TYPE, option.getValue());
+                result.putExtra(GlobalConstants.EXTRA_PAYMENT_TYPE, option.getValue());
                 setResult(RESULT_OK, result);
                 finish();
             }

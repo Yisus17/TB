@@ -87,7 +87,7 @@ public class MenuActivity extends AppCompatActivity {
                 options.add(new MenuOption("Transferencias a Terceros", TransferThirdActivity.class));
                 break;
             case "PAGOS_INTERNOS":
-                options.add(new MenuOption("Pago de TDC", ""));
+                options.add(new MenuOption("Pago de TDC", CreditCardPaymentActivity.class));
                 options.add(new MenuOption("Pago de Microcrédito", ""));
                 break;
             case "PAGOS_EXTERNOS":
