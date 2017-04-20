@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Footer -->
+    <include layout="@layout/_footer" />
+
+    <RelativeLayout
+        android:layout_above="@id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/lbl_form_number"
+            style="@style/Label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/action_form_number_enter" />
+
+        <EditText
+            android:id="@+id/txt_form_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_form_number"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/lbl_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_form_number"
+            android:layout_marginTop="16dp"
+            style="@style/Label"
+            android:text="@string/action_amount_enter" />
+
+        <EditText
+            android:id="@+id/txt_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_amount"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/lbl_control_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_amount"
+            android:layout_marginTop="16dp"
+            style="@style/Label"
+            android:text="@string/action_control_number_enter" />
+
+        <EditText
+            android:id="@+id/txt_control_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_control_number"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/lbl_issue_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_control_number"
+            android:layout_marginTop="16dp"
+            style="@style/Label"
+            android:text="@string/action_issue_date_enter" />
+
+        <EditText
+            android:id="@+id/txt_issue_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_issue_date"
+            android:inputType="date" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="32dp"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:id="@+id/btn_accept"
+                style="@style/HomeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/txt_accept" />
+
+            <Button
+                android:id="@+id/btn_back"
+                style="@style/HomeButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:onClick="onReturn"
+                android:text="@string/txt_back" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

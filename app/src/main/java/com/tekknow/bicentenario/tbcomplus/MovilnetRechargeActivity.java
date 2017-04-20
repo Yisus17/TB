@@ -8,7 +8,7 @@ import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
  * Created by Alejandro on 4/16/2017.
  */
 
-public class MovilnetRechargeActivity extends InternalPaymentActivity {
+public class MovilnetRechargeActivity extends PaymentActivity {
 
     @Override
     protected String getPaymentTitle() {
