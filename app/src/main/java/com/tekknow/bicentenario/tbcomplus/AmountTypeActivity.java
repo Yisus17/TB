@@ -23,11 +23,4 @@ public class AmountTypeActivity extends BaseActivity {
                 break;
         }
     }
-
-    public void accept(View view) {
-        //TODO Colocar el monto a pagar en el result
-        setResult(RESULT_OK, new Intent());
-        finish();
-    }
-
 }

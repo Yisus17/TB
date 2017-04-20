@@ -9,7 +9,7 @@ import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class UserCardReadActivity extends BaseActivity {
 
-    String message;
+    int modality;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +18,24 @@ public class UserCardReadActivity extends BaseActivity {
 
         TextView textView = (TextView) findViewById(R.id.txt_card_read);
 
-        message = getIntent().hasExtra(EXTRA_MESSAGE_CONTENT) ? getIntent().getStringExtra(EXTRA_MESSAGE_CONTENT) : getString(R.string.action_card_cnb_read);
-        textView.setText(message);
+        modality = getIntent().getIntExtra(EXTRA_MODALITY, MODALITY_AUTHENTICATE_OPERATIONS);
+
+        switch (modality) {
+            case MODALITY_START_OPERATIONS:
+                textView.setText(R.string.action_card_start_user_read);
+                break;
+            case MODALITY_REOPEN_OPERATIONS:
+                textView.setText(R.string.action_card_reopen_user_read);
+                break;
+            default:
+                textView.setText(R.string.action_card_user_read);
+                break;
+        }
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            setResult(RESULT_OK, new Intent());
-            finish();
+            onAccept();
             }
         });
     }

@@ -1,6 +1,6 @@
 package com.tekknow.bicentenario.tbcomplus;
 
-import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
+import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class OperationTemporalClosureActivity extends ClosureActivity {
 
@@ -16,6 +16,6 @@ public class OperationTemporalClosureActivity extends ClosureActivity {
 
     @Override
     protected int getOperationStatus() {
-        return GlobalConstants.STATUS_CLOSE;
+        return STATUS_CLOSE;
     }
 }

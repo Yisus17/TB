@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_margin="10dp"
-            android:onClick="onCancel"
+            android:onClick="onReturn"
             android:text="@string/txt_back" />
 
         <ListView

@@ -6,14 +6,15 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.widget.TextView;
 import android.widget.LinearLayout;
 
 import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
 
 public class WithdrawalActivity extends TransactionActivity {
+
     EditText fieldAmount;
-    LinearLayout layout;
+    Toast toast;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +48,7 @@ public class WithdrawalActivity extends TransactionActivity {
     @Override
     protected void onDisplayMessageResult(int status, Bundle data) {
         super.onDisplayMessageResult(status, data);
-        setResult(RESULT_OK, new Intent());
-        finish();
+        onAccept();
     }
 
     @Override
@@ -58,20 +58,23 @@ public class WithdrawalActivity extends TransactionActivity {
 
     @Override
     public void onAccept(View view) {
-        fieldAmount=(EditText)findViewById(R.id.txt_amount);
-        float amount= Float.parseFloat(fieldAmount.getText().toString());
-        if ((amount> GlobalConstants.MIN_AMOUNT_WITHDRAWAL)&&(amount<GlobalConstants.MAX_AMOUNT_WITHDRAWAL)){
-            requestCustomerCard();
-        }else{
-            Toast toast = Toast.makeText(this, "El monto debe ser minimo de "+GlobalConstants.MIN_AMOUNT_WITHDRAWAL+" y maximo de "+GlobalConstants.MAX_AMOUNT_WITHDRAWAL, Toast.LENGTH_SHORT);
-            layout = (LinearLayout) toast.getView();
-            if (layout.getChildCount() > 0) {
-                TextView tv = (TextView) layout.getChildAt(0);
-                tv.setGravity(Gravity.CENTER);
-            }
+        fieldAmount = (EditText) findViewById(R.id.txt_amount);
+        String txtAmount = fieldAmount.getText().toString();
+
+        if(txtAmount.trim().length() == 0){
+            toast = Toast.makeText(this, getString(R.string.no_empty_amount), Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER,0,0);
             toast.show();
-        }
+        }else{
+            float amount= Float.parseFloat(txtAmount);
 
+            if ((amount> GlobalConstants.MIN_AMOUNT_WITHDRAWAL)&&(amount<GlobalConstants.MAX_AMOUNT_WITHDRAWAL)){
+                requestCustomerCard();
+            }else{
+                toast = Toast.makeText(this, getString(R.string.txt_min) + GlobalConstants.MIN_AMOUNT_WITHDRAWAL+ "\n" + getString(R.string.txt_max) + GlobalConstants.MAX_AMOUNT_WITHDRAWAL, Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER,0,0);
+                toast.show();
+            }
+        }
     }
 }

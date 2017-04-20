@@ -115,9 +115,7 @@ public abstract class InternalPaymentActivity extends TransactionActivity {
     @Override
     protected void onDisplayMessageResult(int status, Bundle data) {
         super.onDisplayMessageResult(status, data);
-
-        setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_OK));
-        finish();
+        onAccept();
     }
 
     protected abstract String getPaymentTitle();

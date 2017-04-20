@@ -45,11 +45,12 @@
     <!--        ACCIONES        -->
 
     <!-- Tarjeta -->
-    <string name="action_card_cnb_read">Introduzca la Tarjeta del Corresponsal no Bancario en el BBPOS</string>
+    <string name="action_card_user_read">Introduzca la Tarjeta del Corresponsal no Bancario en el BBPOS</string>
     <string name="action_card_client_read">Introduzca la Tarjeta del Cliente en el BBPOS</string>
-    <string name="action_pin_entry">Ingrese el pin del Corresponsal no Bancario en el BBPOS</string>
+    <string name="action_pin_user_entry">Ingrese el pin del Corresponsal no Bancario en el BBPOS</string>
     <string name="action_pin_client_entry">Ingrese el pin del cliente en BBPOS</string>
-    <string name="action_card_start_read">Ingrese la Tarjeta del Corresponsal no Bancario en el BBPOS para iniciar operaciones</string>
+    <string name="action_card_start_user_read">Ingrese la Tarjeta del Corresponsal no Bancario en el BBPOS para iniciar operaciones</string>
+    <string name="action_card_reopen_user_read">Ingrese la Tarjeta del Corresponsal no Bancario en el BBPOS para reapertura de operaciones</string>
 
     <!-- Transacciones TBCOM -->
     <string name="action_amount_enter">Ingrese el monto</string>
@@ -79,6 +80,12 @@
     <string name="txt_last_query_info">Venta Debito\n 41412*****5256\n Banco Bicentenario\n Fecha 04/06/2017 Hora:09:41:42 AM\n Monto: xx.xxx,xx</string>
     <string name="action_temporal_operations_closure_sure">¿Desea realizar el Cierre Temporal de Operaciones?</string>
     <string name="action_operations_closure_sure">¿Desea realizar el Cierre Definitivo de Operaciones?</string>
+
+    <!-- Validaciones -->
+
+    <string name="no_empty_amount">Debe ingresar un monto</string>
+    <string name="txt_min">Monto mínimo:&#160;</string>
+    <string name="txt_max">Monto máximo:&#160;</string>
 
 
 </resources>

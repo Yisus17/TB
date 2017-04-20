@@ -4,7 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
+
 public class TransferThirdActivity extends TransactionActivity {
+
+    protected static final int TRANSFER_THIRD_REQUEST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +19,15 @@ public class TransferThirdActivity extends TransactionActivity {
     @Override
     protected void onOriginAccountRequestResult(int status, Bundle data) {
         super.onTransferTypeRequestResult(status, data);
-        setContentView(R.layout.fragment_transfer_third_data);
+
+        if(status == STATUS_BACK){
+            Intent intent = new Intent(this, MenuActivity.class);
+            intent.putExtra(MenuActivity.MENU_CATEGORY_ID, "TRANSFERENCIAS");
+            intent.putExtra(MenuActivity.MENU_CATEGORY_TITLE, "Transferencias");
+            startActivityForResult(intent, TRANSFER_THIRD_REQUEST);
+        }else {
+            setContentView(R.layout.fragment_transfer_third_data);
+        }
     }
 
     @Override
@@ -38,8 +50,7 @@ public class TransferThirdActivity extends TransactionActivity {
     @Override
     protected void onDisplayMessageResult(int status, Bundle data) {
         super.onDisplayMessageResult(status, data);
-        setResult(RESULT_OK, new Intent());
-        finish();
+        onAccept();
     }
 
 

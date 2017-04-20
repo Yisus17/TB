@@ -32,7 +32,7 @@
                     android:layout_above="@id/btn_cancel"
                     style="@style/Message"
                     android:gravity="center"
-                    android:text="@string/action_card_cnb_read" />
+                    android:text="@string/action_card_user_read" />
         </RelativeLayout>
 
 </RelativeLayout>

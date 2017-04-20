@@ -1,5 +1,6 @@
 package com.tekknow.bicentenario.tbcomplus;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -29,100 +30,154 @@ public abstract class TransactionActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
     }
 
-    protected void displayMessage(Bundle data) { //Desplegar mensaje
-        Intent intent = new Intent(getApplicationContext(), DisplayMessageActivity.class);
+    //---- Plantilla para llamar request ----
+    protected void sendRequest(Class activity, int tag, Bundle data){
+        Intent intent = new Intent(getApplicationContext(), activity);
+
         if (data != null) {
             intent.putExtras(data);
         }
-        startActivityForResult(intent, DISPLAY_MESSAGE_REQUEST);
+
+        startActivityForResult(intent, tag);
+    }
+
+    //---- Desplegar mensaje ----
+    protected void displayMessage(Bundle data) {
+        sendRequest(DisplayMessageActivity.class, DISPLAY_MESSAGE_REQUEST, data);
     }
 
     protected void displayMessage() { //Desplegar mensaje por defecto
         displayMessage(null);
     }
 
-    protected void requestUserCard() { //Lectura de la tarjeta del CNB
-        Intent intent = new Intent(getApplicationContext(), UserCardReadActivity.class);
-        startActivityForResult(intent, USER_CARD_REQUEST);
+
+    //---- Lectura de la tarjeta del CNB ----
+    protected void requestUserCard(Bundle data) {
+        sendRequest(UserCardReadActivity.class, USER_CARD_REQUEST, data);
     }
 
-    protected void requestCustomerCard() { //Lectura de la tarjeta del Cliente
-        Intent intent = new Intent(getApplicationContext(), CustomerCardReadActivity.class);
-        startActivityForResult(intent, CUSTOMER_CARD_REQUEST);
+    protected void requestUserCard() { //Desplegar mensaje por defecto
+        requestUserCard(null);
     }
 
-    protected void requestUserPin() { //Ingreso del pin del CNB
-        Intent intent = new Intent(getApplicationContext(), UserPinEntryActivity.class);
-        startActivityForResult(intent, USER_PIN_REQUEST);
+
+    //---- Lectura de la tarjeta del Cliente ----
+    protected void requestCustomerCard(Bundle data) {
+        sendRequest(CustomerCardReadActivity.class, CUSTOMER_CARD_REQUEST, data);
     }
 
-    protected void requestCustomerPin() { //Ingreso del pin del Cliente
-        Intent intent = new Intent(getApplicationContext(), CustomerPinEntryActivity.class);
-        startActivityForResult(intent, CUSTOMER_PIN_REQUEST);
+    protected void requestCustomerCard() {
+        requestCustomerCard(null);
+    }
+
+
+    //---- Ingreso del pin del CNB ----
+    protected void requestUserPin(Bundle data) {
+        sendRequest(UserPinEntryActivity.class, USER_PIN_REQUEST, data);
+    }
+
+    protected void requestUserPin() {
+        requestUserPin(null);
+    }
+
+    //---- Ingreso del pin del Cliente ----
+    protected void requestCustomerPin(Bundle data) {
+        sendRequest(CustomerPinEntryActivity.class, CUSTOMER_PIN_REQUEST, data);
+    }
+
+    protected void requestCustomerPin() {
+        requestCustomerPin(null);
+    }
+
+    //---- Ingreso de la cédula del cliente ----
+    protected void requestCustomerCI(Bundle data){
+        sendRequest(CustomerCIEntryActivity.class, CUSTOMER_CI_REQUEST, data);
     }
 
     protected void requestCustomerCI(){
-        Intent intent = new Intent(getApplicationContext(), CustomerCIEntryActivity.class);
-        startActivityForResult(intent, CUSTOMER_CI_REQUEST);
+        requestCustomerCI(null);
+    }
+
+    //---- Ingreso del correo electrónico del cliente ----
+    protected void requestCustomerEmail(Bundle data){
+        sendRequest(CustomerEmailEntryActivity.class, CUSTOMER_EMAIL_REQUEST, data);
     }
 
     protected void requestCustomerEmail(){
-        Intent intent = new Intent(getApplicationContext(), CustomerEmailEntryActivity.class);
-        startActivityForResult(intent, CUSTOMER_EMAIL_REQUEST);
+        requestCustomerEmail(null);
+    }
+
+    //---- Ingreso del monto de la Venta ----
+    protected void requestSaleAmount(Bundle data){
+        sendRequest(SaleAmountActivity.class, SALE_AMOUNT_REQUEST, data);
     }
 
     protected void requestSaleAmount(){
-        Intent intent = new Intent(getApplicationContext(), SaleAmountActivity.class);
-        startActivityForResult(intent, SALE_AMOUNT_REQUEST);
+        requestSaleAmount(null);
     }
 
-    protected void sendHostRequest(Bundle data) { //Solicitud al host
-        Intent intent = new Intent(getApplicationContext(), HostRequestActivity.class);
-        if (data != null) {
-            intent.putExtras(data);
-        }
-        startActivityForResult(intent, HOST_REQUEST);
+    //---- Solicitud al host ----
+    protected void sendHostRequest(Bundle data) {
+        sendRequest(HostRequestActivity.class, HOST_REQUEST, data);
     }
 
     protected void sendHostRequest() { //Solicitud al host por defecto
         sendHostRequest(null);
     }
 
-    protected void selectAccountType() { //Pantalla para seleccionar tipo de cuenta (ahorro o corriente)
-        Intent intent = new Intent(getApplicationContext(), AccountTypeActivity.class);
-        startActivityForResult(intent, ACCOUNT_TYPE_REQUEST);
+    //---- Seleccion tipo de cuenta (ahorro o corriente) ----
+    protected void selectAccountType(Bundle data) {
+        sendRequest(AccountTypeActivity.class, ACCOUNT_TYPE_REQUEST, data);
     }
 
+    protected void selectAccountType() {
+        selectAccountType(null);
+    }
+
+    //---- Seleccion del monto a pagar (parcial, total, otro) ----
     protected void selectAmountType(Bundle data) {
-        Intent intent = new Intent(getApplicationContext(), AmountTypeActivity.class);
-        if (data != null) {
-            intent.putExtras(data);
-        }
-        startActivityForResult(intent, AMOUNT_TYPE_REQUEST);
+        sendRequest(AmountTypeActivity.class, AMOUNT_TYPE_REQUEST, data );
     }
 
-    protected void selectAmountType() { //Pantalla para seleccionar el monto a pagar (parcial, total, otro)
+    protected void selectAmountType() {
         selectAmountType(null);
     }
 
+    //---- Seleccion tipo de tarjeta (credito/debito) ----
     //FIXME Solo para el Prototipo
-    protected void selectCardType() { //Pantalla para seleccionar el tipo de tarjeta (credito/debito)
-        Intent intent = new Intent(getApplicationContext(), CardTypeActivity.class);
-        startActivityForResult(intent, CARD_TYPE_REQUEST);
+    protected void selectCardType(Bundle data) {
+        sendRequest(CardTypeActivity.class, CARD_TYPE_REQUEST, data);
     }
 
-    protected void selectPaymentType() { //Pantalla para seleccionar el tipo de pago (efectivo, cargo en cuenta)
-        Intent intent = new Intent(getApplicationContext(), PaymentTypeActivity.class);
-        startActivityForResult(intent, PAYMENT_TYPE_REQUEST);
+    protected void selectCardType() {
+        selectCardType(null);
     }
 
-    protected void selectTransferType() { //Pantalla para seleccionar el tipo de transferencia
-        Intent intent = new Intent(getApplicationContext(), TransferTypeActivity.class);
-        startActivityForResult(intent, TRANSFER_TYPE_REQUEST);
+    //---- Seleccion tipo de pago (efectivo, cargo en cuenta) ----
+    protected void selectPaymentType(Bundle data) {
+        sendRequest(PaymentTypeActivity.class, PAYMENT_TYPE_REQUEST, data);
     }
-    protected void selectOriginAccount() { //Pantalla para seleccionar cuenta origen transferencia
-        Intent intent = new Intent(getApplicationContext(), OriginAccountActivity.class);
-        startActivityForResult(intent, ORIGIN_ACCOUNT_REQUEST);
+
+    protected void selectPaymentType() {
+        selectPaymentType(null);
+    }
+
+    //---- Seleccion tipo de transferencia (Propia/Terceros) ----
+    protected void selectTransferType(Bundle data) {
+        sendRequest(TransferTypeActivity.class, TRANSFER_TYPE_REQUEST, data);
+    }
+
+    protected void selectTransferType() {
+        selectTransferType(null);
+    }
+
+    //---- Seleccion cuenta origen transferencia (Ahorro/Corriente) ----
+    protected void selectOriginAccount(Bundle data) {
+        sendRequest(OriginAccountActivity.class, ORIGIN_ACCOUNT_REQUEST, data );
+    }
+
+    protected void selectOriginAccount() {
+        selectOriginAccount(null);
     }
 
     @Override
@@ -131,12 +186,11 @@ public abstract class TransactionActivity extends BaseActivity {
 
         switch (status) {
             case STATUS_CANCEL:
-                setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_CANCEL));
-                finish();
+                onCancel();
                 break;
             case STATUS_CLOSE:
-                setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_CLOSE));
-                finish();
+                onClose();
+                break;
             default:
                 switch (requestCode) {
                     case ACCOUNT_TYPE_REQUEST:
@@ -189,6 +243,8 @@ public abstract class TransactionActivity extends BaseActivity {
                 break;
         }
     }
+
+    //---- Metodos "abstractos" ----
 
     protected void onAccountTypeSelectResult(int status, Bundle data) {}
 

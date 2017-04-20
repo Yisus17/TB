@@ -88,9 +88,7 @@ public class SaleActivity extends TransactionActivity {
     @Override
     protected void onDisplayMessageResult(int status, Bundle data) {
         super.onDisplayMessageResult(status, data);
-
-        setResult(RESULT_OK, new Intent());
-        finish();
+        onAccept();
     }
 
 
@@ -99,8 +97,7 @@ public class SaleActivity extends TransactionActivity {
         if (cardType == CARD_TDD) {
             selectAccountType();
         } else {
-            setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_CANCEL));
-            finish();
+            onCancel();
         }
     }
 }

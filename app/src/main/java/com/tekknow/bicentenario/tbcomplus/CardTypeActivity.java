@@ -17,14 +17,11 @@ import java.util.List;
 public class CardTypeActivity extends BaseActivity {
 
     ListView accountOptions;
-    Intent result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_type);
-
-        result = new Intent();
 
         accountOptions = (ListView) findViewById(R.id.lst_card_options);
 
@@ -39,8 +36,7 @@ public class CardTypeActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MenuPair option = (MenuPair) accountOptions.getItemAtPosition(position);
-                result.putExtra(GlobalConstants.CARD_TYPE, option.getValue());
-                setResult(RESULT_OK, result);
+                setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.CARD_TYPE, option.getValue()));
                 finish();
             }
         });

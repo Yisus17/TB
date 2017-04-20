@@ -19,8 +19,7 @@ public class UserPinEntryActivity extends BaseActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_OK));
-            finish();
+            onAccept();
             }
         });
     }

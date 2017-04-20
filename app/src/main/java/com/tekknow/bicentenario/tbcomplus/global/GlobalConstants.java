@@ -8,6 +8,7 @@ public class GlobalConstants {
     public static final String EXTRA_PAYMENT_TYPE = "com.tekknow.bicentenario.tbcomplus.extra.PAYMENT_TYPE";
     public static final String EXTRA_REQUEST_CODE = "com.tekknow.bicentenario.tbcomplus.extra.REQUEST_CODE";
     public static final String EXTRA_STATUS = "com.tekknow.bicentenario.tbcomplus.extra.STATUS";
+    public static final String EXTRA_MODALITY = "com.tekknow.bicentenario.tbcomplus.extra.MODALITY";
 
     public static final int AMOUNT_TYPE_BALANCE = 1;
     public static final int AMOUNT_TYPE_FIXED = 2;
@@ -27,6 +28,11 @@ public class GlobalConstants {
     public static final int MESSAGE_TYPE_INFO = 2;
     public static final int MESSAGE_TYPE_WARNING = 3;
     public static final int MESSAGE_TYPE_ERROR = 4;
+
+    public static final int MODALITY_START_OPERATIONS = 1;
+    public static final int MODALITY_AUTHENTICATE_OPERATIONS = 2;
+    public static final int MODALITY_REOPEN_OPERATIONS = 3;
+
 
     public static final int PAYMENT_TYPE_CASH = 1;
     public static final int PAYMENT_TYPE_ACCOUNT = 2;

@@ -102,6 +102,9 @@
             android:name=".OperationClosureActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".OperationReopenActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".OperationTemporalClosureActivity"
             android:screenOrientation="portrait" />
         <activity

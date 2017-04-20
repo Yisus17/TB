@@ -9,19 +9,36 @@ import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class BaseActivity extends AppCompatActivity {
 
-    public void onAccept(View view) {
+    public void onAccept() {
         setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_OK));
         finish();
     }
 
-    public void onReturn(View view){
+    public void onReturn() {
         setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_BACK));
         finish();
     }
 
-    public void onCancel(View view){
+    public void onCancel() {
         setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_CANCEL));
         finish();
+    }
+
+    public void onClose(){
+        setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_CLOSE));
+        finish();
+    }
+
+    public void onAccept(View view) {
+        onAccept();
+    }
+
+    public void onReturn(View view){
+        onReturn();
+    }
+
+    public void onCancel(View view){
+        onCancel();
     }
 
     @Override

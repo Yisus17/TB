@@ -16,14 +16,11 @@ import java.util.List;
 public class PaymentTypeActivity extends BaseActivity {
 
     ListView paymentOptions;
-    Intent result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_type);
-
-        result = new Intent();
 
         paymentOptions = (ListView) findViewById(R.id.lst_payment_options);
 
@@ -38,8 +35,7 @@ public class PaymentTypeActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MenuPair option = (MenuPair) paymentOptions.getItemAtPosition(position);
-                result.putExtra(GlobalConstants.EXTRA_PAYMENT_TYPE, option.getValue());
-                setResult(RESULT_OK, result);
+                setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_PAYMENT_TYPE, option.getValue()));
                 finish();
             }
         });
