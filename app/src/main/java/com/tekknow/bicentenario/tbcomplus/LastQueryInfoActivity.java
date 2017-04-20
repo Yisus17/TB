@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class LastQueryInfoActivity extends BaseActivity {
+public class LastQueryInfoActivity extends TransactionActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -10,7 +10,7 @@ import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
  * Created by Alejandro on 4/16/2017.
  */
 
-public abstract class InternalPaymentActivity extends BaseActivity {
+public abstract class InternalPaymentActivity extends TransactionActivity {
 
     protected static final int INQUIRY_HOST_REQUEST = 1;
     protected static final int PAYMENT_HOST_REQUEST = 2;

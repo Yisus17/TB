@@ -6,7 +6,7 @@ import android.view.View;
 
 import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
-public class HomeActivity extends GenericActivity {
+public class HomeActivity extends BaseActivity {
 
     protected static final int POS_REQUEST = 1;
     protected static final int TBCOM_REQUEST = 2;
@@ -42,7 +42,10 @@ public class HomeActivity extends GenericActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         int status = data.getIntExtra(EXTRA_STATUS, STATUS_OK);
-        setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, status));
-        finish();
+
+        if(status == STATUS_CLOSE){
+            setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, status));
+            finish();
+        }
     }
 }

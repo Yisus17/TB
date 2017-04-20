@@ -14,7 +14,7 @@ import java.util.List;
 
 import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
-public class MenuActivity extends GenericActivity {
+public class MenuActivity extends BaseActivity {
 
     public static final String MENU_CATEGORY_ID = "com.tekknow.bicentenario.tbcomplus.MENU_CATEGORY_ID";
     public static final String MENU_CATEGORY_TITLE = "com.tekknow.bicentenario.tbcomplus.MENU_CATEGORY_TITLE";
@@ -68,7 +68,7 @@ public class MenuActivity extends GenericActivity {
                 options.add(new MenuOption("Ventas", SaleActivity.class));
                 options.add(new MenuOption("Devoluciones", ""));
                 options.add(new MenuOption("Consulta de Ultimo Movimiento", LastQueryInfoActivity.class));
-                options.add(new MenuOption("Cierre de POS", OperationPosClosureActivity.class));
+                options.add(new MenuOption("Cierre de POS", PosClosureActivity.class));
                 break;
             case "CNB":
                 options.add(new MenuOption("Retiros", WithdrawalActivity.class));

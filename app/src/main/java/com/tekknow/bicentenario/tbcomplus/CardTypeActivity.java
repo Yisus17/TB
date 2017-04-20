@@ -14,7 +14,7 @@ import com.tekknow.bicentenario.tbcomplus.model.MenuPair;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CardTypeActivity extends GenericActivity {
+public class CardTypeActivity extends BaseActivity {
 
     ListView accountOptions;
     Intent result;

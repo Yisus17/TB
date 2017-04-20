@@ -49,6 +49,7 @@
     <string name="action_card_client_read">Introduzca la Tarjeta del Cliente en el BBPOS</string>
     <string name="action_pin_entry">Ingrese el pin del Corresponsal no Bancario en el BBPOS</string>
     <string name="action_pin_client_entry">Ingrese el pin del cliente en BBPOS</string>
+    <string name="action_card_start_read">Ingrese la Tarjeta del Corresponsal no Bancario en el BBPOS para iniciar operaciones</string>
 
     <!-- Transacciones TBCOM -->
     <string name="action_amount_enter">Ingrese el monto</string>

@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
-
-public class DepositActivity extends BaseActivity {
+public class DepositActivity extends TransactionActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

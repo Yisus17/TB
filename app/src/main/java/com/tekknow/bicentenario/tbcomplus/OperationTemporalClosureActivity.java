@@ -2,7 +2,7 @@ package com.tekknow.bicentenario.tbcomplus;
 
 import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
 
-public class OperationTemporalClosureActivity extends OperationControlActivity {
+public class OperationTemporalClosureActivity extends ClosureActivity {
 
     @Override
     protected String getOperationClosureTitle() {

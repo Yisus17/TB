@@ -7,7 +7,7 @@ import android.view.View;
 
 import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
-public class SaleActivity extends BaseActivity {
+public class SaleActivity extends TransactionActivity {
 
     protected int cardType;
 

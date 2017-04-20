@@ -13,7 +13,7 @@ import com.tekknow.bicentenario.tbcomplus.model.MenuPair;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PaymentTypeActivity extends GenericActivity {
+public class PaymentTypeActivity extends BaseActivity {
 
     ListView paymentOptions;
     Intent result;

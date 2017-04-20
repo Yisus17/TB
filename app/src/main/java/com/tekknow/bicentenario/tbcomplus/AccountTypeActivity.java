@@ -13,7 +13,7 @@ import com.tekknow.bicentenario.tbcomplus.model.MenuPair;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AccountTypeActivity extends GenericActivity {
+public class AccountTypeActivity extends BaseActivity {
 
     ListView accountOptions;
     Intent result;

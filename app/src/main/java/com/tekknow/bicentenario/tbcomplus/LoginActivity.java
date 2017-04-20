@@ -3,14 +3,15 @@ package com.tekknow.bicentenario.tbcomplus;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
+import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends TransactionActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         requestUserCard();
     }
 
@@ -24,7 +25,7 @@ public class LoginActivity extends BaseActivity {
     protected void onUserPinRequestResult(int status, Bundle data) {
         super.onUserPinRequestResult(status, data);
 
-        if(status == GlobalConstants.STATUS_CANCEL){
+        if(status == STATUS_CANCEL){
             cancel();
         }else{
             sendHostRequest();
@@ -36,8 +37,7 @@ public class LoginActivity extends BaseActivity {
         super.onHostRequestResult(status, data);
 
         Bundle extras = new Bundle();
-        extras.putInt(GlobalConstants.EXTRA_MESSAGE_TYPE, GlobalConstants.MESSAGE_TYPE_SUCCESS);
-        extras.putString(GlobalConstants.EXTRA_MESSAGE_CONTENT, getString(R.string.msg_success_login));
+        extras.putInt(EXTRA_MESSAGE_TYPE, MESSAGE_TYPE_SUCCESS);
 
         displayMessage(extras);
     }
@@ -51,7 +51,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     public void cancel(){
-        setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, GlobalConstants.STATUS_CANCEL));
+        setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_CANCEL));
         finish();
     }
 

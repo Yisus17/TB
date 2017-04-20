@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
 
-public abstract class OperationControlActivity extends BaseActivity {
+public abstract class ClosureActivity extends TransactionActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

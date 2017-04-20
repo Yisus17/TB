@@ -1,7 +1,7 @@
 package com.tekknow.bicentenario.tbcomplus;
 import android.os.Bundle;
 
-public class CustomerCIEntryActivity extends GenericActivity {
+public class CustomerCIEntryActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

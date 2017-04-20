@@ -6,7 +6,7 @@ import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
  * Created by Mercedes Rodriguez on 4/18/2017.
  */
 
-public class OperationClosureActivity extends OperationControlActivity {
+public class OperationClosureActivity extends ClosureActivity {
     @Override
     protected String getOperationClosureTitle() {
         return null;

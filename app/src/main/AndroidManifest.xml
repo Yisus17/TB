@@ -36,7 +36,7 @@
             android:name=".CantvPaymentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".OperationPosClosureActivity"
+            android:name=".PosClosureActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".CreditCardPaymentActivity"
@@ -87,9 +87,6 @@
             android:name=".MovilnetRechargeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".OperationControlActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".OriginAccountActivity"
             android:screenOrientation="portrait"/>
         <activity
@@ -121,7 +118,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".UserPinEntryActivity"
-            android:screenOrientation="portrait" />/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".WithdrawalActivity"
             android:screenOrientation="portrait" />

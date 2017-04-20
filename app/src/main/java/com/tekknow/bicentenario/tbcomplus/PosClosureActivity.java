@@ -3,7 +3,7 @@ package com.tekknow.bicentenario.tbcomplus;
 
 import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
 
-public class OperationPosClosureActivity extends OperationControlActivity {
+public class PosClosureActivity extends ClosureActivity {
 
     @Override
     protected String getOperationClosureTitle() {
@@ -12,7 +12,7 @@ public class OperationPosClosureActivity extends OperationControlActivity {
 
     @Override
     protected int getOperationClosureView() {
-        return R.layout.activity_operation_pos_closure;
+        return R.layout.activity_pos_closure;
     }
 
     @Override

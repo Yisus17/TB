@@ -6,7 +6,7 @@ import android.os.Bundle;
 import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 
-public class MainActivity extends GenericActivity {
+public class MainActivity extends BaseActivity {
 
     private static final int LOGIN_REQUEST = 1;
     private static final int HOME_REQUEST = 2;

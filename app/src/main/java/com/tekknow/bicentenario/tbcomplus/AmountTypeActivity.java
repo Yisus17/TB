@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
 
-public class AmountTypeActivity extends GenericActivity {
+public class AmountTypeActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -8,7 +8,7 @@ import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
 
 import java.util.Random;
 
-public class HostRequestActivity extends GenericActivity {
+public class HostRequestActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

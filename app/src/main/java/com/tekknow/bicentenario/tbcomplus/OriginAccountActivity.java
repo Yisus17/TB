@@ -13,7 +13,7 @@ import com.tekknow.bicentenario.tbcomplus.model.MenuPair;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OriginAccountActivity extends GenericActivity {
+public class OriginAccountActivity extends BaseActivity {
     ListView transferOptions;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

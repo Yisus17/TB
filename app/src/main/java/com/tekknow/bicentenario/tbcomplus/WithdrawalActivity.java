@@ -1,11 +1,8 @@
 package com.tekknow.bicentenario.tbcomplus;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,7 +11,7 @@ import android.widget.LinearLayout;
 
 import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
 
-public class WithdrawalActivity extends BaseActivity {
+public class WithdrawalActivity extends TransactionActivity {
     EditText fieldAmount;
     LinearLayout layout;
     @Override

@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
-
-public class CustomerPinEntryActivity extends GenericActivity {
+public class CustomerPinEntryActivity extends BaseActivity {
 
     Intent result;
 
