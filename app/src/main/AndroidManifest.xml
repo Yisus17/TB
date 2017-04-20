@@ -99,6 +99,9 @@
             android:name=".SaleAmountActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".SarenPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".OperationClosureActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -106,6 +109,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".OperationTemporalClosureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".StanhomePaymentActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".TransferOwnAccountActivity"

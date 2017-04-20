@@ -6,7 +6,7 @@ import android.os.Bundle;
  * Created by Alejandro on 4/16/2017.
  */
 
-public class DirectvPaymentActivity extends InternalPaymentActivity {
+public class DirectvPaymentActivity extends PaymentActivity {
 
     @Override
     protected String getPaymentTitle() {

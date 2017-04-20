@@ -95,10 +95,11 @@ public class MenuActivity extends BaseActivity {
                 break;
             case "PAGOS_EXTERNOS":
                 options.add(new MenuOption("Pago CANTV", CantvPaymentActivity.class));
+                options.add(new MenuOption("Pago DIRECTV", DirectvPaymentActivity.class));
                 options.add(new MenuOption("Pago Movilnet Postpago", MovilnetPaymentActivity.class));
+                options.add(new MenuOption("Pago SAREN", SarenPaymentActivity.class));
+                options.add(new MenuOption("Pago Stanhome", StanhomePaymentActivity.class));
                 options.add(new MenuOption("Recarga Movilnet", MovilnetRechargeActivity.class));
-                options.add(new MenuOption("SAREN", ""));
-                options.add(new MenuOption("DirecTV", DirectvPaymentActivity.class));
                 break;
         }
 

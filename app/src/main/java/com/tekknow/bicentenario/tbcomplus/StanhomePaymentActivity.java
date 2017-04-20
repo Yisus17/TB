@@ -6,21 +6,16 @@ import android.os.Bundle;
  * Created by Alejandro on 4/16/2017.
  */
 
-public class CantvPaymentActivity extends PaymentActivity {
+public class StanhomePaymentActivity extends DynamicPaymentActivity {
 
     @Override
     protected String getPaymentTitle() {
-        return getString(R.string.title_activity_cantv_payment);
+        return getString(R.string.title_activity_stanhome_payment);
     }
 
     @Override
     protected int getPaymentView() {
-        return R.layout.activity_phone_payment;
-    }
-
-    @Override
-    protected Bundle buildInquiryRequest() {
-        return new Bundle();
+        return R.layout.activity_stanhome_payment;
     }
 
     @Override

@@ -42,9 +42,10 @@
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/grp_amount"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_select_account_type"
+            android:layout_centerHorizontal="true"
             android:orientation="vertical">
 
             <RadioButton
@@ -60,6 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/opt_1"
+                android:layout_marginTop="16dp"
                 android:text="200,00" />
 
             <RadioButton
@@ -68,6 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/opt_2"
+                android:layout_marginTop="16dp"
                 android:text="500,00" />
         </RadioGroup>
 
