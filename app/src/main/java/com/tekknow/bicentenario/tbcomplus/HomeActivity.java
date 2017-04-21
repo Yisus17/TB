@@ -2,7 +2,10 @@ package com.tekknow.bicentenario.tbcomplus;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
@@ -17,6 +20,7 @@ public class HomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
     }
+
 
     public void launchPOS(View view) {
         Intent intent = new Intent(this, MenuActivity.class);
@@ -47,5 +51,15 @@ public class HomeActivity extends BaseActivity {
             setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, status));
             finish();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+       return true;
     }
 }

@@ -3,6 +3,8 @@ package com.tekknow.bicentenario.tbcomplus;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
@@ -43,4 +45,21 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {}
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.action_home:
+                onCancel();// Volver al home
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }

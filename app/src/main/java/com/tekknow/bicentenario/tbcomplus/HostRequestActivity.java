@@ -3,6 +3,8 @@ package com.tekknow.bicentenario.tbcomplus;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
 
@@ -26,6 +28,18 @@ public class HostRequestActivity extends BaseActivity {
                 finish();
             }
         }, new Random().nextInt(2000) + 500);
+    }
+
+    @Override
+    public void onBackPressed() {}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return true;
     }
 
 }
