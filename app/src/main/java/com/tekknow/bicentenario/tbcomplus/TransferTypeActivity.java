@@ -27,7 +27,7 @@ public class TransferTypeActivity extends BaseActivity {
         transferOptions = (ListView) findViewById(R.id.lst_transfer_options);
         List<MenuPair> options = new ArrayList<>();
         options.add(new MenuPair(getString(R.string.txt_transfer_type_1), ACCOUNT_TYPE_1));
-        options.add(new MenuPair(getString(R.string.txt_account_type_2), ACCOUNT_TYPE_2));
+        options.add(new MenuPair(getString(R.string.txt_transfer_type_2), ACCOUNT_TYPE_2));
 
         ArrayAdapter<MenuPair> adapter = new ArrayAdapter<MenuPair>(this, android.R.layout.simple_list_item_1, android.R.id.text1, options);
         transferOptions.setAdapter(adapter);

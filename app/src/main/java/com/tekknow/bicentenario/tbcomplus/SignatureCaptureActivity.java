@@ -37,7 +37,7 @@ public class SignatureCaptureActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         return true;
     }
-    
+
     protected void onClear(View view) {
         signatureView.clear();
     }

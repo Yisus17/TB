@@ -23,7 +23,7 @@
     <string name="txt_process">Procesar</string>
     <string name="txt_send_email">Enviar al email</string>
     <string name="txt_transfer_type_1">Ahorro a Corriente</string>
-    <string name="txt_transfer_type_2">Corriente a Corriente</string>
+    <string name="txt_transfer_type_2">Corriente a Ahorro</string>
 
 
     <!-- MENSAJES -->
