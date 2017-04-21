@@ -110,7 +110,9 @@ public class MenuActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         int status = data.getIntExtra(EXTRA_STATUS, STATUS_OK);
 
-        setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, status));
-        finish();
+        if(status != STATUS_BACK){
+            setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, status));
+            finish();
+        }
     }
 }

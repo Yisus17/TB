@@ -2,7 +2,7 @@ package com.tekknow.bicentenario.tbcomplus;
 
 import android.os.Bundle;
 
-import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
+import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 /**
  * Created by Alejandro on 4/16/2017.
@@ -32,10 +32,10 @@ public class MovilnetRechargeActivity extends PaymentActivity {
 
     @Override
     protected void onHostRequestResult(int status, Bundle data) { //FIXME Esto esta forzado para efectos del prototipo (para que muestre montos fijos)
-        switch (data.getInt(GlobalConstants.EXTRA_REQUEST_CODE)) {
+        switch (data.getInt(EXTRA_REQUEST_CODE)) {
             case INQUIRY_HOST_REQUEST:
                 Bundle request = new Bundle();
-                request.putInt(GlobalConstants.EXTRA_AMOUNT_TYPE, GlobalConstants.AMOUNT_TYPE_FIXED);
+                request.putInt(EXTRA_AMOUNT_TYPE, AMOUNT_TYPE_FIXED);
                 selectAmountType(request);
                 break;
             case PAYMENT_HOST_REQUEST:

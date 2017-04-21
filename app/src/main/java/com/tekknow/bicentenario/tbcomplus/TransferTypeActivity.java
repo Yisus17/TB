@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
+import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 import com.tekknow.bicentenario.tbcomplus.model.MenuPair;
 
 import java.util.ArrayList;
@@ -26,8 +26,8 @@ public class TransferTypeActivity extends BaseActivity {
 
         transferOptions = (ListView) findViewById(R.id.lst_transfer_options);
         List<MenuPair> options = new ArrayList<>();
-        options.add(new MenuPair(getString(R.string.txt_transfer_type_1), GlobalConstants.ACCOUNT_TYPE_1));
-        options.add(new MenuPair(getString(R.string.txt_account_type_2), GlobalConstants.ACCOUNT_TYPE_2));
+        options.add(new MenuPair(getString(R.string.txt_transfer_type_1), ACCOUNT_TYPE_1));
+        options.add(new MenuPair(getString(R.string.txt_account_type_2), ACCOUNT_TYPE_2));
 
         ArrayAdapter<MenuPair> adapter = new ArrayAdapter<MenuPair>(this, android.R.layout.simple_list_item_1, android.R.id.text1, options);
         transferOptions.setAdapter(adapter);
@@ -36,7 +36,7 @@ public class TransferTypeActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MenuPair option = (MenuPair) transferOptions.getItemAtPosition(position);
-                setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.ACCOUNT_TYPE, option.getValue()));
+                setResult(RESULT_OK, new Intent().putExtra(ACCOUNT_TYPE, option.getValue()));
                 finish();
             }
         });

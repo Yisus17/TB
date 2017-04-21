@@ -2,6 +2,7 @@ package com.tekknow.bicentenario.tbcomplus.global;
 
 public class GlobalConstants {
 
+    public static final String EXTRA_ACCOUNT_MODE = "com.tekknow.bicentenario.tbcomplus.extra.ACCOUNT_MODE";
     public static final String EXTRA_AMOUNT_TYPE = "com.tekknow.bicentenario.tbcomplus.extra.AMOUNT_TYPE";
     public static final String EXTRA_MESSAGE_CONTENT = "com.tekknow.bicentenario.tbcomplus.extra.MESSAGE_CONTENT";
     public static final String EXTRA_MESSAGE_TYPE = "com.tekknow.bicentenario.tbcomplus.extra.MESSAGE_TYPE";
@@ -9,6 +10,9 @@ public class GlobalConstants {
     public static final String EXTRA_REQUEST_CODE = "com.tekknow.bicentenario.tbcomplus.extra.REQUEST_CODE";
     public static final String EXTRA_STATUS = "com.tekknow.bicentenario.tbcomplus.extra.STATUS";
     public static final String EXTRA_MODALITY = "com.tekknow.bicentenario.tbcomplus.extra.MODALITY";
+
+    public static final int ACCOUNT_MODE_RETURN = 1;
+    public static final int ACCOUNT_MODE_CANCEL = 2;
 
     public static final int AMOUNT_TYPE_BALANCE = 1;
     public static final int AMOUNT_TYPE_FIXED = 2;

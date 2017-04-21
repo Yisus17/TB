@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
+import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public abstract class ClosureActivity extends TransactionActivity {
 
@@ -30,7 +30,7 @@ public abstract class ClosureActivity extends TransactionActivity {
     protected void onDisplayMessageResult(int status, Bundle data) {
         super.onDisplayMessageResult(status, data);
 
-        setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_STATUS, getOperationStatus()));
+        setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, getOperationStatus()));
         finish();
     }
 

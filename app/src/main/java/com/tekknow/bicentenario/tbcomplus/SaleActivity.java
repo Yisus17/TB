@@ -1,7 +1,5 @@
 package com.tekknow.bicentenario.tbcomplus;
 
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -22,7 +20,11 @@ public class SaleActivity extends TransactionActivity {
     @Override
     protected void onCustomerCIRequestResult(int status, Bundle extras) {
         super.onCustomerCIRequestResult(status, extras);
-        requestCustomerEmail();
+        if(status == STATUS_BACK){
+            onReturn();
+        }else{
+            requestCustomerEmail();
+        }
     }
 
     @Override
@@ -34,7 +36,6 @@ public class SaleActivity extends TransactionActivity {
         }else{
             requestCustomerCard();
         }
-
     }
 
     @Override
@@ -52,7 +53,9 @@ public class SaleActivity extends TransactionActivity {
 
             switch (cardType){
                 case CARD_TDD: //DEBITO
-                    selectAccountType();
+                    Bundle request = new Bundle();
+                    request.putInt(EXTRA_ACCOUNT_MODE, ACCOUNT_MODE_CANCEL);
+                    selectAccountType(request);
                     break;
                 case CARD_TDC: //CREDITO
                     requestSaleAmount();
@@ -70,7 +73,15 @@ public class SaleActivity extends TransactionActivity {
     @Override
     protected void onSaleAmountRequestResult(int status, Bundle extras) {
         super.onSaleAmountRequestResult(status, extras);
-        requestCustomerPin();
+
+        switch (cardType){
+            case CARD_TDD: //DEBITO
+                requestCustomerPin();
+                break;
+            case CARD_TDC: //CREDITO
+                sendHostRequest();
+                break;
+        }
     }
 
     @Override

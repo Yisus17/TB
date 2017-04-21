@@ -1,14 +1,13 @@
 package com.tekknow.bicentenario.tbcomplus;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.widget.LinearLayout;
 
-import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
+
+import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class WithdrawalActivity extends TransactionActivity {
 
@@ -24,7 +23,12 @@ public class WithdrawalActivity extends TransactionActivity {
     @Override
     protected void onAccountTypeSelectResult(int status, Bundle data) {
         super.onAccountTypeSelectResult(status, data);
-        setContentView(R.layout.activity_withdrawal);
+
+        if(status == STATUS_BACK){
+            onReturn();
+        }else{
+            setContentView(R.layout.activity_withdrawal);
+        }
     }
 
     @Override
@@ -68,10 +72,10 @@ public class WithdrawalActivity extends TransactionActivity {
         }else{
             float amount= Float.parseFloat(txtAmount);
 
-            if ((amount> GlobalConstants.MIN_AMOUNT_WITHDRAWAL)&&(amount<GlobalConstants.MAX_AMOUNT_WITHDRAWAL)){
+            if ((amount > MIN_AMOUNT_WITHDRAWAL)&&(amount < MAX_AMOUNT_WITHDRAWAL)){
                 requestCustomerCard();
             }else{
-                toast = Toast.makeText(this, getString(R.string.txt_min) + GlobalConstants.MIN_AMOUNT_WITHDRAWAL+ "\n" + getString(R.string.txt_max) + GlobalConstants.MAX_AMOUNT_WITHDRAWAL, Toast.LENGTH_SHORT);
+                toast = Toast.makeText(this, getString(R.string.txt_min) + MIN_AMOUNT_WITHDRAWAL+ "\n" + getString(R.string.txt_max) + MAX_AMOUNT_WITHDRAWAL, Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER,0,0);
                 toast.show();
             }
