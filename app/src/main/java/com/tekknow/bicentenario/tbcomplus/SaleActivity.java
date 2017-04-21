@@ -82,6 +82,20 @@ public class SaleActivity extends TransactionActivity {
     @Override
     protected void onHostRequestResult(int status, Bundle data) {
         super.onHostRequestResult(status, data);
+
+        switch (cardType) {
+            case CARD_TDD:
+                displayMessage();
+                break;
+            case CARD_TDC:
+                requestSignature();
+                break;
+        }
+    }
+
+    @Override
+    protected void onSignatureRequestResult(int status, Bundle data) {
+        super.onSignatureRequestResult(status, data);
         displayMessage();
     }
 

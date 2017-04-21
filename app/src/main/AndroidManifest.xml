@@ -111,6 +111,9 @@
             android:name=".OperationTemporalClosureActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".SignatureCaptureActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".StanhomePaymentActivity"
             android:screenOrientation="portrait" />
         <activity

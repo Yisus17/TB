@@ -13,6 +13,7 @@
     <string name="txt_account_type_2">Cuenta Corriente</string>
     <string name="txt_back">Regresar</string>
     <string name="txt_cancel">Cancelar</string>
+    <string name="txt_clear">Limpiar</string>
     <string name="txt_option_no">No</string>
     <string name="txt_option_yes">Si</string>
     <string name="txt_payment_type_1">Efectivo</string>
@@ -63,6 +64,7 @@
     <string name="action_deposit_amount_enter">Ingrese monto del depósito</string>
     <string name="action_form_number_enter">Ingrese el número de planilla</string>
     <string name="action_issue_date_enter">Ingrese la fecha de emisión</string>
+    <string name="action_signature_enter">Coloque su firma</string>
     <string name="action_withdrawal_amount_enter">Ingrese monto del retiro</string>
     <string name="action_creditcard_number">Ingrese Número de Tarjeta</string>
     <string name="action_phone_number">Ingrese Número de Teléfono</string>

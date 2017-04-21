@@ -1,6 +1,5 @@
 package com.tekknow.bicentenario.tbcomplus;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -22,7 +21,8 @@ public abstract class TransactionActivity extends BaseActivity {
     protected static final int CUSTOMER_CI_REQUEST = 12;
     protected static final int CUSTOMER_EMAIL_REQUEST = 13;
     protected static final int SALE_AMOUNT_REQUEST = 14;
-    protected static final int ORIGIN_ACCOUNT_REQUEST= 15;
+    protected static final int ORIGIN_ACCOUNT_REQUEST = 15;
+    protected static final int SIGNATURE_REQUEST = 16;
 
 
     @Override
@@ -173,11 +173,20 @@ public abstract class TransactionActivity extends BaseActivity {
 
     //---- Seleccion cuenta origen transferencia (Ahorro/Corriente) ----
     protected void selectOriginAccount(Bundle data) {
-        sendRequest(OriginAccountActivity.class, ORIGIN_ACCOUNT_REQUEST, data );
+        sendRequest(OriginAccountActivity.class, ORIGIN_ACCOUNT_REQUEST, data);
     }
 
     protected void selectOriginAccount() {
         selectOriginAccount(null);
+    }
+
+    //---- Seleccion cuenta origen transferencia (Ahorro/Corriente) ----
+    protected void requestSignature(Bundle data) {
+        sendRequest(SignatureCaptureActivity.class, SIGNATURE_REQUEST, data);
+    }
+
+    protected void requestSignature() {
+        requestSignature(null);
     }
 
     @Override
@@ -226,6 +235,9 @@ public abstract class TransactionActivity extends BaseActivity {
                     case SALE_AMOUNT_REQUEST:
                         onSaleAmountRequestResult(status, data.getExtras());
                         break;
+                    case SIGNATURE_REQUEST:
+                        onSignatureRequestResult(status, data.getExtras());
+                        break;
                     case TRANSFER_TYPE_REQUEST:
                         onTransferTypeRequestResult(status, data.getExtras());
                         break;
@@ -269,6 +281,8 @@ public abstract class TransactionActivity extends BaseActivity {
 
     protected void onSaleAmountRequestResult(int status, Bundle extras) {}
 
+    protected void onSignatureRequestResult(int status, Bundle data) {}
+
     protected void onTransferTypeRequestResult(int status, Bundle data) {}
 
     protected void onOriginAccountRequestResult(int status, Bundle data) {}
@@ -276,4 +290,5 @@ public abstract class TransactionActivity extends BaseActivity {
     protected void onUserCardRequestResult(int status, Bundle data) {}
 
     protected void onUserPinRequestResult(int status, Bundle data) {}
+
 }

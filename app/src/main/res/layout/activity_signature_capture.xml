@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Footer -->
+    <include layout="@layout/_footer" />
+
+    <RelativeLayout
+        android:layout_above="@id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/lbl_signature"
+            style="@style/Label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/action_signature_enter" />
+
+        <LinearLayout
+            android:id="@+id/signature_pad"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lbl_signature"
+            android:layout_above="@+id/buttons"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="32dp"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:id="@+id/btn_accept"
+                style="@style/HomeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onAccept"
+                android:text="@string/txt_accept" />
+
+            <Button
+                android:id="@+id/btn_clear"
+                style="@style/HomeButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:onClick="onClear"
+                android:text="@string/txt_clear" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
