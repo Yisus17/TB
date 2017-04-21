@@ -43,7 +43,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="onCancel"
+                android:onClick="onReturn"
                 android:text="@string/txt_back" />
         </LinearLayout>
 
@@ -103,7 +103,7 @@
                 android:layout_marginTop="16dp"
                 android:ems="10"
                 android:hint="Monto"
-                android:inputType="textPersonName" />
+                android:inputType="numberDecimal" />
         </LinearLayout>
 
     </RelativeLayout>

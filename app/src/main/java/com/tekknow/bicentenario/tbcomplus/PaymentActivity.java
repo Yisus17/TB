@@ -1,10 +1,9 @@
 package com.tekknow.bicentenario.tbcomplus;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
+import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 /**
  * Created by Alejandro on 4/16/2017.
@@ -28,7 +27,7 @@ public abstract class PaymentActivity extends TransactionActivity {
             @Override
             public void onClick(View view) {
                 Bundle request = buildInquiryRequest();
-                request.putInt(GlobalConstants.EXTRA_REQUEST_CODE, INQUIRY_HOST_REQUEST);
+                request.putInt(EXTRA_REQUEST_CODE, INQUIRY_HOST_REQUEST);
                 sendHostRequest(request);
             }
         });
@@ -37,14 +36,16 @@ public abstract class PaymentActivity extends TransactionActivity {
     @Override
     protected void onAmountTypeSelectResult(int status, Bundle data) {
         super.onAmountTypeSelectResult(status, data);
-        selectPaymentType();
+        if(status == STATUS_OK){
+            selectPaymentType();
+        }
     }
 
     @Override
     protected void onHostRequestResult(int status, Bundle data) {
         super.onHostRequestResult(status, data);
 
-        switch (data.getInt(GlobalConstants.EXTRA_REQUEST_CODE)) {
+        switch (data.getInt(EXTRA_REQUEST_CODE)) {
             case INQUIRY_HOST_REQUEST:
                 selectAmountType();
                 break;
@@ -58,15 +59,19 @@ public abstract class PaymentActivity extends TransactionActivity {
     protected void onPaymentTypeSelectResult(int status, Bundle data) {
         super.onPaymentTypeSelectResult(status, data);
 
-        paymentType = data.getInt(GlobalConstants.EXTRA_PAYMENT_TYPE);
+        if(status == STATUS_BACK){
+            selectAmountType();
+        }else{
+            paymentType = data.getInt(EXTRA_PAYMENT_TYPE);
 
-        switch (paymentType) {
-            case GlobalConstants.PAYMENT_TYPE_CASH:
-                requestUserCard();
-                break;
-            case GlobalConstants.PAYMENT_TYPE_ACCOUNT:
-                requestCustomerCI();
-                break;
+            switch (paymentType) {
+                case PAYMENT_TYPE_CASH:
+                    requestUserCard();
+                    break;
+                case PAYMENT_TYPE_ACCOUNT:
+                    requestCustomerCI();
+                    break;
+            }
         }
     }
 
@@ -81,20 +86,29 @@ public abstract class PaymentActivity extends TransactionActivity {
         super.onUserPinRequestResult(status, data);
 
         Bundle request = buildPaymentRequest();
-        request.putInt(GlobalConstants.EXTRA_REQUEST_CODE, PAYMENT_HOST_REQUEST);
+        request.putInt(EXTRA_REQUEST_CODE, PAYMENT_HOST_REQUEST);
         sendHostRequest(request);
     }
 
     @Override
     protected void onCustomerCIRequestResult(int status, Bundle extras) {
         super.onCustomerCIRequestResult(status, extras);
-        selectAccountType();
+        if(status == STATUS_BACK){
+            selectPaymentType();
+        }else{
+            selectAccountType();
+        }
     }
 
     @Override
     protected void onAccountTypeSelectResult(int status, Bundle data) {
         super.onAccountTypeSelectResult(status, data);
-        requestCustomerCard();
+
+        if(status == STATUS_BACK){
+            requestCustomerCI();
+        }else{
+            requestCustomerCard();
+        }
     }
 
     @Override
@@ -108,7 +122,7 @@ public abstract class PaymentActivity extends TransactionActivity {
         super.onCustomerPinRequestResult(status, data);
 
         Bundle request = buildPaymentRequest();
-        request.putInt(GlobalConstants.EXTRA_REQUEST_CODE, PAYMENT_HOST_REQUEST);
+        request.putInt(EXTRA_REQUEST_CODE, PAYMENT_HOST_REQUEST);
         sendHostRequest(request);
     }
 

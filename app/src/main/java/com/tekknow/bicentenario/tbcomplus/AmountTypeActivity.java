@@ -1,10 +1,7 @@
 package com.tekknow.bicentenario.tbcomplus;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-
-import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
+import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class AmountTypeActivity extends BaseActivity {
 
@@ -12,13 +9,13 @@ public class AmountTypeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        int amountType = getIntent().getIntExtra(GlobalConstants.EXTRA_AMOUNT_TYPE, GlobalConstants.AMOUNT_TYPE_BALANCE);
+        int amountType = getIntent().getIntExtra(EXTRA_AMOUNT_TYPE, AMOUNT_TYPE_BALANCE);
 
         switch (amountType) {
-            case GlobalConstants.AMOUNT_TYPE_FIXED:
+            case AMOUNT_TYPE_FIXED:
                 setContentView(R.layout.activity_amount_type_fixed);
                 break;
-            case GlobalConstants.AMOUNT_TYPE_BALANCE:
+            case AMOUNT_TYPE_BALANCE:
                 setContentView(R.layout.activity_amount_type_balance);
                 break;
         }

@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.tekknow.bicentenario.tbcomplus.global.GlobalConstants;
+import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 import java.util.Random;
 
@@ -18,13 +18,13 @@ public class HostRequestActivity extends BaseActivity {
 
         setContentView(R.layout.activity_host_request);
 
-        final int requestCode = getIntent().getIntExtra(GlobalConstants.EXTRA_REQUEST_CODE, 0);
+        final int requestCode = getIntent().getIntExtra(EXTRA_REQUEST_CODE, 0);
 
         Handler handler = new Handler();
 
         handler.postDelayed(new Runnable() {
             public void run() {
-                setResult(RESULT_OK, new Intent().putExtra(GlobalConstants.EXTRA_REQUEST_CODE, requestCode)); //TODO Agregar respuesta del host
+                setResult(RESULT_OK, new Intent().putExtra(EXTRA_REQUEST_CODE, requestCode)); //TODO Agregar respuesta del host
                 finish();
             }
         }, new Random().nextInt(2000) + 500);
