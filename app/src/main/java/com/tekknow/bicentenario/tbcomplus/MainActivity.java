@@ -20,6 +20,7 @@ public class MainActivity extends BaseActivity {
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
         startActivityForResult(intent, LOGIN_REQUEST);
     }
+    
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         int status = data.getIntExtra(EXTRA_STATUS, STATUS_OK);
