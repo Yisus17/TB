@@ -31,7 +31,7 @@ public class MenuActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        setTitle("Menu");
+
 
         menuOptions = (ListView) findViewById(R.id.lst_menu_options);
 
