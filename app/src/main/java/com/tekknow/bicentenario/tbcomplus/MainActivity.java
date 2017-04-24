@@ -3,6 +3,10 @@ package com.tekknow.bicentenario.tbcomplus;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.crashlytics.android.Crashlytics;
+
+import io.fabric.sdk.android.Fabric;
+
 import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 
@@ -16,6 +20,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
 
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
         startActivityForResult(intent, LOGIN_REQUEST);
