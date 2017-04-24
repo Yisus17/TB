@@ -31,6 +31,6 @@ public class LastQueryInfoActivity extends TransactionActivity {
 
     @Override
     protected String getBarTitle() {
-        return getString(R.string.txt_last_query_info);
+        return getString(R.string.title_activity_last_query);
     }
 }
