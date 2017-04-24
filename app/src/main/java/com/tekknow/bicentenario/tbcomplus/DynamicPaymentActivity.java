@@ -116,4 +116,13 @@ public abstract class DynamicPaymentActivity extends TransactionActivity {
 
     protected abstract Bundle buildPaymentRequest();
 
+    @Override
+    protected String getBarTitle() {
+        return getPaymentTitle();
+    }
+
+    @Override
+    protected int getLayout() {
+        return getPaymentView();
+    }
 }

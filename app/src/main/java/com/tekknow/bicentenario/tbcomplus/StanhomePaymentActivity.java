@@ -23,8 +23,4 @@ public class StanhomePaymentActivity extends DynamicPaymentActivity {
         return new Bundle();
     }
 
-    @Override
-    protected int getLayout() {
-        return getPaymentView();
-    }
 }

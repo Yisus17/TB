@@ -18,26 +18,35 @@
         android:layout_height="match_parent"
         android:layout_margin="10dp">
 
-        <TextView
-            android:id="@+id/label_amount"
-            style="@style/Label"
+        <LinearLayout
+            android:layout_above="@id/btn_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/action_phone_number" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/margin_top_layout">
 
-        <EditText
-            android:id="@+id/txt_amount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/label_amount"
-            android:inputType="numberDecimal" />
+            <TextView
+                android:id="@+id/label_amount"
+                style="@style/Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/action_phone_number" />
+
+            <EditText
+                android:id="@+id/txt_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_amount"
+                android:inputType="numberDecimal" />
+
+        </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/btn_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="@dimen/margin_top_layout"
             android:layout_alignParentBottom="true">
 
             <Button

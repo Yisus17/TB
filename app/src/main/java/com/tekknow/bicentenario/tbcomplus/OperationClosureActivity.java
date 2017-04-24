@@ -18,8 +18,4 @@ public class OperationClosureActivity extends ClosureActivity {
         return STATUS_CLOSE;
     }
 
-    @Override
-    protected int getLayout() {
-        return getOperationClosureView();
-    }
 }

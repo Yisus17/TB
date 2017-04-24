@@ -39,4 +39,9 @@ public abstract class ClosureActivity extends TransactionActivity {
     protected String getBarTitle() {
         return getOperationClosureTitle();
     }
+
+    @Override
+    protected int getLayout() {
+        return getOperationClosureView();
+    }
 }

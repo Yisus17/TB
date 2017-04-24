@@ -16,94 +16,104 @@
         android:layout_above="@id/footer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:id="@+id/lbl_ci_advisor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            style="@style/Label"
-            android:text="@string/action_ci_advisor_enter" />
-
-        <EditText
-            android:id="@+id/txt_ci_advisor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/lbl_ci_advisor"
-            android:inputType="number" />
-
-        <TextView
-            android:id="@+id/lbl_citizenship"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_ci_advisor"
-            android:layout_marginTop="16dp"
-            style="@style/Label"
-            android:text="@string/action_citizenship_select" />
-
-        <RadioGroup
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/grp_citizenship"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/lbl_citizenship"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/opt_citizenship_v"
-                style="@style/Message"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/citizenship_local" />
-
-            <RadioButton
-                android:id="@+id/opt_citizenship_e"
-                style="@style/Message"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/opt_citizenship_v"
-                android:text="@string/citizenship_foreign" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/lbl_amount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/grp_citizenship"
-            android:layout_marginTop="16dp"
-            style="@style/Label"
-            android:text="@string/action_amount_enter" />
-
-        <EditText
-            android:id="@+id/txt_amount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/lbl_amount"
-            android:inputType="numberDecimal" />
-
-        <TextView
-            android:id="@+id/lbl_form_number"
-            style="@style/Label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_amount"
-            android:layout_marginTop="16dp"
-            android:text="@string/action_form_number_enter" />
-
-        <EditText
-            android:id="@+id/txt_form_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/lbl_form_number"
-            android:inputType="number" />
+        android:layout_margin="@dimen/margin_all_layout">
 
         <LinearLayout
+            android:layout_above="@id/btn_content"
+            android:layout_marginTop="@dimen/margin_top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lbl_ci_advisor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Label"
+                android:text="@string/action_ci_advisor_enter" />
+
+            <EditText
+                android:id="@+id/txt_ci_advisor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl_ci_advisor"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/lbl_citizenship"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_ci_advisor"
+                android:layout_marginTop="@dimen/margin_top_form_small"
+                style="@style/Label"
+                android:text="@string/action_citizenship_select" />
+
+            <RadioGroup
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/grp_citizenship"
+                android:layout_marginTop="@dimen/margin_all_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lbl_citizenship"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/opt_citizenship_v"
+                    style="@style/Message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/citizenship_local" />
+
+                <RadioButton
+                    android:id="@+id/opt_citizenship_e"
+                    style="@style/Message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/opt_citizenship_v"
+                    android:text="@string/citizenship_foreign" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/lbl_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/grp_citizenship"
+                android:layout_marginTop="@dimen/margin_top_form_small"
+                style="@style/Label"
+                android:text="@string/action_amount_enter" />
+
+            <EditText
+                android:id="@+id/txt_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl_amount"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/lbl_form_number"
+                style="@style/Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_amount"
+                android:layout_marginTop="@dimen/margin_top_form_small"
+                android:text="@string/action_form_number_enter" />
+
+            <EditText
+                android:id="@+id/txt_form_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl_form_number"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="@dimen/margin_top_layout"
             android:layout_alignParentBottom="true">
 
             <Button

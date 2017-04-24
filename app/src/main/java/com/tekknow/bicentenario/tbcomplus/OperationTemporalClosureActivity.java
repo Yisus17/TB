@@ -18,9 +18,4 @@ public class OperationTemporalClosureActivity extends ClosureActivity {
     protected int getOperationStatus() {
         return STATUS_CLOSE;
     }
-
-    @Override
-    protected int getLayout() {
-        return getOperationClosureView();
-    }
 }

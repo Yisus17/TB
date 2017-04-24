@@ -14,28 +14,14 @@
         android:layout_above="@id/footer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:id="@+id/label_amount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            style="@style/Label"
-            android:text="@string/action_email_customer_enter" />
-
-        <EditText
-            android:id="@+id/txt_amount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/label_amount"
-            android:inputType="textEmailAddress" />
+        android:layout_margin="@dimen/margin_all_layout">
 
         <LinearLayout
+            android:id="@+id/btn_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="@dimen/margin_top_layout"
             android:layout_alignParentBottom="true">
 
             <Button
@@ -55,6 +41,29 @@
                 android:layout_height="wrap_content"
                 android:onClick="onReturn"
                 android:text="@string/txt_back" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_above="@id/btn_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_top_layout"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/label_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Label"
+                android:text="@string/action_email_customer_enter" />
+
+            <EditText
+                android:id="@+id/txt_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_amount"
+                android:inputType="textEmailAddress" />
+
         </LinearLayout>
 
     </RelativeLayout>

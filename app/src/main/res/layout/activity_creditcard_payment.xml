@@ -16,40 +16,49 @@
         android:layout_above="@id/footer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:id="@+id/label_amount"
-            style="@style/Label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/action_creditcard_number" />
-
-        <EditText
-            android:id="@+id/txt_amount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/label_amount"
-            android:inputType="numberDecimal" />
-
-        <TextView
-            android:id="@+id/label_ci"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_amount"
-            android:layout_marginTop="32dp"
-            style="@style/Label"
-            android:text="@string/action_ci_enter" />
-
-        <EditText
-            android:id="@+id/txt_ci"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/label_ci"
-            android:inputType="number" />
+        android:layout_margin="@dimen/margin_all_layout">
 
         <LinearLayout
+            android:layout_above="@id/btn_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_top_layout"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/label_amount"
+                style="@style/Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/action_creditcard_number" />
+
+            <EditText
+                android:id="@+id/txt_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_amount"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/label_ci"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_amount"
+                android:layout_marginTop="@dimen/margin_top_form"
+                style="@style/Label"
+                android:text="@string/action_ci_enter" />
+
+            <EditText
+                android:id="@+id/txt_ci"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_ci"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

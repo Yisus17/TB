@@ -16,14 +16,13 @@
         android:layout_above="@id/footer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        android:layout_margin="@dimen/margin_all_layout">
 
         <TextView
             android:id="@+id/lbl_signature"
             style="@style/Label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:gravity="center_horizontal"
             android:text="@string/action_signature_enter" />
 
@@ -41,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="@dimen/margin_top_layout"
             android:layout_alignParentBottom="true">
 
             <Button
