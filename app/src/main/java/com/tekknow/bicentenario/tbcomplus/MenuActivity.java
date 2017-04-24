@@ -30,16 +30,13 @@ public class MenuActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
-
 
         menuOptions = (ListView) findViewById(R.id.lst_menu_options);
 
-        String categoryId = getIntent().getStringExtra(MENU_CATEGORY_ID);
-        String categoryTitle = getIntent().getStringExtra(MENU_CATEGORY_TITLE);
+        final String categoryId = getIntent().getStringExtra(MENU_CATEGORY_ID);
 
-        TextView category = (TextView) findViewById(R.id.txt_category);
-        category.setText(categoryTitle.toUpperCase());
+        /*TextView category = (TextView) findViewById(R.id.txt_category);
+        category.setText(categoryTitle.toUpperCase());*/
 
         List<MenuOption> options = getMenuOptions(categoryId);
 
@@ -57,14 +54,18 @@ public class MenuActivity extends BaseActivity {
             } else if (option.getCategoryId() != null) {
                 Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
                 intent.putExtra(MENU_CATEGORY_ID, option.getCategoryId());
-                intent.putExtra(MENU_CATEGORY_TITLE, option.getTitle());
+                //intent.putExtra(MENU_CATEGORY_TITLE, option.getTitle());
+                intent.putExtra(EXTRA_TITLE, option.getTitle());
                 startActivityForResult(intent, MENU_REQUEST);
             }
             }
         });
     }
 
-
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_menu;
+    }
 
 
     private List<MenuOption> getMenuOptions(String category) {

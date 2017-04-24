@@ -6,18 +6,13 @@ import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 public class AmountTypeActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    protected int getLayout() {
         int amountType = getIntent().getIntExtra(EXTRA_AMOUNT_TYPE, AMOUNT_TYPE_BALANCE);
 
-        switch (amountType) {
-            case AMOUNT_TYPE_FIXED:
-                setContentView(R.layout.activity_amount_type_fixed);
-                break;
-            case AMOUNT_TYPE_BALANCE:
-                setContentView(R.layout.activity_amount_type_balance);
-                break;
+        if(amountType == AMOUNT_TYPE_FIXED){
+            return R.layout.activity_amount_type_fixed;
+        }else{
+            return R.layout.activity_amount_type_balance;
         }
     }
 }

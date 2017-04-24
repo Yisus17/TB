@@ -20,8 +20,6 @@ public class DisplayMessageActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_success_message);
-
         requestCode = getIntent().getIntExtra(EXTRA_REQUEST_CODE, 0);
         message = getIntent().hasExtra(EXTRA_MESSAGE_CONTENT) ? getIntent().getStringExtra(EXTRA_MESSAGE_CONTENT) : getString(R.string.msg_success_transaction);
 
@@ -45,5 +43,9 @@ public class DisplayMessageActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return true;
+    }
+
+    protected int getLayout() {
+        return R.layout.activity_success_message;
     }
 }

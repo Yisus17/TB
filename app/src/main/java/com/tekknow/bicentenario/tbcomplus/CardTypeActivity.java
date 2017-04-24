@@ -21,7 +21,6 @@ public class CardTypeActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_card_type);
 
         accountOptions = (ListView) findViewById(R.id.lst_card_options);
 
@@ -40,5 +39,10 @@ public class CardTypeActivity extends BaseActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_card_type;
     }
 }

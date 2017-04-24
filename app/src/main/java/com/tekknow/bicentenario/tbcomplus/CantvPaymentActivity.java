@@ -28,4 +28,8 @@ public class CantvPaymentActivity extends PaymentActivity {
         return new Bundle();
     }
 
+    @Override
+    protected int getLayout() {
+       return getPaymentView();
+    }
 }

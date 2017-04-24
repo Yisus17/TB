@@ -18,7 +18,7 @@ public class OriginAccountActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.origin_account);
+
         transferOptions = (ListView) findViewById(R.id.lst_account_options);
 
         List<MenuPair> options = new ArrayList<>();
@@ -36,5 +36,10 @@ public class OriginAccountActivity extends BaseActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.origin_account;
     }
 }

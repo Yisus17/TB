@@ -20,7 +20,6 @@ public class PaymentTypeActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment_type);
 
         paymentOptions = (ListView) findViewById(R.id.lst_payment_options);
 
@@ -39,5 +38,10 @@ public class PaymentTypeActivity extends BaseActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_payment_type;
     }
 }

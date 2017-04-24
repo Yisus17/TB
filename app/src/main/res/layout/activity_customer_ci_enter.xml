@@ -3,10 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- AppBar -->
+    <include layout="@layout/_appbar" />
+
     <!-- Footer -->
     <include layout="@layout/_footer" />
 
     <RelativeLayout
+        android:layout_below="@id/appbar"
         android:layout_above="@id/footer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

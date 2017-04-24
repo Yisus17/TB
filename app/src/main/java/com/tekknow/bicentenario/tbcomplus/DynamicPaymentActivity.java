@@ -20,9 +20,6 @@ public abstract class DynamicPaymentActivity extends TransactionActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(getPaymentView());
-        getSupportActionBar().setTitle(getPaymentTitle());
-
         findViewById(R.id.btn_accept).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

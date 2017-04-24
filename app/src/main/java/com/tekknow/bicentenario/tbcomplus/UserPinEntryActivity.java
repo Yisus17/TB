@@ -14,10 +14,8 @@ public class UserPinEntryActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_pin_entry);
 
         TextView textView = (TextView) findViewById(R.id.txt_pin_entry);
-
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,6 +31,11 @@ public class UserPinEntryActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return true;
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_user_pin_entry;
     }
 
 }

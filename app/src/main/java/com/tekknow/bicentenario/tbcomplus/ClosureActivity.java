@@ -9,11 +9,6 @@ import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public abstract class ClosureActivity extends TransactionActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(getOperationClosureView());
-    }
 
     @Override
     public void onAccept(View view) {
@@ -39,4 +34,9 @@ public abstract class ClosureActivity extends TransactionActivity {
     protected abstract int getOperationClosureView();
 
     protected abstract int getOperationStatus();
+
+    @Override
+    protected String getBarTitle() {
+        return getOperationClosureTitle();
+    }
 }

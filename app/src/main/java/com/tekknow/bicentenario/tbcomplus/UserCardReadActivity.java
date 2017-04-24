@@ -2,6 +2,8 @@ package com.tekknow.bicentenario.tbcomplus;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +18,6 @@ public class UserCardReadActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_card_read);
 
         TextView textView = (TextView) findViewById(R.id.txt_card_read);
 
@@ -51,4 +52,10 @@ public class UserCardReadActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         return true;
     }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_user_card_read;
+    }
+
 }

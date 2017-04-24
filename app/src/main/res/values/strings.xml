@@ -31,6 +31,7 @@
     <string name="msg_success_transaction">Transacción procesada exitosamente</string>
 
     <!-- TITULOS ACTIVITIES -->
+    <string name="title_activity_login">Inicio de operaciones</string>
     <string name="title_activity_cantv_payment">Pago CANTV</string>
     <string name="title_activity_creditcard_payment">Pago de TDC</string>
     <string name="title_activity_directv_payment">Pago DIRECTV</string>
@@ -44,6 +45,13 @@
     <string name="title_account_type">Seleccione el tipo de cuenta</string>
     <string name="title_activity_close_pos">Cierre POS</string>
     <string name="title_activity_temporal_operation_closure">Cierre Temporal de Operaciones</string>
+    <string name="title_activity_operation_reopen">Reapertura de operaciones</string>
+    <string name="title_activity_operation_closure">Cierre de operaciones</string>
+    <string name="title_activity_sale">Venta</string>
+    <string name="title_activity_transfer_own_account">Transferencia cuenta propia</string>
+    <string name="title_activity_transfer_third">Tranferencia a terceros</string>
+    <string name="title_activity_operation_control">Control operaciones</string>
+    <string name="title_activity_last_query">Último movimiento</string>
 
     <!--        ACCIONES        -->
 

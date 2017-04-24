@@ -19,6 +19,11 @@ public class OperationReopenActivity extends TransactionActivity {
     }
 
     @Override
+    protected int getLayout() {
+        return -1;
+    }
+
+    @Override
     protected void onUserCardRequestResult(int status, Bundle data) {
         super.onUserCardRequestResult(status, data);
         requestUserPin();
@@ -41,5 +46,10 @@ public class OperationReopenActivity extends TransactionActivity {
     protected void onDisplayMessageResult(int status, Bundle data) {
         super.onDisplayMessageResult(status, data);
         onAccept();
+    }
+
+    @Override
+    protected String getBarTitle() {
+        return getString(R.string.title_activity_operation_reopen);
     }
 }

@@ -1,14 +1,33 @@
 package com.tekknow.bicentenario.tbcomplus;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
-public class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
+
+    String title;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if(getIntent()!= null && getIntent().getStringExtra(EXTRA_TITLE) != null){
+            title = getIntent().getStringExtra(EXTRA_TITLE);
+        }else{
+            title = getBarTitle();
+        }
+
+        setContentLayout(getLayout());
+    }
 
     public void onAccept() {
         setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_OK));
@@ -61,4 +80,27 @@ public class BaseActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    protected abstract int getLayout();
+
+    protected String getBarTitle(){
+        return getString(R.string.app_name);
+    }
+
+    public void setContentLayout(int layout){
+
+        if(layout != -1){
+            setContentView(layout);
+
+            Toolbar myToolbar = (Toolbar) findViewById(R.id.appbar);
+            myToolbar.setLogo(R.drawable.icono_bicentenario);
+
+            TextView mTitle = (TextView) myToolbar.findViewById(R.id.toolbar_title);
+            mTitle.setText(title);
+
+            setSupportActionBar(myToolbar);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
+    }
+
 }

@@ -2,20 +2,17 @@
 
     <!-- Base application theme. -->
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:colorBackground">@color/grayBicentenario</item>
-        <item name="actionBarStyle">@style/MyActionBarLogo</item>
-
+<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="android:colorBackground">@color/grayBicentenario</item>
 </style>
 
 <style name="MyActionBarLogo" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
     <item name="background">@color/colorPrimary</item>
     <item name="logo">@drawable/icono_bicentenario</item>
     <item name="displayOptions">useLogo|showHome</item>
-
 </style>
 
 <style name="Category">
@@ -67,6 +64,13 @@
         <item name="android:gravity">center</item>
         <item name="android:textSize">10sp</item>
         <item name="android:text">@string/footer</item>
+    </style>
+
+    <style name="TitleToolbar">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
 </resources>

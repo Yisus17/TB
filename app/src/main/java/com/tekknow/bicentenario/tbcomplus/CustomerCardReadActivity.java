@@ -12,7 +12,6 @@ public class CustomerCardReadActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customer_card_read);
 
         //FIXME Prototipo
         TextView textView = (TextView) findViewById(R.id.txt_card_read);
@@ -32,5 +31,10 @@ public class CustomerCardReadActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return true;
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_customer_card_read;
     }
 }

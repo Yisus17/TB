@@ -7,11 +7,8 @@ import android.view.View;
 public class LastQueryInfoActivity extends TransactionActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_last_query_info);
-        getSupportActionBar().setTitle(getString(R.string.title_activity_deposit));
+    protected int getLayout() {
+        return R.layout.activity_last_query_info;
     }
 
     @Override
@@ -30,5 +27,10 @@ public class LastQueryInfoActivity extends TransactionActivity {
 
     public void onPrint(View view) {
         sendHostRequest();
+    }
+
+    @Override
+    protected String getBarTitle() {
+        return getString(R.string.txt_last_query_info);
     }
 }

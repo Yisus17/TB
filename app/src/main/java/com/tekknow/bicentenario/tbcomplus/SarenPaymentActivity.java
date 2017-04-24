@@ -23,4 +23,8 @@ public class SarenPaymentActivity extends DynamicPaymentActivity {
         return new Bundle();
     }
 
+    @Override
+    protected int getLayout() {
+        return getPaymentView();
+    }
 }

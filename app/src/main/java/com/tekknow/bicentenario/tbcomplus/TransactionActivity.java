@@ -32,11 +32,15 @@ public abstract class TransactionActivity extends BaseActivity {
 
     //---- Plantilla para llamar request ----
     protected void sendRequest(Class activity, int tag, Bundle data){
+        String title = getBarTitle();
         Intent intent = new Intent(getApplicationContext(), activity);
 
-        if (data != null) {
-            intent.putExtras(data);
+        if (data == null) {
+            data = new Bundle();
         }
+
+        data.putString(EXTRA_TITLE, title);
+        intent.putExtras(data);
 
         startActivityForResult(intent, tag);
     }
@@ -290,5 +294,7 @@ public abstract class TransactionActivity extends BaseActivity {
     protected void onUserCardRequestResult(int status, Bundle data) {}
 
     protected void onUserPinRequestResult(int status, Bundle data) {}
+
+
 
 }

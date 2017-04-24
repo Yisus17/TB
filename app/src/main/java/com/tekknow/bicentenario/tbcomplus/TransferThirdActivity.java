@@ -26,7 +26,7 @@ public class TransferThirdActivity extends TransactionActivity {
             intent.putExtra(MenuActivity.MENU_CATEGORY_TITLE, "Transferencias");
             startActivityForResult(intent, TRANSFER_THIRD_REQUEST);
         }else {
-            setContentView(R.layout.fragment_transfer_third_data);
+            setContentLayout(R.layout.fragment_transfer_third_data);
         }
     }
 
@@ -60,7 +60,17 @@ public class TransferThirdActivity extends TransactionActivity {
     }
 
     @Override
+    protected int getLayout() {
+        return -1;
+    }
+
+    @Override
     public void onAccept(View view) {
         requestCustomerCard();
+    }
+
+    @Override
+    protected String getBarTitle() {
+        return getString(R.string.title_activity_transfer_third);
     }
 }

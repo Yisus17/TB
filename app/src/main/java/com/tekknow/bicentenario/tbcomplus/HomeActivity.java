@@ -15,31 +15,25 @@ public class HomeActivity extends BaseActivity {
     protected static final int TBCOM_REQUEST = 2;
     protected static final int OPERATION_REQUEST = 3;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-    }
-
 
     public void launchPOS(View view) {
         Intent intent = new Intent(this, MenuActivity.class);
         intent.putExtra(MenuActivity.MENU_CATEGORY_ID, "POS");
-        intent.putExtra(MenuActivity.MENU_CATEGORY_TITLE, getString(R.string.category_pos));
+        intent.putExtra(EXTRA_TITLE, getString(R.string.category_pos));
         startActivityForResult(intent, POS_REQUEST);
     }
 
     public void launchCNB(View view) {
         Intent intent = new Intent(this, MenuActivity.class);
         intent.putExtra(MenuActivity.MENU_CATEGORY_ID, "CNB");
-        intent.putExtra(MenuActivity.MENU_CATEGORY_TITLE, getString(R.string.category_cnb));
+        intent.putExtra(EXTRA_TITLE, getString(R.string.category_cnb));
         startActivityForResult(intent, TBCOM_REQUEST);
     }
 
     public void launchControl(View view) {
         Intent intent = new Intent(this, MenuActivity.class);
         intent.putExtra(MenuActivity.MENU_CATEGORY_ID, "CONTROL");
-        intent.putExtra(MenuActivity.MENU_CATEGORY_TITLE, getString(R.string.category_control));
+        intent.putExtra(EXTRA_TITLE, getString(R.string.title_activity_operation_control));
         startActivityForResult(intent, OPERATION_REQUEST);
     }
 
@@ -61,5 +55,10 @@ public class HomeActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
        return true;
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_home;
     }
 }

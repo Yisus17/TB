@@ -27,7 +27,7 @@ public class TransferOwnAccountActivity extends TransactionActivity {
             intent.putExtra(MenuActivity.MENU_CATEGORY_TITLE, "Transferencias");
             startActivityForResult(intent, TRANSFER_OWN_REQUEST);
         }else{
-            setContentView(R.layout.fragment_transfer_amount);
+            setContentLayout(R.layout.fragment_transfer_amount);
         }
     }
 
@@ -61,8 +61,17 @@ public class TransferOwnAccountActivity extends TransactionActivity {
     }
 
     @Override
+    protected int getLayout() {
+        return -1;
+    }
+
+    @Override
     public void onAccept(View view) {
         requestCustomerCard();
     }
 
+    @Override
+    protected String getBarTitle() {
+        return getString(R.string.title_activity_transfer_own_account);
+    }
 }

@@ -44,4 +44,8 @@ public class MovilnetRechargeActivity extends PaymentActivity {
         }
     }
 
+    @Override
+    protected int getLayout() {
+        return getPaymentView();
+    }
 }

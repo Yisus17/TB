@@ -22,7 +22,6 @@ public class TransferTypeActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_own_transfer_type);
 
         transferOptions = (ListView) findViewById(R.id.lst_transfer_options);
         List<MenuPair> options = new ArrayList<>();
@@ -40,5 +39,10 @@ public class TransferTypeActivity extends BaseActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.list_own_transfer_type;
     }
 }

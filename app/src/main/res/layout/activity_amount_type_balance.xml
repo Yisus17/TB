@@ -6,11 +6,15 @@
     android:layout_height="match_parent"
     tools:context="com.tekknow.bicentenario.tbcomplus.AccountTypeActivity">
 
+    <!-- AppBar -->
+    <include layout="@layout/_appbar" />
+
     <!-- Footer -->
     <include layout="@layout/_footer"
         android:id="@+id/include" />
 
     <RelativeLayout
+        android:layout_below="@id/appbar"
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

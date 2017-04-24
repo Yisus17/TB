@@ -125,4 +125,14 @@ public class SaleActivity extends TransactionActivity {
             onCancel();
         }
     }
+
+    @Override
+    protected int getLayout() {
+        return -1;
+    }
+
+    @Override
+    protected String getBarTitle() {
+        return getString(R.string.title_activity_sale);
+    }
 }

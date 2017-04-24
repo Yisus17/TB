@@ -16,8 +16,6 @@ public class HostRequestActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_host_request);
-
         final int requestCode = getIntent().getIntExtra(EXTRA_REQUEST_CODE, 0);
 
         Handler handler = new Handler();
@@ -31,8 +29,6 @@ public class HostRequestActivity extends BaseActivity {
     }
 
     @Override
-    public void onBackPressed() {}
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         return true;
     }
@@ -40,6 +36,11 @@ public class HostRequestActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return true;
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_host_request;
     }
 
 }

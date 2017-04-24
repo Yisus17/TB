@@ -1,8 +1,3 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <!-- "Mark Favorite", should appear as action button if possible -->
-    <item
-        android:id="@+id/action_favorite"
-        android:icon="@drawable/images"
-        android:title="EPA"
-      />
 </menu>

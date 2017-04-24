@@ -18,13 +18,16 @@ public class SignatureCaptureActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_signature_capture);
-
         LinearLayout signaturePad = (LinearLayout) findViewById(R.id.signature_pad);
 
         signatureView = new SignatureView(this);
 
         signaturePad.addView(signatureView);
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_signature_capture;
     }
 
     protected void onClear(View view) {

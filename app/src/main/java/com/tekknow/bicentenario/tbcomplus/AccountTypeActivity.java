@@ -22,14 +22,6 @@ public class AccountTypeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        accountMode = getIntent().getIntExtra(EXTRA_ACCOUNT_MODE, ACCOUNT_MODE_RETURN);
-
-        if(accountMode == ACCOUNT_MODE_CANCEL){
-            setContentView(R.layout.activity_account_type_cancel);
-        }else{
-            setContentView(R.layout.activity_account_type_return);
-        }
-
         accountOptions = (ListView) findViewById(R.id.lst_account_options);
 
         List<MenuPair> options = new ArrayList<>();
@@ -47,6 +39,17 @@ public class AccountTypeActivity extends BaseActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected int getLayout() {
+        accountMode = getIntent().getIntExtra(EXTRA_ACCOUNT_MODE, ACCOUNT_MODE_RETURN);
+
+        if(accountMode == ACCOUNT_MODE_CANCEL){
+            return R.layout.activity_account_type_cancel;
+        }else{
+            return R.layout.activity_account_type_return;
+        }
     }
 
 }

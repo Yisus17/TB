@@ -6,10 +6,14 @@
     android:layout_height="match_parent"
     tools:context="com.tekknow.bicentenario.tbcomplus.UserPinEntryActivity">
 
+        <!-- AppBar -->
+        <include layout="@layout/_appbar" />
+
         <!-- Footer -->
         <include layout="@layout/_footer" />
 
         <RelativeLayout
+            android:layout_below="@id/appbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"

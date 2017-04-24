@@ -1,6 +1,5 @@
 package com.tekknow.bicentenario.tbcomplus;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -62,5 +61,15 @@ public class LoginActivity extends TransactionActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return true;
+    }
+
+    @Override
+    protected int getLayout() {
+        return -1;
+    }
+
+    @Override
+    protected String getBarTitle() {
+        return getString(R.string.title_activity_login);
     }
 }

@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context="com.tekknow.bicentenario.tbcomplus.DepositActivity">
 
+    <!-- AppBar -->
+    <include layout="@layout/_appbar" />
+
     <!-- Footer -->
     <include layout="@layout/_footer" />
 
@@ -13,13 +16,14 @@
         android:layout_above="@id/footer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/appbar"
         android:layout_margin="10dp">
 
         <TextView
             android:id="@+id/label_account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="25dp"
             style="@style/Label"
             android:text="@string/action_deposit_enter_account" />
 

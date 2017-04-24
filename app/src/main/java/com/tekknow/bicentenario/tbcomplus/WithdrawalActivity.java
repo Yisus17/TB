@@ -27,7 +27,7 @@ public class WithdrawalActivity extends TransactionActivity {
         if(status == STATUS_BACK){
             onReturn();
         }else{
-            setContentView(R.layout.activity_withdrawal);
+            setContentLayout(R.layout.activity_withdrawal);
         }
     }
 
@@ -58,6 +58,16 @@ public class WithdrawalActivity extends TransactionActivity {
     @Override
     public void onReturn(View view) {
         selectAccountType();
+    }
+
+    @Override
+    protected int getLayout() {
+        return -1;
+    }
+
+    @Override
+    protected String getBarTitle() {
+        return getString(R.string.title_activity_withdrawal);
     }
 
     @Override

@@ -19,4 +19,13 @@ public class PosClosureActivity extends ClosureActivity {
         return STATUS_OK;
     }
 
+    @Override
+    protected int getLayout() {
+        return getOperationClosureView();
+    }
+
+    @Override
+    protected String getBarTitle() {
+        return getString(R.string.title_activity_close_pos);
+    }
 }
