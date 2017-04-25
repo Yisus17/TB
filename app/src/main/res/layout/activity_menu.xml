@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/margin_all_layout"
             android:onClick="onReturn"
             android:text="@string/txt_back" />
 
@@ -32,7 +32,7 @@
             android:layout_above="@id/btn_back"
             android:id="@+id/lst_menu_options"
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin_top_layout"
             android:layout_height="match_parent"></ListView>
 
 

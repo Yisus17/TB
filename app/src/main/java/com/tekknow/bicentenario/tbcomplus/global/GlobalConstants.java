@@ -11,6 +11,7 @@ public class GlobalConstants {
     public static final String EXTRA_STATUS = "com.tekknow.bicentenario.tbcomplus.extra.STATUS";
     public static final String EXTRA_MODALITY = "com.tekknow.bicentenario.tbcomplus.extra.MODALITY";
     public static final String EXTRA_TITLE = "com.tekknow.bicentenario.tbcomplus.extra.TITLE";
+    public static final String EXTRA_SEQUENCE_NUMBER = "com.tekknow.bicentenario.tbcomplus.extra.SEQUENCE_NUMBER";
 
     public static final int ACCOUNT_MODE_RETURN = 1;
     public static final int ACCOUNT_MODE_CANCEL = 2;

@@ -94,6 +94,15 @@
             android:name=".PaymentTypeActivity"
             android:screenOrientation="portrait"/>
         <activity
+            android:name=".ReverseActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ReverseInfoDataActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ReverseSureActivity"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".SaleActivity"
             android:screenOrientation="portrait" />
         <activity

@@ -63,12 +63,13 @@
                 style="@style/Message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
                 android:gravity="center"
-                android:paddingTop="6dp"
+                android:layout_marginTop="@dimen/margin_top_layout"
                 android:text="@string/action_amount_type_select" />
 
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            <RadioGroup
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_marginTop="@dimen/margin_top_layout"
                 android:id="@+id/grp_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

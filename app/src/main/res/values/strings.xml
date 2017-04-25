@@ -24,6 +24,7 @@
     <string name="txt_send_email">Enviar al email</string>
     <string name="txt_transfer_type_1">Ahorro a Corriente</string>
     <string name="txt_transfer_type_2">Corriente a Ahorro</string>
+    <string name="txt_sequence_number">Operación:</string>
 
 
     <!-- MENSAJES -->
@@ -52,6 +53,7 @@
     <string name="title_activity_transfer_third">Transferencia a terceros</string>
     <string name="title_activity_operation_control">Control operaciones</string>
     <string name="title_activity_last_query">Último movimiento</string>
+    <string name="title_activity_reverse">Reverso</string>
 
     <!--        ACCIONES        -->
 
@@ -62,7 +64,8 @@
     <string name="action_pin_client_entry">Ingrese el pin del cliente en BBPOS</string>
     <string name="action_card_start_user_read">Ingrese la Tarjeta del Corresponsal no Bancario en el BBPOS para iniciar operaciones</string>
     <string name="action_card_reopen_user_read">Ingrese la Tarjeta del Corresponsal no Bancario en el BBPOS para reapertura de operaciones</string>
-
+    <string name="action_sequence_number_enter">Ingrese número de secuencia de la operación</string>
+    
     <!-- Transacciones TBCOM -->
     <string name="action_account_type_select">Seleccione el tipo de cuenta</string>
     <string name="action_amount_enter">Ingrese el monto</string>
@@ -88,17 +91,20 @@
     <string name="action_sale_amount_enter">Ingrese monto de la venta</string>
     <string name="action_withdrawal_amount_enter">Ingrese monto del retiro</string>
 
+    <string name="txt_result_sequence_number">Deposito\n Monto: 78.000,87\n Tipo de Pago: Cargo en Cuenta\n Fecha 04/06/2017\n Hora:09:41:42</string>
+    <string name="action_reverse_sure">¿Esta seguro de realizar el reverso de la operación?</string>
 
     <!-- Transacciones POS -->
     <string name="action_close_pos_sure">¿Desea realizar el cierre del POS?</string>
     <string name="action_temporal_operations_closure_sure">¿Desea realizar el Cierre Temporal de Operaciones?</string>
     <string name="action_operations_closure_sure">¿Desea realizar el Cierre Definitivo de Operaciones?</string>
 
-    <string name="txt_last_query_info">Venta Debito\n 41412*****5256\n Banco Bicentenario\n Fecha 04/06/2017 Hora:09:41:42 AM\n Monto: 5.680,50</string>
+    <string name="txt_last_query_info">Venta Debito\n 41412*****5256\n Banco Bicentenario\n Fecha 04/06/2017 Hora:09:41:42 \n Monto: 5.680,50</string>
 
     <!-- Validaciones -->
 
     <string name="no_empty_amount">Debe ingresar un monto</string>
+    <string name="no_empty_sequence_number">Debe ingresar un número de secuencia</string>
     <string name="txt_min">Monto mínimo:&#160;</string>
     <string name="txt_max">Monto máximo:&#160;</string>
 

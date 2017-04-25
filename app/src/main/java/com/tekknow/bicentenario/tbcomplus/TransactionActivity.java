@@ -23,6 +23,8 @@ public abstract class TransactionActivity extends BaseActivity {
     protected static final int SALE_AMOUNT_REQUEST = 14;
     protected static final int ORIGIN_ACCOUNT_REQUEST = 15;
     protected static final int SIGNATURE_REQUEST = 16;
+    protected static final int REVERSE_SURE_REQUEST = 17;
+    protected static final int REVERSE_INFO_DATA_REQUEST = 18;
 
 
     @Override
@@ -193,6 +195,24 @@ public abstract class TransactionActivity extends BaseActivity {
         requestSignature(null);
     }
 
+    //---- Información de reverso ----
+    protected void requestReverseInfoData(Bundle data) {
+        sendRequest(ReverseInfoDataActivity.class, REVERSE_INFO_DATA_REQUEST, data);
+    }
+
+    protected void requestReverseInfoData() {
+        requestReverseInfoData(null);
+    }
+
+    //---- Confirmacion de reverso ----
+    protected void requestReverseSure(Bundle data) {
+        sendRequest(ReverseSureActivity.class, REVERSE_SURE_REQUEST, data);
+    }
+
+    protected void requestReverseSure() {
+        requestReverseSure(null);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         int status = data.getIntExtra(EXTRA_STATUS, STATUS_OK);
@@ -235,6 +255,12 @@ public abstract class TransactionActivity extends BaseActivity {
                         break;
                     case PAYMENT_TYPE_REQUEST:
                         onPaymentTypeSelectResult(status, data.getExtras());
+                        break;
+                    case REVERSE_INFO_DATA_REQUEST:
+                        onReverseInfoDataRequestResult(status, data.getExtras());
+                        break;
+                    case REVERSE_SURE_REQUEST:
+                        onReverseSureRequestResult(status, data.getExtras());
                         break;
                     case SALE_AMOUNT_REQUEST:
                         onSaleAmountRequestResult(status, data.getExtras());
@@ -282,6 +308,10 @@ public abstract class TransactionActivity extends BaseActivity {
     protected void onHostRequestResult(int status, Bundle data) {}
 
     protected void onPaymentTypeSelectResult(int status, Bundle data) {}
+
+    protected void onReverseInfoDataRequestResult(int status, Bundle data) {}
+
+    protected void onReverseSureRequestResult(int status, Bundle data) {}
 
     protected void onSaleAmountRequestResult(int status, Bundle extras) {}
 

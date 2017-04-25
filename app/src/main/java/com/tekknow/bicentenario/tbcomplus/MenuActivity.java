@@ -35,9 +35,6 @@ public class MenuActivity extends BaseActivity {
 
         final String categoryId = getIntent().getStringExtra(MENU_CATEGORY_ID);
 
-        /*TextView category = (TextView) findViewById(R.id.txt_category);
-        category.setText(categoryTitle.toUpperCase());*/
-
         List<MenuOption> options = getMenuOptions(categoryId);
 
         ArrayAdapter<MenuOption> adapter = new ArrayAdapter<MenuOption>(this, android.R.layout.simple_list_item_1, android.R.id.text1, options);
@@ -54,7 +51,6 @@ public class MenuActivity extends BaseActivity {
             } else if (option.getCategoryId() != null) {
                 Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
                 intent.putExtra(MENU_CATEGORY_ID, option.getCategoryId());
-                //intent.putExtra(MENU_CATEGORY_TITLE, option.getTitle());
                 intent.putExtra(EXTRA_TITLE, option.getTitle());
                 startActivityForResult(intent, MENU_REQUEST);
             }
@@ -85,6 +81,7 @@ public class MenuActivity extends BaseActivity {
                 options.add(new MenuOption("Pagos Internos", "PAGOS_INTERNOS"));
                 options.add(new MenuOption("Pagos Externos", "PAGOS_EXTERNOS"));
                 options.add(new MenuOption("Consultas", ""));
+                options.add(new MenuOption("Reversos", ReverseActivity.class));
                 break;
             case "CONTROL":
                 options.add(new MenuOption("Consulta de Totales", ""));

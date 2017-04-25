@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,7 +9,9 @@
     <include layout="@layout/_appbar" />
 
     <!-- Footer -->
-    <include layout="@layout/_footer" />
+    <include
+        android:id="@+id/footer"
+        layout="@layout/_footer" />
 
     <RelativeLayout
         android:layout_below="@id/appbar"
@@ -19,30 +21,7 @@
         android:layout_margin="@dimen/margin_all_layout">
 
         <LinearLayout
-            android:layout_above="@id/btn_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/margin_top_layout">
-
-            <TextView
-                android:id="@+id/label_amount"
-                style="@style/Label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/action_phone_number" />
-
-            <EditText
-                android:id="@+id/txt_amount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/label_amount"
-                android:inputType="numberDecimal" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/btn_content"
+            android:id="@id/btn_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -50,23 +29,33 @@
             android:layout_alignParentBottom="true">
 
             <Button
-                android:id="@+id/btn_accept"
+                android:id="@+id/btn_yes"
                 style="@style/HomeButton"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:onClick="onAccept"
                 android:text="@string/txt_accept" />
 
             <Button
-                android:id="@+id/btn_back"
+                android:id="@+id/btn_no"
                 style="@style/HomeButton"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:onClick="onReturn"
-                android:text="@string/txt_back" />
+                android:onClick="onCancel"
+                android:text="@string/txt_cancel" />
+
         </LinearLayout>
 
-    </RelativeLayout>
+        <TextView
+            android:layout_above="@id/btn_content"
+            android:id="@+id/label_are_you_sure"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            style="@style/Label"
+            android:text="@string/action_reverse_sure" />
 
+    </RelativeLayout>
 </RelativeLayout>

@@ -4,5 +4,6 @@
     <dimen name="margin_top_layout">10dp</dimen>
     <dimen name="margin_all_layout">10dp</dimen>
     <dimen name="margin_top_form_small">16dp</dimen>
+    <dimen name="margin_home">16dp</dimen>
 
 </resources>

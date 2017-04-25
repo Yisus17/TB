@@ -88,7 +88,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public void setContentLayout(int layout){
-
         if(layout != -1){
             setContentView(layout);
 

@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/margin_all_layout"
             style="@style/TitleToolbar"
             android:id="@+id/toolbar_title" />
 
