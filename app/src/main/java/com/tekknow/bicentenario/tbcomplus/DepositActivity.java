@@ -24,13 +24,12 @@ public class DepositActivity extends TransactionActivity {
         context = this;
 
         Button executeDeposit = (Button) findViewById(R.id.btn_execute_deposit);
-
-
+        
         executeDeposit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AmountEditText editTextAmount = (AmountEditText) findViewById(R.id.input_amount);
-                
+
                 boolean isValid = editTextAmount.isValidAmount(MIN_AMOUNT , MAX_AMOUNT);
 
                 if(isValid){
