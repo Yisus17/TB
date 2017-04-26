@@ -6,11 +6,9 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
-/**
- * Created by Mercedes Rodriguez on 4/26/2017.
- */
 
 public class AmountEditText extends AppCompatEditText {
 
@@ -48,5 +46,4 @@ public class AmountEditText extends AppCompatEditText {
             }
         });
     }
-
 }

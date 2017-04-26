@@ -47,7 +47,7 @@
                 style="@style/Label"
                 android:text="@string/action_deposit_amount_enter" />
 
-            <EditText
+            <com.tekknow.bicentenario.tbcomplus.widget.AmountEditText
                 android:id="@+id/txt_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
