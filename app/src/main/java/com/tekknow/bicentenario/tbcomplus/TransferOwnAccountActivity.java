@@ -1,8 +1,13 @@
 package com.tekknow.bicentenario.tbcomplus;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+
+import com.tekknow.bicentenario.tbcomplus.fragment.CiFragment;
 
 import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
@@ -28,6 +33,15 @@ public class TransferOwnAccountActivity extends TransactionActivity {
             startActivityForResult(intent, TRANSFER_OWN_REQUEST);
         }else{
             setContentLayout(R.layout.fragment_transfer_amount);
+
+            /*Button acceptData = (Button) findViewById(R.id.);
+
+            CiFragment ciFragment = new CiFragment();
+
+            FragmentManager manager = getFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.add(R.id.ci_container, ciFragment, "ciFragment");
+            transaction.commit();*/
         }
     }
 
