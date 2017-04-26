@@ -49,7 +49,7 @@
     <string name="title_activity_operation_reopen">Reapertura de operaciones</string>
     <string name="title_activity_operation_closure">Cierre de operaciones</string>
     <string name="title_activity_sale">Venta</string>
-    <string name="title_activity_transfer_own_account">Transferencia cuenta propia</string>
+    <string name="title_activity_transfer_own_account">Transferencia cuentas propias</string>
     <string name="title_activity_transfer_third">Transferencia a terceros</string>
     <string name="title_activity_operation_control">Control operaciones</string>
     <string name="title_activity_last_query">Último movimiento</string>

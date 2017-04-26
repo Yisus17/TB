@@ -69,14 +69,14 @@ public class MenuActivity extends BaseActivity {
 
         switch (category) {
             case "POS":
-                options.add(new MenuOption("Ventas", SaleActivity.class));
-                options.add(new MenuOption("Devoluciones", ""));
+                options.add(new MenuOption("Venta", SaleActivity.class));
+                options.add(new MenuOption("Devolución", ""));
                 options.add(new MenuOption("Consulta de Ultimo Movimiento", LastQueryInfoActivity.class));
                 options.add(new MenuOption("Cierre de POS", PosClosureActivity.class));
                 break;
             case "CNB":
-                options.add(new MenuOption("Retiros", WithdrawalActivity.class));
-                options.add(new MenuOption("Depósitos", DepositActivity.class));
+                options.add(new MenuOption("Retiro", WithdrawalActivity.class));
+                options.add(new MenuOption("Depósito", DepositActivity.class));
                 options.add(new MenuOption("Transferencias", "TRANSFERENCIAS"));
                 options.add(new MenuOption("Pagos Internos", "PAGOS_INTERNOS"));
                 options.add(new MenuOption("Pagos Externos", "PAGOS_EXTERNOS"));
@@ -91,8 +91,8 @@ public class MenuActivity extends BaseActivity {
                 options.add(new MenuOption("Cierre de Operaciones", OperationClosureActivity.class));
                 break;
             case "TRANSFERENCIAS":
-                options.add(new MenuOption("Transferencias Cuenta Propias", TransferOwnAccountActivity.class));
-                options.add(new MenuOption("Transferencias a Terceros", TransferThirdActivity.class));
+                options.add(new MenuOption("Transferencia Cuentas Propias", TransferOwnAccountActivity.class));
+                options.add(new MenuOption("Transferencia a Terceros", TransferThirdActivity.class));
                 break;
             case "PAGOS_INTERNOS":
                 options.add(new MenuOption("Pago de TDC", CreditCardPaymentActivity.class));
