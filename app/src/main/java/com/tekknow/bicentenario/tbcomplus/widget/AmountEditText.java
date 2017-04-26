@@ -12,6 +12,8 @@ import java.util.Locale;
 
 public class AmountEditText extends AppCompatEditText {
 
+    // -- Constructores --
+
     public AmountEditText(Context context) {
         super(context);
         setFocusBehavior();
@@ -27,6 +29,35 @@ public class AmountEditText extends AppCompatEditText {
         setFocusBehavior();
     }
 
+    // -- Validaciones --
+
+    private String getAmountString(){
+        return getText().toString();
+    }
+
+    private String getAmountClean(){
+        return (getAmountString().replace(".", "").replace(",", "."));
+    }
+
+    private Double getAmountNumber(){
+        return Double.parseDouble(getAmountClean());
+    }
+
+    private boolean isEmpty(){
+        return (getAmountString() == "");
+    }
+
+    private boolean validateRange(Double min, Double max){
+        Double amount = getAmountNumber();
+        return (amount <= max  && amount >= min);
+    }
+
+    public boolean isValidAmount(Double min, Double max){
+        return (!isEmpty() && validateRange(min, max));
+    }
+
+    // -- Separador --
+
     private void setFocusBehavior() {
         setOnFocusChangeListener(new OnFocusChangeListener() {
             @Override
@@ -40,7 +71,7 @@ public class AmountEditText extends AppCompatEditText {
                         formatter.setDecimalSeparatorAlwaysShown(true);
                         formatter.setMinimumFractionDigits(2);
 
-                        setText(formatter.format(Double.parseDouble(getText().toString())));
+                        setText(formatter.format(Double.parseDouble(getAmountString())));
                     }
                 }
             }

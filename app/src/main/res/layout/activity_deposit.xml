@@ -48,7 +48,7 @@
                 android:text="@string/action_deposit_amount_enter" />
 
             <com.tekknow.bicentenario.tbcomplus.widget.AmountEditText
-                android:id="@+id/txt_amount"
+                android:id="@+id/input_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal" />
@@ -64,12 +64,11 @@
             android:layout_alignParentBottom="true">
 
             <Button
-                android:id="@+id/btn_execute"
+                android:id="@+id/btn_execute_deposit"
                 style="@style/HomeButton"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:onClick="onAccept"
                 android:text="@string/txt_accept" />
 
             <Button

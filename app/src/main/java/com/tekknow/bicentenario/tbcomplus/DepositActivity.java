@@ -1,12 +1,48 @@
 package com.tekknow.bicentenario.tbcomplus;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.tekknow.bicentenario.tbcomplus.widget.AmountEditText;
 
 public class DepositActivity extends TransactionActivity {
+
+    public final Double MAX_AMOUNT = 5000.40;
+    public final Double MIN_AMOUNT = 1040.32;
+
+    Context context;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        context = this;
+
+        Button executeDeposit = (Button) findViewById(R.id.btn_execute_deposit);
+
+
+        executeDeposit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AmountEditText editTextAmount = (AmountEditText) findViewById(R.id.input_amount);
+                
+                boolean isValid = editTextAmount.isValidAmount(MIN_AMOUNT , MAX_AMOUNT);
+
+                if(isValid){
+                    requestUserCard();
+                }else{
+                    Toast toast = Toast.makeText(context, "Error" , Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER,0,0);
+                    toast.show();
+                }
+            }
+        });
+    }
 
     @Override
     protected void onUserCardRequestResult(int status, Bundle data) {
@@ -34,9 +70,6 @@ public class DepositActivity extends TransactionActivity {
         finish();
     }
 
-    public void onAccept(View view) {
-        requestUserCard();
-    }
 
     @Override
     protected int getLayout() {
