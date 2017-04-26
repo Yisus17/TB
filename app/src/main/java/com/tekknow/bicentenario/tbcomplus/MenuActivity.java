@@ -87,7 +87,7 @@ public class MenuActivity extends BaseActivity {
                 options.add(new MenuOption("Consulta de Totales", ""));
                 options.add(new MenuOption("Consulta de Transacciones", ""));
                 options.add(new MenuOption("Cierre Temporal de Operaciones", OperationTemporalClosureActivity.class));
-                options.add(new MenuOption("Reapertura de Operaciones", OperationReopenActivity.class));
+                //options.add(new MenuOption("Reapertura de Operaciones", OperationReopenActivity.class));
                 options.add(new MenuOption("Cierre de Operaciones", OperationClosureActivity.class));
                 break;
             case "TRANSFERENCIAS":
