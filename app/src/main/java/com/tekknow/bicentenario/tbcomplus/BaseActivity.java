@@ -9,11 +9,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-
+import android.os.*;
 import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public abstract class BaseActivity extends AppCompatActivity {
-
     String title;
 
     @Override
@@ -101,5 +100,50 @@ public abstract class BaseActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
     }
+
+    /*******Manejo de inactividad del usuario para colocar banner publicitario**********/
+    public static final long DISCONNECT_TIMEOUT = 60000; //1000 = 1 segundo
+    private Handler disconnectHandler = new Handler(){
+        public void handleMessage(Message msg) {
+        }
+    };
+
+    private Runnable disconnectCallback = new Runnable() {
+        @Override
+        public void run() {
+            Intent myIntent = new Intent(BaseActivity.this, BannerActivity.class);
+            BaseActivity.this.startActivity(myIntent);
+
+        }
+    };
+
+    public void resetDisconnectTimer(){
+        disconnectHandler.removeCallbacks(disconnectCallback);
+        disconnectHandler.postDelayed(disconnectCallback, DISCONNECT_TIMEOUT);
+    }
+
+    public void stopDisconnectTimer(){
+        disconnectHandler.removeCallbacks(disconnectCallback);
+    }
+
+    @Override
+    public void onUserInteraction(){
+        resetDisconnectTimer();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        resetDisconnectTimer();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        stopDisconnectTimer();
+    }
+
+    /************************************************************************/
+
 
 }

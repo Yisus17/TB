@@ -5,4 +5,6 @@
     <color name="colorAccent">#305B7F</color>
     <color name="grayBicentenario">#E5E5E5</color>
     <color name="white">#FFFFFF</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

@@ -65,7 +65,7 @@
     <string name="action_card_start_user_read">Ingrese la Tarjeta del Corresponsal no Bancario en el BBPOS para iniciar operaciones</string>
     <string name="action_card_reopen_user_read">Ingrese la Tarjeta del Corresponsal no Bancario en el BBPOS para reapertura de operaciones</string>
     <string name="action_sequence_number_enter">Ingrese número de secuencia de la operación</string>
-    
+
     <!-- Transacciones TBCOM -->
     <string name="action_account_type_select">Seleccione el tipo de cuenta</string>
     <string name="action_amount_enter">Ingrese el monto</string>
@@ -110,4 +110,8 @@
 
     <string name="citizenship_foreign">Extranjero</string>
     <string name="citizenship_local">Venezolano</string>
+
+    <string name="title_activity_banner">BannerActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

@@ -29,7 +29,13 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".AmountTypeActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BannerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_banner"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullscreenTheme"/>
         <activity
             android:name=".CardTypeActivity"
             android:screenOrientation="portrait" />
@@ -41,7 +47,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".CreditCardPaymentActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".CustomerCardReadActivity"
             android:screenOrientation="portrait" />
@@ -89,19 +95,19 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".OriginAccountActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PaymentTypeActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ReverseActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ReverseInfoDataActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ReverseSureActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SaleActivity"
             android:screenOrientation="portrait" />
@@ -144,8 +150,10 @@
         <activity
             android:name=".WithdrawalActivity"
             android:screenOrientation="portrait" />
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="d8c6de549f35d82a25b48f7a325e48d3cd672430" />
     </application>
+
 </manifest>
