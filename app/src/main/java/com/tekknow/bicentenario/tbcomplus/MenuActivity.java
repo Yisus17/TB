@@ -81,7 +81,7 @@ public class MenuActivity extends BaseActivity {
                 options.add(new MenuOption("Pagos Internos", "PAGOS_INTERNOS"));
                 options.add(new MenuOption("Pagos Externos", "PAGOS_EXTERNOS"));
                 options.add(new MenuOption("Consultas", ""));
-                options.add(new MenuOption("Reversos", ReverseActivity.class));
+                options.add(new MenuOption("Reverso", ReverseActivity.class));
                 break;
             case "CONTROL":
                 options.add(new MenuOption("Consulta de Totales", ""));
