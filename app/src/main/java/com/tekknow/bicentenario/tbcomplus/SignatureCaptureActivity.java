@@ -37,7 +37,7 @@ public class SignatureCaptureActivity extends BaseActivity {
         return R.layout.activity_signature_capture;
     }
 
-    protected void onClear(View view) {
+    public void onClear(View view) {
         signatureView.clear();
     }
 }
