@@ -61,4 +61,9 @@ public class HomeActivity extends BaseActivity {
     protected int getLayout() {
         return R.layout.activity_home;
     }
+
+    @Override
+    public void onBackPressed() {
+        onCancel();
+    }
 }
