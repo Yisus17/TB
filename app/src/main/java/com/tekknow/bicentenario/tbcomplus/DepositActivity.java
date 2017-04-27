@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -24,11 +25,17 @@ public class DepositActivity extends TransactionActivity {
         context = this;
 
         Button executeDeposit = (Button) findViewById(R.id.btn_execute_deposit);
-        
+
         executeDeposit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AmountEditText editTextAmount = (AmountEditText) findViewById(R.id.input_amount);
+                //editTextAmount.clearFocus();
+
+                /*InputMethodManager im = (InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                im.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);*/
+
+                //view.requestFocusFromTouch();
 
                 boolean isValid = editTextAmount.isValidAmount(MIN_AMOUNT , MAX_AMOUNT);
 
