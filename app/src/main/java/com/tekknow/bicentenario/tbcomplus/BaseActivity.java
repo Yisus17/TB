@@ -26,6 +26,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
 
         setContentLayout(getLayout());
+        Intent myIntent = new Intent(BaseActivity.this, apiTest.class);
+        BaseActivity.this.startActivity(myIntent);
+
     }
 
     public void onAccept() {
