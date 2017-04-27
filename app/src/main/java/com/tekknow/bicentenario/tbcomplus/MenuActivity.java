@@ -71,7 +71,7 @@ public class MenuActivity extends BaseActivity {
             case "POS":
                 options.add(new MenuOption("Venta", SaleActivity.class));
                 options.add(new MenuOption("Devolución", ""));
-                options.add(new MenuOption("Consulta de Ultimo Movimiento", LastQueryInfoActivity.class));
+                options.add(new MenuOption("Consulta de Último Movimiento", LastQueryInfoActivity.class));
                 options.add(new MenuOption("Cierre de POS", PosClosureActivity.class));
                 break;
             case "CNB":
@@ -91,7 +91,7 @@ public class MenuActivity extends BaseActivity {
                 options.add(new MenuOption("Cierre de Operaciones", OperationClosureActivity.class));
                 break;
             case "TRANSFERENCIAS":
-                options.add(new MenuOption("Transferencia Cuentas Propias", TransferOwnAccountActivity.class));
+                options.add(new MenuOption("Transferencia a Cuentas Propias", TransferOwnAccountActivity.class));
                 options.add(new MenuOption("Transferencia a Terceros", TransferThirdActivity.class));
                 break;
             case "PAGOS_INTERNOS":
