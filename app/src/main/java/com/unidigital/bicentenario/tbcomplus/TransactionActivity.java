@@ -1,9 +1,9 @@
-package com.tekknow.bicentenario.tbcomplus;
+package com.unidigital.bicentenario.tbcomplus;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public abstract class TransactionActivity extends BaseActivity {
 

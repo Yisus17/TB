@@ -1,6 +1,6 @@
-package com.tekknow.bicentenario.tbcomplus;
+package com.unidigital.bicentenario.tbcomplus;
 
-import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class OperationTemporalClosureActivity extends ClosureActivity {
 

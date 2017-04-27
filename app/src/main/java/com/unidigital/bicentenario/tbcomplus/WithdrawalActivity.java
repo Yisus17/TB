@@ -1,4 +1,4 @@
-package com.tekknow.bicentenario.tbcomplus;
+package com.unidigital.bicentenario.tbcomplus;
 
 import android.os.Bundle;
 import android.view.Gravity;
@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class WithdrawalActivity extends TransactionActivity {
 

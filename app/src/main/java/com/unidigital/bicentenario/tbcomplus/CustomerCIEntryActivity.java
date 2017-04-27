@@ -1,5 +1,4 @@
-package com.tekknow.bicentenario.tbcomplus;
-import android.os.Bundle;
+package com.unidigital.bicentenario.tbcomplus;
 
 public class CustomerCIEntryActivity extends BaseActivity {
 

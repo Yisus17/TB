@@ -1,8 +1,7 @@
-package com.tekknow.bicentenario.tbcomplus;
+package com.unidigital.bicentenario.tbcomplus;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -10,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.os.*;
-import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public abstract class BaseActivity extends AppCompatActivity {
     String title;

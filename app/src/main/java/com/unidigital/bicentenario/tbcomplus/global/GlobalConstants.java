@@ -1,4 +1,4 @@
-package com.tekknow.bicentenario.tbcomplus.global;
+package com.unidigital.bicentenario.tbcomplus.global;
 
 public class GlobalConstants {
 

@@ -1,10 +1,10 @@
-package com.tekknow.bicentenario.tbcomplus;
+package com.unidigital.bicentenario.tbcomplus;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 /**
  * Created by Alejandro on 4/16/2017.

@@ -1,4 +1,4 @@
-package com.tekknow.bicentenario.tbcomplus.model;
+package com.unidigital.bicentenario.tbcomplus.model;
 
 public class MenuOption {
 

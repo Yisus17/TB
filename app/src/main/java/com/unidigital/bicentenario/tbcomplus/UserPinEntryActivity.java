@@ -1,13 +1,10 @@
-package com.tekknow.bicentenario.tbcomplus;
+package com.unidigital.bicentenario.tbcomplus;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-
-import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class UserPinEntryActivity extends BaseActivity {
 

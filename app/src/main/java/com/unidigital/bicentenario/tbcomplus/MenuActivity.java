@@ -1,22 +1,18 @@
-package com.tekknow.bicentenario.tbcomplus;
+package com.unidigital.bicentenario.tbcomplus;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.tekknow.bicentenario.tbcomplus.model.MenuOption;
+import com.unidigital.bicentenario.tbcomplus.model.MenuOption;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class MenuActivity extends BaseActivity {
 

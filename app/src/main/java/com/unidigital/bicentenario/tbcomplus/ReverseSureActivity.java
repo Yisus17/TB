@@ -1,9 +1,4 @@
-package com.tekknow.bicentenario.tbcomplus;
-
-import android.os.Bundle;
-import android.widget.TextView;
-
-import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
+package com.unidigital.bicentenario.tbcomplus;
 
 /**
  * Created by Mercedes Rodriguez on 4/25/2017.

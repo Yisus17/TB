@@ -1,7 +1,5 @@
-package com.tekknow.bicentenario.tbcomplus;
+package com.unidigital.bicentenario.tbcomplus;
 
-
-import android.os.Bundle;
 
 public class SaleAmountActivity extends BaseActivity {
 

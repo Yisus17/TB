@@ -1,4 +1,4 @@
-package com.tekknow.bicentenario.tbcomplus;
+package com.unidigital.bicentenario.tbcomplus;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -6,7 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.tekknow.bicentenario.tbcomplus.model.SignatureView;
+import com.unidigital.bicentenario.tbcomplus.model.SignatureView;
 
 public class SignatureCaptureActivity extends BaseActivity {
 

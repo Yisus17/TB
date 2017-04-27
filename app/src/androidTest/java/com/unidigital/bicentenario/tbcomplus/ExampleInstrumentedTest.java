@@ -1,4 +1,4 @@
-package com.tekknow.bicentenario.tbcomplus;
+package com.unidigital.bicentenario.tbcomplus;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

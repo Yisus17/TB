@@ -1,4 +1,4 @@
-package com.tekknow.bicentenario.tbcomplus;
+package com.unidigital.bicentenario.tbcomplus;
 
 
 import android.content.Intent;
@@ -8,8 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
-import com.tekknow.bicentenario.tbcomplus.model.MenuPair;
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
+import com.unidigital.bicentenario.tbcomplus.model.MenuPair;
 
 import java.util.ArrayList;
 import java.util.List;
