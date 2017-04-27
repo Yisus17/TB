@@ -10,11 +10,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.os.*;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public abstract class BaseActivity extends AppCompatActivity {
     String title;
-
+    private Retrofit retrofit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +27,20 @@ public abstract class BaseActivity extends AppCompatActivity {
         }else{
             title = getBarTitle();
         }
-
         setContentLayout(getLayout());
 
+        apiConn(); //Carga inicial del API
+    }
 
+    private void apiConn() {
+        retrofit= new Retrofit.Builder()
+                .baseUrl("http://pokeapi.co/api/v2/")
+                .addConverterFactory(GsonConverterFactory.create()) //Formateando a JSON los mensajes
+                .build();
+        initCall();
+    }
+
+    private void initCall() {
 
     }
 
