@@ -5,12 +5,19 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.os.*;
-import retrofit2.Retrofit;
+
+import com.tekknow.bicentenario.tbcomplus.api.*;
+import com.tekknow.bicentenario.tbcomplus.api_models.*;
+
+import java.util.ArrayList;
+
+import retrofit2.*;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
@@ -18,6 +25,8 @@ import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 public abstract class BaseActivity extends AppCompatActivity {
     String title;
     private Retrofit retrofit;
+    private static final String TAG= "API: ";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,11 +46,38 @@ public abstract class BaseActivity extends AppCompatActivity {
                 .baseUrl("http://pokeapi.co/api/v2/")
                 .addConverterFactory(GsonConverterFactory.create()) //Formateando a JSON los mensajes
                 .build();
-        initCall();
+        getData();
+
     }
 
-    private void initCall() {
+    private void getData() {
+        apiService service = retrofit.create(apiService.class);
+        Call<apiResponse> apiResponseCall= service.getInitData();
 
+        apiResponseCall.enqueue(new Callback<apiResponse>() {
+            @Override
+            public void onResponse(Call<apiResponse> call, Response<apiResponse> response) {
+                if (response.isSuccessful()){
+                    apiResponse apiResponse = response.body();
+                    ArrayList<item> listResults = apiResponse.getResults();
+                    int count = apiResponse.getCount();
+                    for (int i=0;i<listResults.size();i++){
+                        item it = listResults.get(i);
+                        Log.i(TAG, " Pokemon: "+it.getName());
+                    }
+                    Log.i(TAG, " Count: "+ count);
+
+                }else{
+                    Log.e(TAG," onResponse: " + response.errorBody());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<apiResponse> call, Throwable t) {
+                Log.e(TAG," onFailure: " + t.getMessage());
+
+            }
+        });
     }
 
     public void onAccept() {
