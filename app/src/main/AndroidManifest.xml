@@ -155,7 +155,6 @@
             android:name="io.fabric.ApiKey"
             android:value="d8c6de549f35d82a25b48f7a325e48d3cd672430" />
 
-        <activity android:name=".apiTest"></activity>
     </application>
 
 </manifest>
