@@ -7,7 +7,7 @@ import android.view.KeyEvent;
 import android.view.View;
 
 
-import com.tekknow.bicentenario.tbcomplus.intarfaces.KeyboardListener;
+import com.tekknow.bicentenario.tbcomplus.interfaces.KeyboardListener;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -46,11 +46,11 @@ public class AmountEditText extends AppCompatEditText {
             }
 
             // Hide cursor
-           setFocusable(false);
+           /*setFocusable(false);
 
             // Set EditText to be focusable again
             setFocusable(true);
-            setFocusableInTouchMode(true);
+            setFocusableInTouchMode(true);*/
         }
 
         return super.onKeyPreIme(keyCode, event);

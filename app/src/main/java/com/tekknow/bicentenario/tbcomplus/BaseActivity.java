@@ -1,5 +1,7 @@
 package com.tekknow.bicentenario.tbcomplus;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.os.*;
 import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
@@ -47,6 +50,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         setResult(RESULT_OK, new Intent().putExtra(EXTRA_STATUS, STATUS_CLOSE));
         finish();
     }
+
+    /*public static void hideSoftKeyboard (Context context, View view) {
+        InputMethodManager im = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        im.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+    }*/
 
     public void onAccept(View view) {
         onAccept();

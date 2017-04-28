@@ -1,4 +1,4 @@
-package com.tekknow.bicentenario.tbcomplus.intarfaces;
+package com.tekknow.bicentenario.tbcomplus.interfaces;
 
 import android.view.KeyEvent;
 
