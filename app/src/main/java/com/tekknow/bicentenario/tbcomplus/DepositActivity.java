@@ -1,18 +1,17 @@
 package com.tekknow.bicentenario.tbcomplus;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.Toast;
 
+import com.tekknow.bicentenario.tbcomplus.interfaces.ActionListener;
 import com.tekknow.bicentenario.tbcomplus.widget.AmountEditText;
 import com.tekknow.bicentenario.tbcomplus.widget.FocusableButton;
+
+import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
+
 
 public class DepositActivity extends TransactionActivity {
 
@@ -29,43 +28,19 @@ public class DepositActivity extends TransactionActivity {
 
         FocusableButton executeDeposit = (FocusableButton) findViewById(R.id.btn_execute_deposit);
 
-        executeDeposit.setAction(new FocusableButton.Actionable() {
+        executeDeposit.setAction(new ActionListener() {
             @Override
             public void onAction() {
                 AmountEditText amountEditText = (AmountEditText) findViewById(R.id.input_amount);
 
-                boolean isValid = amountEditText.isValidAmount(MIN_AMOUNT , MAX_AMOUNT);
+                amountEditText.setMinAmount(MIN_AMOUNT);
+                amountEditText.setMaxAmount(MAX_AMOUNT);
+                amountEditText.setCurrentContext(context);
 
-                if(isValid){
+                if(amountEditText.validate())
                     requestUserCard();
-                }else{
-                    Toast toast = Toast.makeText(context, "Error" , Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER,0,0);
-                    toast.show();
-
-                    Log.i("WAAA", "Error");
-                }
             }
         });
-
-        /*executeDeposit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AmountEditText editTextAmount = (AmountEditText) findViewById(R.id.input_amount);
-
-                boolean isValid = editTextAmount.isValidAmount(MIN_AMOUNT , MAX_AMOUNT);
-
-                if(isValid){
-                    requestUserCard();
-                }else{
-                    Toast toast = Toast.makeText(context, "Error" , Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER,0,0);
-                    toast.show();
-
-                    Log.i("WAAA", "Error");
-                }
-            }
-        });*/
     }
 
     @Override

@@ -4,11 +4,15 @@ import android.content.Context;
 import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.View.OnClickListener;
 
-public class FocusableButton extends AppCompatButton {
+import com.tekknow.bicentenario.tbcomplus.interfaces.ActionListener;
 
-    Actionable actionable;
+public class FocusableButton extends AppCompatButton implements View.OnClickListener {
+
+    ActionListener actionListener; //Interfaz para manejar acciones luego de hacer click en el Button
+
+
+    // -------- Constructores --------
 
     public FocusableButton(Context context) {
         super(context);
@@ -25,25 +29,27 @@ public class FocusableButton extends AppCompatButton {
         init();
     }
 
-    public void setAction(Actionable actionable){
-        this.actionable = actionable;
+    public void setAction(ActionListener actionListener){
+        this.actionListener = actionListener;
     }
+
+    // -------- Manejo ClickListener --------
 
     public void init(){
-        setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                v.setFocusableInTouchMode(true);
-                v.requestFocus();
-                v.setFocusableInTouchMode(false);
-
-                actionable.onAction();
-            }
-        });
+        setOnClickListener(this);
     }
 
-    public interface Actionable{
-        void onAction();
-    }
 
+    @Override
+    public void onClick(View v) {
+        //Colocar foco en el Button al hacer click (fuerza al format de los EditText)
+        v.setFocusableInTouchMode(true);
+
+        //Quitar foco del Button
+        v.requestFocus();
+        v.setFocusableInTouchMode(false);
+
+        //Acciones al hacer click (Serán definidas en cada Activity)
+        actionListener.onAction();
+    }
 }

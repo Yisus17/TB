@@ -1,12 +1,16 @@
 package com.tekknow.bicentenario.tbcomplus.widget;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
 
 
+import com.tekknow.bicentenario.tbcomplus.R;
 import com.tekknow.bicentenario.tbcomplus.interfaces.KeyboardListener;
 
 import java.text.DecimalFormat;
@@ -14,31 +18,73 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
 
+
 public class AmountEditText extends AppCompatEditText {
 
-    private KeyboardListener keyboardListener;
+    public static Resources resources;
+    private Double minAmount, maxAmount;
+    private Context currentContext;
+    private KeyboardListener keyboardListener; //Interfaz para posibles modificaciones del onKeyPreIme
 
-    // -- Constructores --
+
+    // -------- Constructores --------
 
     public AmountEditText(Context context) {
         super(context);
+        resources = getResources();
         setFocusBehavior();
     }
 
     public AmountEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
+        resources = getResources();
         setFocusBehavior();
     }
 
     public AmountEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        resources = getResources();
         setFocusBehavior();
     }
 
-    // -- Manejo enventos --
+    public void setKeyImeChangeListener(KeyboardListener keyboardListener){
+        this.keyboardListener = keyboardListener;
+    }
 
+
+    // -------- Getters, Setters --------
+
+    public void setMinAmount(Double minAmount) {
+        this.minAmount = minAmount;
+    }
+
+    public void setMaxAmount(Double maxAmount) {
+        this.maxAmount = maxAmount;
+    }
+
+    public void setCurrentContext(Context currentContext) {
+        this.currentContext = currentContext;
+    }
+
+    public Double getMinAmount() {
+        return minAmount;
+    }
+
+    public Double getMaxAmount() {
+        return maxAmount;
+    }
+
+    public Context getCurrentContext() {
+        return currentContext;
+    }
+
+
+    // -------- Manejo enventos --------
+
+    //Eventos al presionar alguna tecla sobre el EditText
     @Override
     public boolean onKeyPreIme(int keyCode, KeyEvent event) {
+        //Si se esconde el teclado se quita el foco del edit text
         if (event.getKeyCode() == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
 
             if(keyboardListener != null){
@@ -46,66 +92,92 @@ public class AmountEditText extends AppCompatEditText {
             }
 
             // Hide cursor
-           /*setFocusable(false);
+           setFocusable(false);
 
             // Set EditText to be focusable again
             setFocusable(true);
-            setFocusableInTouchMode(true);*/
+            setFocusableInTouchMode(true);
         }
 
         return super.onKeyPreIme(keyCode, event);
     }
 
-    public void setKeyImeChangeListener(KeyboardListener listener){
-        keyboardListener = listener;
-    }
 
 
-    // -- Transformaciones del monto --
+    // -------- Transformaciones del monto --------
 
+    //Monto en String
     private String getAmountString(){
         return getText().toString();
     }
 
+    //Monto Doble con formato de miles
     private Double getAmountDouble(){
         return Double.parseDouble(getAmountString());
     }
 
+    //Monto String sin formato de miles
     private String getAmountClean(){
         return (getAmountString().replace(".", "").replace(",", "."));
     }
 
+    //Monto Double sin formato de miles
     private Double getAmountCleanNumber(){
         return Double.parseDouble(getAmountClean());
     }
 
-    private String getAmountFormat(){
+
+    //Formato de miles
+    private String getAmountFormat(Double amount){
         DecimalFormat formatter = new DecimalFormat();
         formatter.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(new Locale("es", "VE")));
         formatter.setDecimalSeparatorAlwaysShown(true);
         formatter.setMinimumFractionDigits(2);
 
-        return formatter.format(getAmountDouble());
+        return formatter.format(amount);
     }
 
-    // -- Validaciones --
 
-    private boolean isEmpty(){
-        return (getAmountString() == "");
+    // -------- Validaciones --------
+
+    //Monto vacio
+    public boolean isEmpty(){
+        return (getAmountString().trim().length() == 0);
     }
 
-    private boolean validateRange(Double min, Double max){
+    //Monto dentro del rango
+    public boolean isValidRange(){
         Double amount = getAmountCleanNumber();
-        return (amount <= max  && amount >= min);
+        return (amount <= maxAmount  && amount >= minAmount);
     }
 
-    public boolean isValidAmount(Double min, Double max){
-        return (!isEmpty() && validateRange(min, max));
+    //Validacion completa
+    public boolean validate(){
+        String msgError = "";
+        boolean isValid = true;
+
+        if(isEmpty()){
+            msgError += resources.getString(R.string.no_empty_amount);
+            isValid = !isValid;
+        }else if(!isValidRange()){
+            msgError += resources.getString(R.string.txt_min) + getAmountFormat(minAmount) + "\n" + resources.getString(R.string.txt_max) + getAmountFormat(maxAmount);
+            isValid = !isValid;
+        }
+
+        if(!isValid){
+            //TODO Cambiar por Dialog
+            Toast toast = Toast.makeText(currentContext, msgError , Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER,0,0);
+            toast.show();
+        }
+
+        return isValid;
     }
 
 
-    // -- Separador --
+    // -------- Separador --------
 
+    //Al quitar foco, realizar formato de miles en el monto
     private void setFocusBehavior() {
         setOnFocusChangeListener(new OnFocusChangeListener() {
             @Override
@@ -113,7 +185,7 @@ public class AmountEditText extends AppCompatEditText {
                 if (hasFocus) {
                     setText(getAmountClean());
                 } else if (getText().length() > 0) {
-                    setText(getAmountFormat());
+                    setText(getAmountFormat(getAmountDouble()));
                 }
             }
         });
