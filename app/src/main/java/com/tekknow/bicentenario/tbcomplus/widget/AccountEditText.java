@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
+import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -17,69 +18,46 @@ import android.widget.Toast;
 import com.tekknow.bicentenario.tbcomplus.R;
 import com.tekknow.bicentenario.tbcomplus.interfaces.KeyboardListener;
 
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.Locale;
 
+/**
+ * Created by Jesus Arevalo on 5/3/2017.
+ */
 
-
-public class AmountEditText extends AppCompatEditText {
+public class AccountEditText extends AppCompatEditText {
 
     public static Resources resources;
-    private Double minAmount, maxAmount;
     private Context currentContext;
     private KeyboardListener keyboardListener; //Interfaz para posibles modificaciones del onKeyPreIme
 
 
     // -------- Constructores --------
-
-    public AmountEditText(Context context) {
+    public AccountEditText(Context context) {
         super(context);
         resources = getResources();
-        setFocusBehavior();
     }
 
-    public AmountEditText(Context context, AttributeSet attrs) {
+    public AccountEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
         resources = getResources();
-        setFocusBehavior();
     }
 
-    public AmountEditText(Context context, AttributeSet attrs, int defStyleAttr) {
+    public AccountEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         resources = getResources();
-        setFocusBehavior();
     }
 
     public void setKeyImeChangeListener(KeyboardListener keyboardListener){
         this.keyboardListener = keyboardListener;
     }
 
+    // -------- Getters y Setters --------
 
-    // -------- Getters, Setters --------
-
-    public void setMinAmount(Double minAmount) {
-        this.minAmount = minAmount;
-    }
-
-    public void setMaxAmount(Double maxAmount) {
-        this.maxAmount = maxAmount;
+    public Context getCurrentContext() {
+        return currentContext;
     }
 
     public void setCurrentContext(Context currentContext) {
         this.currentContext = currentContext;
-    }
-
-    public Double getMinAmount() {
-        return minAmount;
-    }
-
-    public Double getMaxAmount() {
-        return maxAmount;
-    }
-
-    public Context getCurrentContext() {
-        return currentContext;
     }
 
 
@@ -96,7 +74,7 @@ public class AmountEditText extends AppCompatEditText {
             }
 
             // Hide cursor
-           setFocusable(false);
+            setFocusable(false);
 
             // Set EditText to be focusable again
             setFocusable(true);
@@ -107,64 +85,33 @@ public class AmountEditText extends AppCompatEditText {
     }
 
 
+    // -------- Validacion completa-------
 
-    // -------- Transformaciones del monto --------
-
-    //Monto en String
-    private String getAmountString(){
-        return getText().toString();
+    public boolean isEmpty() {
+        String account= getText().toString().trim();
+        boolean isEmpty=true;
+        if(account.length()>0)
+            isEmpty=false;
+        return isEmpty;
     }
 
-    //Monto Doble con formato de miles
-    private Double getAmountDouble(){
-        return Double.parseDouble(getAmountString());
-    }
-
-    //Monto String sin formato de miles
-    private String getAmountClean(){
-        return (getAmountString().replace(".", "").replace(",", "."));
-    }
-
-    //Monto Double sin formato de miles
-    private Double getAmountCleanNumber(){
-        return Double.parseDouble(getAmountClean());
-    }
-
-
-    //Formato de miles
-    private String getAmountFormat(Double amount){
-        DecimalFormat formatter = new DecimalFormat();
-        formatter.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(new Locale("es", "VE")));
-        formatter.setDecimalSeparatorAlwaysShown(true);
-        formatter.setMinimumFractionDigits(2);
-
-        return formatter.format(amount);
-    }
-
-
-    // -------- Validaciones --------
-
-    //Monto vacio
-    public boolean isEmpty(){
-        return (getAmountString().trim().length() == 0);
-    }
-
-    //Monto dentro del rango
     public boolean isValidRange(){
-        Double amount = getAmountCleanNumber();
-        return (amount <= maxAmount  && amount >= minAmount);
+        boolean isValidRange=false;
+        String account= getText().toString();
+        if(account.length()==10)
+            isValidRange=true;
+        return isValidRange;
     }
 
-    //Validacion completa
     public boolean validate(){
         String msgError = "";
         boolean isValid = true;
 
         if(isEmpty()){
-            msgError += resources.getString(R.string.no_empty_amount);
+            msgError += resources.getString(R.string.no_empty_account);
             isValid = !isValid;
         }else if(!isValidRange()){
-            msgError += resources.getString(R.string.txt_min) + getAmountFormat(minAmount) + "\n" + resources.getString(R.string.txt_max) + getAmountFormat(maxAmount);
+            msgError += resources.getString(R.string.invalid_account_number);
             isValid = !isValid;
         }
 
@@ -175,24 +122,6 @@ public class AmountEditText extends AppCompatEditText {
         return isValid;
     }
 
-
-    // -------- Separador --------
-
-    //Al quitar foco, realizar formato de miles en el monto
-    private void setFocusBehavior() {
-        setOnFocusChangeListener(new OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean hasFocus) {
-                if (hasFocus) {
-                    setText(getAmountClean());
-                } else if (getText().length() > 0) {
-                    setText(getAmountFormat(getAmountDouble()));
-                }
-            }
-        });
-    }
-
-    // -------- Mostrar mensaje de error en dialog --------
     private void displayError(String msgError){
 
         AlertDialog alertError = null;
@@ -216,4 +145,7 @@ public class AmountEditText extends AppCompatEditText {
         alertError = alert.create();
         alertError.show();
     }
+
+
+
 }

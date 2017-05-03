@@ -7,6 +7,7 @@ import android.view.Gravity;
 import android.widget.Toast;
 
 import com.tekknow.bicentenario.tbcomplus.interfaces.ActionListener;
+import com.tekknow.bicentenario.tbcomplus.widget.AccountEditText;
 import com.tekknow.bicentenario.tbcomplus.widget.AmountEditText;
 import com.tekknow.bicentenario.tbcomplus.widget.FocusableButton;
 
@@ -37,7 +38,10 @@ public class DepositActivity extends TransactionActivity {
                 amountEditText.setMaxAmount(MAX_AMOUNT);
                 amountEditText.setCurrentContext(context);
 
-                if(amountEditText.validate())
+                AccountEditText accountEditText= (AccountEditText) findViewById(R.id.input_account);
+                accountEditText.setCurrentContext(context);
+
+                if((accountEditText.validate()) && (amountEditText.validate()))
                     requestUserCard();
             }
         });
