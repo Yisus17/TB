@@ -4,11 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.os.*;
+import android.widget.Toast;
+
 import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public abstract class BaseActivity extends AppCompatActivity {
@@ -98,6 +102,26 @@ public abstract class BaseActivity extends AppCompatActivity {
             setSupportActionBar(myToolbar);
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
+    }
+
+    public Toast setCustomToast(String Text, int layout){ //Metodo para crear un custom toast
+        RelativeLayout holder = null;
+        TextView customText;
+
+        switch (layout){
+            case TOAST_LIMITES_MONTOS:
+                holder= (RelativeLayout) getLayoutInflater().inflate(R.layout.custom_toast_amout_limits,(RelativeLayout) findViewById(R.id.rell));
+                break;
+        }
+        customText = (TextView) holder.findViewById(R.id.textViewCustomToast);
+
+        customText.setText(Text);
+        final Toast t = new Toast(getApplicationContext());
+        t.setGravity(Gravity.CENTER,0,0);
+        t.setDuration(Toast.LENGTH_SHORT);
+        t.setView(holder);
+
+        return t;
     }
 
     /*******Manejo de inactividad del usuario para colocar banner publicitario**********/

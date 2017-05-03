@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -74,10 +76,9 @@ public class WithdrawalActivity extends TransactionActivity {
     public void onAccept(View view) {
         fieldAmount = (EditText) findViewById(R.id.txt_amount);
         String txtAmount = fieldAmount.getText().toString();
-
+        Toast toast;
         if(txtAmount.trim().length() == 0){
-            toast = Toast.makeText(this, getString(R.string.no_empty_amount), Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.CENTER,0,0);
+            toast=setCustomToast(getString(R.string.no_empty_amount),TOAST_LIMITES_MONTOS);//Cambiar Toast
             toast.show();
         }else{
             float amount= Float.parseFloat(txtAmount);
@@ -85,8 +86,7 @@ public class WithdrawalActivity extends TransactionActivity {
             if ((amount > MIN_AMOUNT_WITHDRAWAL)&&(amount < MAX_AMOUNT_WITHDRAWAL)){
                 requestCustomerCard();
             }else{
-                toast = Toast.makeText(this, getString(R.string.txt_min) + MIN_AMOUNT_WITHDRAWAL+ "\n" + getString(R.string.txt_max) + MAX_AMOUNT_WITHDRAWAL, Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER,0,0);
+                toast = setCustomToast(getString(R.string.txt_min) + MIN_AMOUNT_WITHDRAWAL+ "\n" + getString(R.string.txt_max) + MAX_AMOUNT_WITHDRAWAL,TOAST_LIMITES_MONTOS);
                 toast.show();
             }
         }
