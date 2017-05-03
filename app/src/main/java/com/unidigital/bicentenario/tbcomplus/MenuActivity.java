@@ -66,7 +66,7 @@ public class MenuActivity extends BaseActivity {
         switch (category) {
             case "POS":
                 options.add(new MenuOption("Venta", SaleActivity.class));
-                options.add(new MenuOption("Devolución", ""));
+                options.add(new MenuOption("Devolución", VoidActivity.class));
                 options.add(new MenuOption("Consulta de Último Movimiento", LastQueryInfoActivity.class));
                 options.add(new MenuOption("Cierre de POS", PosClosureActivity.class));
                 break;

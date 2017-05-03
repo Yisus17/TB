@@ -148,6 +148,15 @@
             android:name="com.unidigital.bicentenario.tbcomplus.UserPinEntryActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.unidigital.bicentenario.tbcomplus.VoidActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.unidigital.bicentenario.tbcomplus.VoidInfoDataActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.unidigital.bicentenario.tbcomplus.VoidSureActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.unidigital.bicentenario.tbcomplus.WithdrawalActivity"
             android:screenOrientation="portrait" />
         <meta-data

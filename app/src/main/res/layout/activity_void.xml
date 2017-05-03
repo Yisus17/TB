@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- AppBar -->
+    <include layout="@layout/_appbar" />
+
+    <!-- Footer -->
+    <include layout="@layout/_footer" />
+
+    <RelativeLayout
+        android:layout_below="@id/appbar"
+        android:layout_above="@id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_all_layout">
+
+        <LinearLayout
+            android:layout_above="@id/btn_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/margin_top_layout">
+
+            <TextView
+                android:id="@+id/label_sequence_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Label"
+                android:text="@string/action_sequence_number_enter" />
+
+            <EditText
+                android:id="@+id/input_sequence_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_top_layout"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:id="@+id/btn_execute"
+                style="@style/HomeButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:onClick="onAcceptSequenceNumber"
+                android:text="@string/txt_accept" />
+
+            <Button
+                android:id="@+id/btn_back"
+                style="@style/HomeButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:onClick="onReturn"
+                android:text="@string/txt_back" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
