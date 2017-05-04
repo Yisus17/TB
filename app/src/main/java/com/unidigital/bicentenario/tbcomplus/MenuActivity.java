@@ -57,37 +57,37 @@ public class MenuActivity extends BaseActivity {
         List<MenuOption> options = new ArrayList<>();
 
         switch (category) {
-            case "POS":
+            case CATEGORY_POS:
                 options.add(new MenuOption(getString(R.string.menu_sales), SaleActivity.class));
                 options.add(new MenuOption(getString(R.string.title_activity_void), VoidActivity.class));
                 options.add(new MenuOption(getString(R.string.menu_last_query_info), LastQueryInfoActivity.class));
                 options.add(new MenuOption(getString(R.string.menu_pos_closure), PosClosureActivity.class));
                 break;
-            case "CNB":
+            case CATEGORY_CNB:
                 options.add(new MenuOption(getString(R.string.menu_withdrawal), WithdrawalActivity.class));
                 options.add(new MenuOption(getString(R.string.menu_deposits), DepositActivity.class));
-                options.add(new MenuOption(getString(R.string.menu_transfers), "TRANSFERENCIAS"));
-                options.add(new MenuOption(getString(R.string.menu_internal_payments), "PAGOS_INTERNOS"));
-                options.add(new MenuOption(getString(R.string.menu_external_payments), "PAGOS_EXTERNOS"));
+                options.add(new MenuOption(getString(R.string.menu_transfers), CATEGORY_TRANSFERS));
+                options.add(new MenuOption(getString(R.string.menu_internal_payments), CATEGORY_INTERNAL_PAYMENTS));
+                options.add(new MenuOption(getString(R.string.menu_external_payments), CATEGORY_EXTERNAL_PAYMENTS));
                 options.add(new MenuOption(getString(R.string.menu_queries), ""));
                 options.add(new MenuOption(getString(R.string.menu_reverses), ReverseActivity.class));
                 break;
-            case "CONTROL":
+            case CATEGORY_CONTROL:
                 options.add(new MenuOption(getString(R.string.menu_total_queries), ""));
                 options.add(new MenuOption(getString(R.string.menu_transaction_queries), ""));
                 options.add(new MenuOption(getString(R.string.menu_operation_temporal_closure), OperationTemporalClosureActivity.class));
                 //options.add(new MenuOption("Reapertura de Operaciones", OperationReopenActivity.class));
                 options.add(new MenuOption(getString(R.string.menu_operation_closure), OperationClosureActivity.class));
                 break;
-            case "TRANSFERENCIAS":
+            case CATEGORY_TRANSFERS:
                 options.add(new MenuOption(getString(R.string.title_activity_transfer_own_account), TransferOwnAccountActivity.class));
                 options.add(new MenuOption(getString(R.string.title_activity_transfer_third), TransferThirdActivity.class));
                 break;
-            case "PAGOS_INTERNOS":
+            case CATEGORY_INTERNAL_PAYMENTS:
                 options.add(new MenuOption(getString(R.string.title_activity_creditcard_payment), CreditCardPaymentActivity.class));
                 options.add(new MenuOption(getString(R.string.title_activity_microcredit_payment), MicrocreditPaymentActivity.class));
                 break;
-            case "PAGOS_EXTERNOS":
+            case CATEGORY_EXTERNAL_PAYMENTS:
                 options.add(new MenuOption(getString(R.string.title_activity_cantv_payment), CantvPaymentActivity.class));
                 options.add(new MenuOption(getString(R.string.title_activity_directv_payment), DirectvPaymentActivity.class));
                 options.add(new MenuOption(getString(R.string.title_activity_movilnet_payment), MovilnetPaymentActivity.class));

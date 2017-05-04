@@ -16,21 +16,21 @@ public class HomeActivity extends BaseActivity {
 
     public void launchPOS(View view) {
         Intent intent = new Intent(this, MenuActivity.class);
-        intent.putExtra(MenuActivity.MENU_CATEGORY_ID, "POS");
+        intent.putExtra(MenuActivity.MENU_CATEGORY_ID, CATEGORY_POS);
         intent.putExtra(EXTRA_TITLE, getString(R.string.category_pos));
         startActivityForResult(intent, POS_REQUEST);
     }
 
     public void launchCNB(View view) {
         Intent intent = new Intent(this, MenuActivity.class);
-        intent.putExtra(MenuActivity.MENU_CATEGORY_ID, "CNB");
+        intent.putExtra(MenuActivity.MENU_CATEGORY_ID, CATEGORY_CNB);
         intent.putExtra(EXTRA_TITLE, getString(R.string.category_cnb));
         startActivityForResult(intent, TBCOM_REQUEST);
     }
 
     public void launchControl(View view) {
         Intent intent = new Intent(this, MenuActivity.class);
-        intent.putExtra(MenuActivity.MENU_CATEGORY_ID, "CONTROL");
+        intent.putExtra(MenuActivity.MENU_CATEGORY_ID, CATEGORY_CONTROL);
         intent.putExtra(EXTRA_TITLE, getString(R.string.title_activity_operation_control));
         startActivityForResult(intent, OPERATION_REQUEST);
     }
