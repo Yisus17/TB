@@ -2,6 +2,9 @@ package com.tekknow.bicentenario.tbcomplus;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
@@ -11,6 +14,14 @@ import android.widget.Toast;
 import com.tekknow.bicentenario.tbcomplus.interfaces.ActionListener;
 import com.tekknow.bicentenario.tbcomplus.widget.AmountEditText;
 import com.tekknow.bicentenario.tbcomplus.widget.FocusableButton;
+import com.tekknow.bicentenario.tbcomplus.widget.IdEditText;
+
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.util.StringTokenizer;
 
 import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
@@ -19,9 +30,6 @@ public class WithdrawalActivity extends TransactionActivity {
     public final Double MAX_AMOUNT = 6000.00;
     public final Double MIN_AMOUNT = 340.22;
     Context context;
-
-    EditText fieldAmount;
-    Toast toast;
 
 
     @Override
@@ -47,12 +55,14 @@ public class WithdrawalActivity extends TransactionActivity {
                 @Override
                 public void onAction() {
                     AmountEditText amountEditText = (AmountEditText) findViewById(R.id.input_amount);
-
                     amountEditText.setMinAmount(MIN_AMOUNT);
                     amountEditText.setMaxAmount(MAX_AMOUNT);
                     amountEditText.setCurrentContext(context);
 
-                    if(amountEditText.validate())
+                    IdEditText idEditText = (IdEditText) findViewById(R.id.input_id);
+                    idEditText.setCurrentContext(context);
+
+                    if((amountEditText.validate()) && (idEditText.validate()))
                         requestCustomerCard();
                 }
             });

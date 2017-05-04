@@ -74,8 +74,8 @@
                 style="@style/Label"
                 android:text="@string/action_ci_custumer_enter" />
 
-            <EditText
-                android:id="@+id/txt_ci"
+            <com.tekknow.bicentenario.tbcomplus.widget.IdEditText
+                android:id="@+id/input_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number" />
