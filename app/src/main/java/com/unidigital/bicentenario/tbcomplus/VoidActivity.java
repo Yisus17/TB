@@ -91,6 +91,11 @@ public class VoidActivity extends TransactionActivity {
         return -1;
     }
 
+    @Override
+    protected String getBarTitle() {
+        return getString(R.string.title_activity_void);
+    }
+
     public void onAcceptSequenceNumber(View view) {
         Toast alertToast;
 

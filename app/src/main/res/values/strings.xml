@@ -7,23 +7,20 @@
     <string name="category_cnb">TBCOM</string>
     <string name="category_control">CONTROL DE OPERACIONES</string>
 
-    <!-- TEXTOS -->
+    <!-- GENERALES -->
     <string name="txt_accept">Aceptar</string>
-    <string name="txt_account_type_1">Cuenta Ahorro</string>
-    <string name="txt_account_type_2">Cuenta Corriente</string>
+    <string name="txt_saving_account_type">Cuenta Ahorro</string>
+    <string name="txt_checking_account_type">Cuenta Corriente</string>
     <string name="txt_back">Regresar</string>
     <string name="txt_cancel">Cancelar</string>
     <string name="txt_clear">Limpiar</string>
-    <string name="txt_option_no">No</string>
-    <string name="txt_option_yes">Si</string>
-    <string name="txt_payment_type_1">Efectivo</string>
-    <string name="txt_payment_type_2">Cargo en Cuenta</string>
+    <string name="txt_payment_cash_type">Efectivo</string>
+    <string name="txt_payment_account_charge_type">Cargo en Cuenta</string>
     <string name="txt_please_wait">Por favor espere</string>
     <string name="txt_print">Imprimir</string>
-    <string name="txt_process">Procesar</string>
     <string name="txt_send_email">Enviar al email</string>
-    <string name="txt_transfer_type_1">Ahorro a Corriente</string>
-    <string name="txt_transfer_type_2">Corriente a Ahorro</string>
+    <string name="txt_transfer_saving_to_checking">Ahorro a Corriente</string>
+    <string name="txt_transfer_checking_to_saving">Corriente a Ahorro</string>
     <string name="txt_sequence_number">Operación:</string>
 
 
@@ -31,42 +28,60 @@
     <string name="msg_success_login">Su inicio de operaciones fue exitoso</string>
     <string name="msg_success_transaction">Transacción procesada exitosamente</string>
 
+    <!-- MENU -->
+    <string name="menu_sales">Ventas</string>
+    <string name="menu_void">Anulación</string>
+    <string name="menu_last_query_info">Consulta de Último Movimiento</string>
+    <string name="menu_pos_closure">Cierre de POS</string>
+    <string name="menu_withdrawal">Retiros</string>
+    <string name="menu_deposits">Depósitos</string>
+    <string name="menu_transfers">Transferencias</string>
+    <string name="menu_internal_payments">Pagos internos</string>
+    <string name="menu_external_payments">Pagos externos</string>
+    <string name="menu_queries">Consultas</string>
+    <string name="menu_reverses">Reversos</string>
+    <string name="menu_total_queries">Consulta de totales</string>
+    <string name="menu_transaction_queries">Consulta de transacciones</string>
+    <string name="menu_operation_temporal_closure">Cierre temporal de operaciones</string>
+    <string name="menu_operation_closure">Cierre de operaciones</string>
+    
+
     <!-- TITULOS ACTIVITIES -->
-    <string name="title_activity_login">Inicio de operaciones</string>
+    <string name="title_account_type">Seleccione el tipo de cuenta</string>
+    <string name="title_activity_banner">BannerActivity</string>
     <string name="title_activity_cantv_payment">Pago CANTV</string>
+    <string name="title_activity_close_pos">Cierre POS</string>
     <string name="title_activity_creditcard_payment">Pago de TDC</string>
     <string name="title_activity_directv_payment">Pago DIRECTV</string>
     <string name="title_activity_deposit">Depósito</string>
+    <string name="title_activity_last_query">Último movimiento</string>
+    <string name="title_activity_login">Inicio de operaciones</string>
     <string name="title_activity_microcredit_payment">Pago de Microcrédito</string>
     <string name="title_activity_movilnet_payment">Pago Movilnet Postpago</string>
     <string name="title_activity_movilnet_recharge">Recarga Movilnet</string>
-    <string name="title_activity_saren_payment">Pago SAREN</string>
-    <string name="title_activity_stanhome_payment">Pago Stanhome</string>
-    <string name="title_activity_withdrawal">Retiro</string>
-    <string name="title_account_type">Seleccione el tipo de cuenta</string>
-    <string name="title_activity_close_pos">Cierre POS</string>
-    <string name="title_activity_temporal_operation_closure">Cierre Temporal de Operaciones</string>
-    <string name="title_activity_operation_reopen">Reapertura de operaciones</string>
     <string name="title_activity_operation_closure">Cierre de operaciones</string>
+    <string name="title_activity_operation_control">Control operaciones</string>
+    <string name="title_activity_operation_reopen">Reapertura de operaciones</string>
+    <string name="title_activity_reverse">Reverso</string>
+    <string name="title_activity_saren_payment">Pago SAREN</string>
     <string name="title_activity_sale">Venta</string>
+    <string name="title_activity_stanhome_payment">Pago Stanhome</string>
+    <string name="title_activity_temporal_operation_closure">Cierre Temporal de Operaciones</string>
     <string name="title_activity_transfer_own_account">Transferencia a cuentas propias</string>
     <string name="title_activity_transfer_third">Transferencia a terceros</string>
-    <string name="title_activity_operation_control">Control operaciones</string>
-    <string name="title_activity_last_query">Último movimiento</string>
-    <string name="title_activity_reverse">Reverso</string>
+    <string name="title_activity_void">Anulación</string>
+    <string name="title_activity_withdrawal">Retiro</string>
 
-    <!--        ACCIONES        -->
 
-    <!-- Tarjeta -->
+    <!-- ACCIONES TARJETA -->
     <string name="action_card_user_read">Introduzca la Tarjeta del Corresponsal no Bancario en el BBPOS</string>
     <string name="action_card_client_read">Introduzca la Tarjeta del Cliente en el BBPOS</string>
     <string name="action_pin_user_entry">Ingrese el pin del Corresponsal no Bancario en el BBPOS</string>
     <string name="action_pin_client_entry">Ingrese el pin del cliente en BBPOS</string>
     <string name="action_card_start_user_read">Ingrese la Tarjeta del Corresponsal no Bancario en el BBPOS para iniciar operaciones</string>
     <string name="action_card_reopen_user_read">Ingrese la Tarjeta del Corresponsal no Bancario en el BBPOS para reapertura de operaciones</string>
-    <string name="action_sequence_number_enter">Ingrese número de secuencia de la operación</string>
 
-    <!-- Transacciones TBCOM -->
+    <!-- ACCIONES TRANSACCIONES -->
     <string name="action_account_type_select">Seleccione el tipo de cuenta</string>
     <string name="action_amount_enter">Ingrese el monto</string>
     <string name="action_amount_type_select">Seleccione el monto a pagar</string>
@@ -76,6 +91,7 @@
     <string name="action_citizenship_select">Seleccione la nacionalidad</string>
     <string name="action_contract_number">Ingrese número de contrato</string>
     <string name="action_control_number_enter">Ingrese el número de control</string>
+    <string name="action_close_pos_sure">¿Desea realizar el cierre del POS?</string>
     <string name="action_creditcard_number">Ingrese Número de Tarjeta</string>
     <string name="action_deposit_amount_enter">Ingrese monto del depósito</string>
     <string name="action_deposit_enter_account">Ingrese el número de cuenta (10 dígitos)</string>
@@ -83,35 +99,33 @@
     <string name="action_email_customer_enter">Ingrese el correo electrónico del cliente</string>
     <string name="action_form_number_enter">Ingrese el número de planilla</string>
     <string name="action_issue_date_enter">Ingrese la fecha de emisión</string>
+    <string name="action_operation_closure_sure">¿Desea realizar el Cierre Definitivo de Operaciones?</string>
     <string name="action_origin_accoun_select">Seleccione Cuenta Origen</string>
     <string name="action_phone_number">Ingrese Número de Teléfono</string>
+    <string name="action_reverse_sure">¿Esta seguro de realizar el reverso de la operación?</string>
+    <string name="action_reference_number_enter">Ingrese número de referencia de la operación</string>
+    <string name="action_sale_amount_enter">Ingrese monto de la venta</string>
+    <string name="action_sequence_number_enter">Ingrese número de secuencia de la operación</string>
     <string name="action_signature_enter">Coloque su firma</string>
+    <string name="action_temporal_operations_closure_sure">¿Desea realizar el Cierre Temporal de Operaciones?</string>
     <string name="action_transfer_amount_enter">Ingrese el monto a transferir</string>
     <string name="action_transfer_type_select">Seleccione tipo de transferencia</string>
-    <string name="action_sale_amount_enter">Ingrese monto de la venta</string>
+    <string name="action_void_sure">¿Esta seguro de desea anular la operación?</string>
     <string name="action_withdrawal_amount_enter">Ingrese monto del retiro</string>
 
+    <!-- RESULTADOS -->
+    <string name="txt_result_reference_number">Venta: 78.000,87\n Hora:14:41:42</string>
     <string name="txt_result_sequence_number">Deposito\n Monto: 78.000,87\n Tipo de Pago: Cargo en Cuenta\n Fecha 04/06/2017\n Hora:09:41:42</string>
-    <string name="action_reverse_sure">¿Esta seguro de realizar el reverso de la operación?</string>
-
-    <!-- Transacciones POS -->
-    <string name="action_close_pos_sure">¿Desea realizar el cierre del POS?</string>
-    <string name="action_temporal_operations_closure_sure">¿Desea realizar el Cierre Temporal de Operaciones?</string>
-    <string name="action_operations_closure_sure">¿Desea realizar el Cierre Definitivo de Operaciones?</string>
-
     <string name="txt_last_query_info">Venta Debito\n 41412*****5256\n Banco Bicentenario\n Fecha 04/06/2017 Hora:09:41:42 \n Monto: 5.680,50</string>
 
-    <!-- Validaciones -->
-
+    <!-- VALIDACIONES -->
+    <string name="citizenship_foreign">Extranjero</string>
+    <string name="citizenship_local">Venezolano</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="no_empty_amount">Debe ingresar un monto</string>
     <string name="no_empty_sequence_number">Debe ingresar un número de secuencia</string>
     <string name="txt_min">Monto mínimo:&#160;</string>
     <string name="txt_max">Monto máximo:&#160;</string>
 
-    <string name="citizenship_foreign">Extranjero</string>
-    <string name="citizenship_local">Venezolano</string>
-
-    <string name="title_activity_banner">BannerActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

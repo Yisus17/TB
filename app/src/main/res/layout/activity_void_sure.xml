@@ -55,7 +55,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             style="@style/Label"
-            android:text="@string/action_reverse_sure" />
+            android:text="@string/action_void_sure" />
 
     </RelativeLayout>
 </RelativeLayout>

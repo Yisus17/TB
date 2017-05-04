@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Label"
-                android:text="@string/action_sequence_number_enter" />
+                android:text="@string/action_reference_number_enter" />
 
             <EditText
                 android:id="@+id/input_sequence_number"

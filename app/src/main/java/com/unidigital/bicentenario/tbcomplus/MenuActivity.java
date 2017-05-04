@@ -30,7 +30,6 @@ public class MenuActivity extends BaseActivity {
         menuOptions = (ListView) findViewById(R.id.lst_menu_options);
 
         final String categoryId = getIntent().getStringExtra(MENU_CATEGORY_ID);
-
         List<MenuOption> options = getMenuOptions(categoryId);
 
         ArrayAdapter<MenuOption> adapter = new ArrayAdapter<MenuOption>(this, android.R.layout.simple_list_item_1, android.R.id.text1, options);
@@ -54,57 +53,56 @@ public class MenuActivity extends BaseActivity {
         });
     }
 
-    @Override
-    protected int getLayout() {
-        return R.layout.activity_menu;
-    }
-
-
     private List<MenuOption> getMenuOptions(String category) {
         List<MenuOption> options = new ArrayList<>();
 
         switch (category) {
             case "POS":
-                options.add(new MenuOption("Venta", SaleActivity.class));
-                options.add(new MenuOption("Devolución", VoidActivity.class));
-                options.add(new MenuOption("Consulta de Último Movimiento", LastQueryInfoActivity.class));
-                options.add(new MenuOption("Cierre de POS", PosClosureActivity.class));
+                options.add(new MenuOption(getString(R.string.menu_sales), SaleActivity.class));
+                options.add(new MenuOption(getString(R.string.title_activity_void), VoidActivity.class));
+                options.add(new MenuOption(getString(R.string.menu_last_query_info), LastQueryInfoActivity.class));
+                options.add(new MenuOption(getString(R.string.menu_pos_closure), PosClosureActivity.class));
                 break;
             case "CNB":
-                options.add(new MenuOption("Retiro", WithdrawalActivity.class));
-                options.add(new MenuOption("Depósito", DepositActivity.class));
-                options.add(new MenuOption("Transferencias", "TRANSFERENCIAS"));
-                options.add(new MenuOption("Pagos Internos", "PAGOS_INTERNOS"));
-                options.add(new MenuOption("Pagos Externos", "PAGOS_EXTERNOS"));
-                options.add(new MenuOption("Consultas", ""));
-                options.add(new MenuOption("Reverso", ReverseActivity.class));
+                options.add(new MenuOption(getString(R.string.menu_withdrawal), WithdrawalActivity.class));
+                options.add(new MenuOption(getString(R.string.menu_deposits), DepositActivity.class));
+                options.add(new MenuOption(getString(R.string.menu_transfers), "TRANSFERENCIAS"));
+                options.add(new MenuOption(getString(R.string.menu_internal_payments), "PAGOS_INTERNOS"));
+                options.add(new MenuOption(getString(R.string.menu_external_payments), "PAGOS_EXTERNOS"));
+                options.add(new MenuOption(getString(R.string.menu_queries), ""));
+                options.add(new MenuOption(getString(R.string.menu_reverses), ReverseActivity.class));
                 break;
             case "CONTROL":
-                options.add(new MenuOption("Consulta de Totales", ""));
-                options.add(new MenuOption("Consulta de Transacciones", ""));
-                options.add(new MenuOption("Cierre Temporal de Operaciones", OperationTemporalClosureActivity.class));
+                options.add(new MenuOption(getString(R.string.menu_total_queries), ""));
+                options.add(new MenuOption(getString(R.string.menu_transaction_queries), ""));
+                options.add(new MenuOption(getString(R.string.menu_operation_temporal_closure), OperationTemporalClosureActivity.class));
                 //options.add(new MenuOption("Reapertura de Operaciones", OperationReopenActivity.class));
-                options.add(new MenuOption("Cierre de Operaciones", OperationClosureActivity.class));
+                options.add(new MenuOption(getString(R.string.menu_operation_closure), OperationClosureActivity.class));
                 break;
             case "TRANSFERENCIAS":
-                options.add(new MenuOption("Transferencia a Cuentas Propias", TransferOwnAccountActivity.class));
-                options.add(new MenuOption("Transferencia a Terceros", TransferThirdActivity.class));
+                options.add(new MenuOption(getString(R.string.title_activity_transfer_own_account), TransferOwnAccountActivity.class));
+                options.add(new MenuOption(getString(R.string.title_activity_transfer_third), TransferThirdActivity.class));
                 break;
             case "PAGOS_INTERNOS":
-                options.add(new MenuOption("Pago de TDC", CreditCardPaymentActivity.class));
-                options.add(new MenuOption("Pago de Microcrédito", MicrocreditPaymentActivity.class));
+                options.add(new MenuOption(getString(R.string.title_activity_creditcard_payment), CreditCardPaymentActivity.class));
+                options.add(new MenuOption(getString(R.string.title_activity_microcredit_payment), MicrocreditPaymentActivity.class));
                 break;
             case "PAGOS_EXTERNOS":
-                options.add(new MenuOption("Pago CANTV", CantvPaymentActivity.class));
-                options.add(new MenuOption("Pago DIRECTV", DirectvPaymentActivity.class));
-                options.add(new MenuOption("Pago Movilnet Postpago", MovilnetPaymentActivity.class));
-                options.add(new MenuOption("Pago SAREN", SarenPaymentActivity.class));
-                options.add(new MenuOption("Pago Stanhome", StanhomePaymentActivity.class));
-                options.add(new MenuOption("Recarga Movilnet", MovilnetRechargeActivity.class));
+                options.add(new MenuOption(getString(R.string.title_activity_cantv_payment), CantvPaymentActivity.class));
+                options.add(new MenuOption(getString(R.string.title_activity_directv_payment), DirectvPaymentActivity.class));
+                options.add(new MenuOption(getString(R.string.title_activity_movilnet_payment), MovilnetPaymentActivity.class));
+                options.add(new MenuOption(getString(R.string.title_activity_saren_payment), SarenPaymentActivity.class));
+                options.add(new MenuOption(getString(R.string.title_activity_stanhome_payment), StanhomePaymentActivity.class));
+                options.add(new MenuOption(getString(R.string.title_activity_movilnet_recharge), MovilnetRechargeActivity.class));
                 break;
         }
 
         return options;
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_menu;
     }
 
     @Override

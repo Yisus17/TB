@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="@string/txt_result_sequence_number"
+                android:text="@string/txt_result_reference_number"
                 style="@style/Label" />
         </LinearLayout>
 

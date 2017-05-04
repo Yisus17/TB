@@ -24,8 +24,8 @@ public class PaymentTypeActivity extends BaseActivity {
         paymentOptions = (ListView) findViewById(R.id.lst_payment_options);
 
         List<MenuPair> options = new ArrayList<>();
-        options.add(new MenuPair(getString(R.string.txt_payment_type_1), PAYMENT_TYPE_CASH));
-        options.add(new MenuPair(getString(R.string.txt_payment_type_2), PAYMENT_TYPE_ACCOUNT));
+        options.add(new MenuPair(getString(R.string.txt_payment_cash_type), PAYMENT_TYPE_CASH));
+        options.add(new MenuPair(getString(R.string.txt_payment_account_charge_type), PAYMENT_TYPE_ACCOUNT));
 
         ArrayAdapter<MenuPair> adapter = new ArrayAdapter<MenuPair>(this, android.R.layout.simple_list_item_1, android.R.id.text1, options);
         paymentOptions.setAdapter(adapter);
