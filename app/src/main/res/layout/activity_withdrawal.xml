@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tekknow.bicentenario.tbcomplus.WithdrawalActivity">
+    tools:context="com.unidigital.bicentenario.tbcomplus.WithdrawalActivity">
 
     <!-- AppBar -->
     <include layout="@layout/_appbar" />
@@ -28,7 +28,7 @@
             android:layout_marginTop="@dimen/margin_top_layout"
             android:layout_alignParentBottom="true">
 
-            <com.tekknow.bicentenario.tbcomplus.widget.FocusableButton
+            <com.unidigital.bicentenario.tbcomplus.widget.FocusableButton
                 android:id="@+id/btn_execute_withdrawal"
                 style="@style/HomeButton"
                 android:layout_width="0dp"
@@ -60,7 +60,7 @@
                 style="@style/Label"
                 android:text="@string/action_withdrawal_amount_enter" />
 
-            <com.tekknow.bicentenario.tbcomplus.widget.AmountEditText
+            <com.unidigital.bicentenario.tbcomplus.widget.AmountEditText
                 android:id="@+id/input_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
                 style="@style/Label"
                 android:text="@string/action_ci_custumer_enter" />
 
-            <com.tekknow.bicentenario.tbcomplus.widget.IdEditText
+            <com.unidigital.bicentenario.tbcomplus.widget.IdEditText
                 android:id="@+id/input_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tekknow.bicentenario.tbcomplus">
+    package="com.unidigital.bicentenario.tbcomplus">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,130 +25,130 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AccountTypeActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.AccountTypeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AmountTypeActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.AmountTypeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".BannerActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.BannerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_banner"
             android:screenOrientation="portrait"
             android:theme="@style/FullscreenTheme"/>
         <activity
-            android:name=".CardTypeActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.CardTypeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CantvPaymentActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.CantvPaymentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PosClosureActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.PosClosureActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CreditCardPaymentActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.CreditCardPaymentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CustomerCardReadActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.CustomerCardReadActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CustomerCIEntryActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.CustomerCIEntryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CustomerEmailEntryActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.CustomerEmailEntryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CustomerPinEntryActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.CustomerPinEntryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DepositActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.DepositActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DirectvPaymentActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.DirectvPaymentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DisplayMessageActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.DisplayMessageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HomeActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.HomeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HostRequestActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.HostRequestActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".LastQueryInfoActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.LastQueryInfoActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".LoginActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MenuActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.MenuActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MicrocreditPaymentActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.MicrocreditPaymentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MovilnetPaymentActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.MovilnetPaymentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MovilnetRechargeActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.MovilnetRechargeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".OriginAccountActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.OriginAccountActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PaymentTypeActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.PaymentTypeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ReverseActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.ReverseActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ReverseInfoDataActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.ReverseInfoDataActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ReverseSureActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.ReverseSureActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SaleActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.SaleActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SaleAmountActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.SaleAmountActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SarenPaymentActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.SarenPaymentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".OperationClosureActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.OperationClosureActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".OperationReopenActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.OperationReopenActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".OperationTemporalClosureActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.OperationTemporalClosureActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SignatureCaptureActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.SignatureCaptureActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".StanhomePaymentActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.StanhomePaymentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TransferOwnAccountActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.TransferOwnAccountActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TransferThirdActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.TransferThirdActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TransferTypeActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.TransferTypeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".UserCardReadActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.UserCardReadActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".UserPinEntryActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.UserPinEntryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".WithdrawalActivity"
+            android:name="com.unidigital.bicentenario.tbcomplus.WithdrawalActivity"
             android:screenOrientation="portrait" />
 
         <meta-data
