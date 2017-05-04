@@ -31,7 +31,7 @@
                 android:text="@string/action_sale_amount_enter" />
 
             <com.tekknow.bicentenario.tbcomplus.widget.AmountEditText
-                android:id="@+id/txt_amount"
+                android:id="@+id/input_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/label_amount"
@@ -47,13 +47,12 @@
             android:layout_marginTop="@dimen/margin_top_form"
             android:layout_alignParentBottom="true">
 
-            <Button
+            <com.tekknow.bicentenario.tbcomplus.widget.FocusableButton
                 android:id="@+id/btn_execute"
                 style="@style/HomeButton"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:onClick="onAccept"
                 android:text="@string/txt_accept" />
 
             <Button

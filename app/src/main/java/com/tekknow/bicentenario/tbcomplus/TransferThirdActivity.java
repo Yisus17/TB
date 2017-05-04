@@ -1,18 +1,28 @@
 package com.tekknow.bicentenario.tbcomplus;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.tekknow.bicentenario.tbcomplus.interfaces.ActionListener;
+import com.tekknow.bicentenario.tbcomplus.widget.AmountEditText;
+import com.tekknow.bicentenario.tbcomplus.widget.FocusableButton;
 
 import static com.tekknow.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class TransferThirdActivity extends TransactionActivity {
 
     protected static final int TRANSFER_THIRD_REQUEST = 1;
+    public final Double MAX_AMOUNT = 200000.45;
+    public final Double MIN_AMOUNT = 1040.32;
+
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        context = this;
         selectOriginAccount();
     }
 
@@ -27,6 +37,22 @@ public class TransferThirdActivity extends TransactionActivity {
             startActivityForResult(intent, TRANSFER_THIRD_REQUEST);
         }else {
             setContentLayout(R.layout.fragment_transfer_third_data);
+
+            FocusableButton execute = (FocusableButton) findViewById(R.id.btn_execute);
+
+            execute.setAction(new ActionListener() {
+                @Override
+                public void onAction() {
+                    AmountEditText amountEditText = (AmountEditText) findViewById(R.id.input_amount);
+
+                    amountEditText.setMinAmount(MIN_AMOUNT);
+                    amountEditText.setMaxAmount(MAX_AMOUNT);
+                    amountEditText.setCurrentContext(context);
+
+                    if(amountEditText.validate())
+                        requestCustomerCard();
+                }
+            });
         }
     }
 
@@ -64,10 +90,6 @@ public class TransferThirdActivity extends TransactionActivity {
         return -1;
     }
 
-    @Override
-    public void onAccept(View view) {
-        requestCustomerCard();
-    }
 
     @Override
     protected String getBarTitle() {

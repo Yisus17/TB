@@ -51,11 +51,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         finish();
     }
 
-    /*public static void hideSoftKeyboard (Context context, View view) {
-        InputMethodManager im = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-        im.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-    }*/
-
     public void onAccept(View view) {
         onAccept();
     }
