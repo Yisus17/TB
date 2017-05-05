@@ -8,6 +8,8 @@ import android.os.Bundle;
 
 public class CreditCardPaymentActivity extends PaymentActivity {
 
+
+
     @Override
     protected String getPaymentTitle() {
         return getString(R.string.title_activity_creditcard_payment);
