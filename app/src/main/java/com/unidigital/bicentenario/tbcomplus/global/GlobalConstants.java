@@ -61,6 +61,10 @@ public class GlobalConstants {
     public static final String CATEGORY_INTERNAL_PAYMENTS = "PAGOS_INTERNOS";
     public static final String CATEGORY_EXTERNAL_PAYMENTS = "PAGOS_EXTERNOS";
 
+    public static final int MESSAGE_SUCCESS = 1;
+    public static final int MESSAGE_ERROR = 2;
+    public static final int MESSAGE_INFO = 3;
+
 
 
 }

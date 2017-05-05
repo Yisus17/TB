@@ -132,5 +132,6 @@
     <string name="txt_min">Monto mínimo:&#160;</string>
     <string name="txt_max">Monto máximo:&#160;</string>
 
+    <string name="info">Información</string>
 
 </resources>

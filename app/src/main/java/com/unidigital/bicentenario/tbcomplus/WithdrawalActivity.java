@@ -4,11 +4,12 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
-
 import com.unidigital.bicentenario.tbcomplus.interfaces.ActionListener;
 import com.unidigital.bicentenario.tbcomplus.widget.AmountEditText;
 import com.unidigital.bicentenario.tbcomplus.widget.FocusableButton;
 import com.unidigital.bicentenario.tbcomplus.widget.IdEditText;
+import com.unidigital.bicentenario.tbcomplus.global.GlobalUtilities;
+
 
 import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
@@ -94,5 +95,4 @@ public class WithdrawalActivity extends TransactionActivity {
     protected String getBarTitle() {
         return getString(R.string.title_activity_withdrawal);
     }
-
 }
