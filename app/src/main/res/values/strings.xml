@@ -128,4 +128,11 @@
     <string name="txt_min">Monto mínimo:&#160;</string>
     <string name="txt_max">Monto máximo:&#160;</string>
 
+    <string name="no_empty_account">Debe ingresar un número de cuenta</string>
+    <string name="no_empty_id">Debe ingresar un número de cédula</string>
+    <string name="error">Error</string>
+    <string name="info">Información</string>
+    <string name="invalid_account_number">Número de cuenta invalido</string>
+
+
 </resources>

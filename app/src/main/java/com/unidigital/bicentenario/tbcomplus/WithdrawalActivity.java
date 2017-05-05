@@ -9,6 +9,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.unidigital.bicentenario.tbcomplus.global.GlobalUtilities;
+
 import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class WithdrawalActivity extends TransactionActivity {
@@ -78,16 +80,15 @@ public class WithdrawalActivity extends TransactionActivity {
         String txtAmount = fieldAmount.getText().toString();
         Toast toast;
         if(txtAmount.trim().length() == 0){
-            toast=setCustomToast(getString(R.string.no_empty_amount),TOAST_LIMITES_MONTOS);//Cambiar Toast
-            toast.show();
+            GlobalUtilities.displayMessage(getString(R.string.no_empty_amount), this, MESSAGE_ERROR);
         }else{
             float amount= Float.parseFloat(txtAmount);
 
             if ((amount > MIN_AMOUNT_WITHDRAWAL)&&(amount < MAX_AMOUNT_WITHDRAWAL)){
                 requestCustomerCard();
             }else{
-                toast = setCustomToast(getString(R.string.txt_min) + MIN_AMOUNT_WITHDRAWAL+ "\n" + getString(R.string.txt_max) + MAX_AMOUNT_WITHDRAWAL,TOAST_LIMITES_MONTOS);
-                toast.show();
+                String message = getString(R.string.txt_min) + MIN_AMOUNT_WITHDRAWAL+ "\n" + getString(R.string.txt_max) + MAX_AMOUNT_WITHDRAWAL;
+                GlobalUtilities.displayMessage(message, this, MESSAGE_ERROR);
             }
         }
     }
