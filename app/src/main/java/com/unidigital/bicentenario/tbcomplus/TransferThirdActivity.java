@@ -8,7 +8,6 @@ import android.view.View;
 import com.unidigital.bicentenario.tbcomplus.interfaces.ActionListener;
 import com.unidigital.bicentenario.tbcomplus.widget.AmountEditText;
 import com.unidigital.bicentenario.tbcomplus.widget.FocusableButton;
-
 import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class TransferThirdActivity extends TransactionActivity {

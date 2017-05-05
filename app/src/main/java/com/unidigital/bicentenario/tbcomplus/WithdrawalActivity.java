@@ -94,5 +94,5 @@ public class WithdrawalActivity extends TransactionActivity {
     protected String getBarTitle() {
         return getString(R.string.title_activity_withdrawal);
     }
-    
+
 }

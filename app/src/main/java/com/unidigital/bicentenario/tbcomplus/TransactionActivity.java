@@ -25,6 +25,8 @@ public abstract class TransactionActivity extends BaseActivity {
     protected static final int SIGNATURE_REQUEST = 16;
     protected static final int REVERSE_SURE_REQUEST = 17;
     protected static final int REVERSE_INFO_DATA_REQUEST = 18;
+    protected static final int VOID_INFO_DATA_REQUEST = 19;
+    protected static final int VOID_SURE_REQUEST = 20;
 
 
     @Override
@@ -213,6 +215,27 @@ public abstract class TransactionActivity extends BaseActivity {
         requestReverseSure(null);
     }
 
+
+    //---- Información de anulacion punto de ventas ----
+    protected void requestVoidInfoData(Bundle data) {
+        sendRequest(VoidInfoDataActivity.class, VOID_INFO_DATA_REQUEST, data);
+    }
+
+    protected void requestVoidInfoData() {
+        requestReverseInfoData(null);
+    }
+
+    //---- Confirmacion de de anulacion de punto de ventas ----
+    protected void requestVoidSure(Bundle data) {
+        sendRequest(VoidSureActivity.class, VOID_SURE_REQUEST, data);
+    }
+
+    protected void requestVoidSure() {
+        requestVoidSure(null);
+    }
+
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         int status = data.getIntExtra(EXTRA_STATUS, STATUS_OK);
@@ -280,6 +303,12 @@ public abstract class TransactionActivity extends BaseActivity {
                     case USER_PIN_REQUEST:
                         onUserPinRequestResult(status, data.getExtras());
                         break;
+                    case VOID_INFO_DATA_REQUEST:
+                        onVoidInfoDataRequestResult(status, data.getExtras());
+                        break;
+                    case VOID_SURE_REQUEST:
+                        onVoidSureRequestResult(status, data.getExtras());
+                        break;
                 }
 
                 break;
@@ -325,6 +354,8 @@ public abstract class TransactionActivity extends BaseActivity {
 
     protected void onUserPinRequestResult(int status, Bundle data) {}
 
+    protected void onVoidInfoDataRequestResult(int status, Bundle data) {}
 
+    protected void onVoidSureRequestResult(int status, Bundle data) {}
 
 }

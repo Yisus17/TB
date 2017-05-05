@@ -27,14 +27,26 @@
                 android:id="@+id/label_sequence_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 style="@style/Label"
-                android:text="@string/action_reference_number_enter" />
+                android:text="@string/txt_sequence_number" />
 
-            <EditText
-                android:id="@+id/input_sequence_number"
+            <TextView
+                android:id="@+id/txt_sequence_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number" />
+                android:gravity="center_horizontal"
+                style="@style/Label"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/result_query_sequence_number"
+                android:layout_marginTop="@dimen/margin_top_form"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/txt_result_reference_number"
+                style="@style/Label" />
         </LinearLayout>
 
         <LinearLayout
@@ -51,7 +63,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:onClick="onAcceptSequenceNumber"
+                android:onClick="onAccept"
                 android:text="@string/txt_accept" />
 
             <Button

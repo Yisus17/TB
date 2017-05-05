@@ -148,12 +148,20 @@
             android:name="com.unidigital.bicentenario.tbcomplus.UserPinEntryActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.unidigital.bicentenario.tbcomplus.VoidActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.unidigital.bicentenario.tbcomplus.VoidInfoDataActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.unidigital.bicentenario.tbcomplus.VoidSureActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.unidigital.bicentenario.tbcomplus.WithdrawalActivity"
             android:screenOrientation="portrait" />
-
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="d8c6de549f35d82a25b48f7a325e48d3cd672430" />
+            android:value="bdb9ff94ce4fd180584b35173c56fcd9adcefcd3" />
     </application>
 
 </manifest>

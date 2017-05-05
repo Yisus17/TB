@@ -49,8 +49,18 @@ public class GlobalConstants {
     public static final int STATUS_BACK = 3;
     public static final int STATUS_CLOSE = 4;
 
+    public static final int TOAST_LIMITES_MONTOS=0;
+
     public static final int MIN_AMOUNT_WITHDRAWAL=1000; //Montos minimos y maximos de prueba
     public static final int MAX_AMOUNT_WITHDRAWAL=10000;
+
+    public static final String CATEGORY_POS = "POS";
+    public static final String CATEGORY_CNB = "CNB";
+    public static final String CATEGORY_CONTROL = "CONTROL";
+    public static final String CATEGORY_TRANSFERS = "TRANSFERENCIAS";
+    public static final String CATEGORY_INTERNAL_PAYMENTS = "PAGOS_INTERNOS";
+    public static final String CATEGORY_EXTERNAL_PAYMENTS = "PAGOS_EXTERNOS";
+
 
 
 }
