@@ -8,6 +8,8 @@ import android.view.View;
 import com.unidigital.bicentenario.tbcomplus.interfaces.ActionListener;
 import com.unidigital.bicentenario.tbcomplus.widget.AmountEditText;
 import com.unidigital.bicentenario.tbcomplus.widget.FocusableButton;
+import com.unidigital.bicentenario.tbcomplus.widget.IdEditText;
+
 import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class TransferOwnAccountActivity extends TransactionActivity {
@@ -48,7 +50,10 @@ public class TransferOwnAccountActivity extends TransactionActivity {
                     amountEditText.setMaxAmount(MAX_AMOUNT);
                     amountEditText.setCurrentContext(context);
 
-                    if(amountEditText.validate())
+                    IdEditText idEditText = (IdEditText) findViewById(R.id.input_id);
+                    idEditText.setCurrentContext(context);
+
+                    if(amountEditText.validate() && idEditText.validate())
                         requestCustomerCard();
                 }
             });

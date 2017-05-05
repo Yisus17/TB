@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.unidigital.bicentenario.tbcomplus.interfaces.ActionListener;
+import com.unidigital.bicentenario.tbcomplus.widget.AccountEditText;
 import com.unidigital.bicentenario.tbcomplus.widget.AmountEditText;
 import com.unidigital.bicentenario.tbcomplus.widget.FocusableButton;
+import com.unidigital.bicentenario.tbcomplus.widget.IdEditText;
+
 import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class TransferThirdActivity extends TransactionActivity {
@@ -43,12 +46,17 @@ public class TransferThirdActivity extends TransactionActivity {
                 @Override
                 public void onAction() {
                     AmountEditText amountEditText = (AmountEditText) findViewById(R.id.input_amount);
-
                     amountEditText.setMinAmount(MIN_AMOUNT);
                     amountEditText.setMaxAmount(MAX_AMOUNT);
                     amountEditText.setCurrentContext(context);
 
-                    if(amountEditText.validate())
+                    AccountEditText accountEditText= (AccountEditText) findViewById(R.id.input_account);
+                    accountEditText.setCurrentContext(context);
+
+                    IdEditText idEditText = (IdEditText) findViewById(R.id.input_id);
+                    idEditText.setCurrentContext(context);
+
+                    if(amountEditText.validate() && accountEditText.validate() && idEditText.validate())
                         requestCustomerCard();
                 }
             });

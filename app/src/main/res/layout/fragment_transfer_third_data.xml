@@ -73,11 +73,11 @@
                 style="@style/Label"
                 android:text="@string/action_deposit_enter_account" />
 
-            <EditText
-                android:id="@+id/txt_acount_number"
+            <com.unidigital.bicentenario.tbcomplus.widget.AccountEditText
+                android:id="@+id/input_account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
+                android:inputType="number" />
 
             <TextView
                 android:id="@+id/label_ci"
@@ -87,11 +87,11 @@
                 style="@style/Label"
                 android:text="@string/action_ci_enter" />
 
-            <EditText
-                android:id="@+id/txt_ci"
+            <com.unidigital.bicentenario.tbcomplus.widget.IdEditText
+                android:id="@+id/input_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
+                android:inputType="number" />
 
         </LinearLayout>
 
