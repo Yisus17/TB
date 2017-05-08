@@ -4,6 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.unidigital.bicentenario.tbcomplus.global.GlobalConstants;
+import com.unidigital.bicentenario.tbcomplus.model.DepositRequest;
+
+import java.math.BigDecimal;
+
 public class DepositActivity extends TransactionActivity {
 
     @Override
@@ -15,7 +20,16 @@ public class DepositActivity extends TransactionActivity {
     @Override
     protected void onUserPinRequestResult(int status, Bundle data) {
         super.onUserPinRequestResult(status, data);
-        sendHostRequest();
+
+        DepositRequest deposit = new DepositRequest();
+        deposit.setAccount("1234567890");
+        deposit.setAmount(new BigDecimal(1000000.00));
+
+        Bundle depositData = new Bundle();
+        depositData.putInt(GlobalConstants.EXTRA_HOST_REQUEST_ACTION, GlobalConstants.HOST_ACTION_DEPOSIT);
+        depositData.putSerializable(GlobalConstants.EXTRA_HOST_REQUEST_DATA, deposit);
+
+        sendHostRequest(depositData);
     }
 
     @Override

@@ -4,6 +4,9 @@ public class GlobalConstants {
 
     public static final String EXTRA_ACCOUNT_MODE = "com.tekknow.bicentenario.tbcomplus.extra.ACCOUNT_MODE";
     public static final String EXTRA_AMOUNT_TYPE = "com.tekknow.bicentenario.tbcomplus.extra.AMOUNT_TYPE";
+    public static final String EXTRA_HOST_REQUEST_ACTION = "com.tekknow.bicentenario.tbcomplus.extra.HOST_REQUEST_ACTION";
+    public static final String EXTRA_HOST_REQUEST_DATA = "com.tekknow.bicentenario.tbcomplus.extra.HOST_REQUEST_DATA";
+    public static final String EXTRA_HOST_RESPONSE_DATA = "com.tekknow.bicentenario.tbcomplus.extra.HOST_RESPONSE_DATA";
     public static final String EXTRA_MESSAGE_CONTENT = "com.tekknow.bicentenario.tbcomplus.extra.MESSAGE_CONTENT";
     public static final String EXTRA_MESSAGE_TYPE = "com.tekknow.bicentenario.tbcomplus.extra.MESSAGE_TYPE";
     public static final String EXTRA_PAYMENT_TYPE = "com.tekknow.bicentenario.tbcomplus.extra.PAYMENT_TYPE";
@@ -65,6 +68,7 @@ public class GlobalConstants {
     public static final int MESSAGE_ERROR = 2;
     public static final int MESSAGE_INFO = 3;
 
-
+    public static final int HOST_ACTION_LOGIN = 1;
+    public static final int HOST_ACTION_DEPOSIT = 2;
 
 }

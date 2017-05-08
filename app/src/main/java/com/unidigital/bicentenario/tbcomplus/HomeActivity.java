@@ -5,14 +5,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.CATEGORY_CNB;
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.CATEGORY_CONTROL;
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.CATEGORY_POS;
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.EXTRA_STATUS;
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.EXTRA_TITLE;
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.STATUS_CLOSE;
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.STATUS_OK;
 
 public class HomeActivity extends BaseActivity {
 
     protected static final int POS_REQUEST = 1;
     protected static final int TBCOM_REQUEST = 2;
     protected static final int OPERATION_REQUEST = 3;
-
 
     public void launchPOS(View view) {
         Intent intent = new Intent(this, MenuActivity.class);
