@@ -34,34 +34,49 @@ public class HostRequestActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         final Intent intent = new Intent();
-        intent.putExtra(EXTRA_REQUEST_CODE, getIntent().getIntExtra(EXTRA_REQUEST_CODE, 0));
 
-        if (getIntent().getIntExtra(EXTRA_HOST_REQUEST_ACTION, 0) > 0) {
+        int action = getIntent().getIntExtra(EXTRA_HOST_REQUEST_ACTION, 0);
+
+        if (action > 0) {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
             HostApiEndpoint api = retrofit.create(HostApiEndpoint.class);
+            Serializable requestData = getIntent().getSerializableExtra(EXTRA_HOST_REQUEST_DATA);
 
-            Call call = getCall(api, getIntent().getIntExtra(EXTRA_HOST_REQUEST_ACTION, 0), getIntent().getSerializableExtra(EXTRA_HOST_REQUEST_DATA));
+            Call call = getCall(api, action, requestData);
 
             call.enqueue(new Callback() {
                 @Override
                 public void onResponse(Call call, Response response) {
                     Log.d("TBComPlus", response.body().toString());
                     intent.putExtra(EXTRA_HOST_RESPONSE_DATA, (Serializable) response.body());
+                    intent.putExtra(EXTRA_STATUS, STATUS_OK);
+                    setResult(RESULT_OK, intent);
+                    finish();
                 }
 
                 @Override
                 public void onFailure(Call call, Throwable t) {
                     Log.e("TBComPlus", "ERROR", t);
+
+                    intent.putExtra(EXTRA_STATUS, STATUS_ERROR);
+                    setResult(RESULT_OK, intent);
+                    finish();
                 }
             });
+        }else{
+            Handler handler = new Handler();
+
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    onAccept();
+                }
+            }, new Random().nextInt(2000) + 500);
         }
 
-        setResult(RESULT_OK, intent);
-        finish();
     }
 
     @Override
