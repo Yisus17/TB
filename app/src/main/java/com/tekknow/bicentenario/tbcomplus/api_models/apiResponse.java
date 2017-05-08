@@ -1,15 +1,41 @@
 package com.tekknow.bicentenario.tbcomplus.api_models;
 
-import com.tekknow.bicentenario.tbcomplus.api.item;
-import java.util.ArrayList;
-
 /**
  * Created by Jesus Arevalo on 4/27/2017.
  */
 
 public class apiResponse {
     //Deben llamarse igual que los keys que queremos del JSON
-    private int count;
+
+    private int code;
+    private String message;
+    private int reference;
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public int getReference() {
+        return reference;
+    }
+
+    public void setReference(int reference) {
+        this.reference = reference;
+    }
+
+    /*private int count;
     private ArrayList<item> results;
     private String previous;
     private String next;
@@ -44,5 +70,5 @@ public class apiResponse {
 
     public void setNext(String next) {
         this.next = next;
-    }
+    }*/
 }
