@@ -3,8 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.unidigital.bicentenario.tbcomplus.DepositActivity">
+    android:layout_height="match_parent">
 
     <!-- AppBar -->
     <include layout="@layout/_appbar" />
@@ -33,8 +32,8 @@
                 style="@style/Label"
                 android:text="@string/action_deposit_enter_account" />
 
-            <EditText
-                android:id="@+id/txt_account"
+            <com.unidigital.bicentenario.tbcomplus.widget.AccountEditText
+                android:id="@+id/input_account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number" />
@@ -47,8 +46,8 @@
                 style="@style/Label"
                 android:text="@string/action_deposit_amount_enter" />
 
-            <EditText
-                android:id="@+id/txt_amount"
+            <com.unidigital.bicentenario.tbcomplus.widget.AmountEditText
+                android:id="@+id/input_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal" />
@@ -63,13 +62,12 @@
             android:layout_marginTop="@dimen/margin_top_layout"
             android:layout_alignParentBottom="true">
 
-            <Button
-                android:id="@+id/btn_execute"
+            <com.unidigital.bicentenario.tbcomplus.widget.FocusableButton
+                android:id="@+id/btn_execute_deposit"
                 style="@style/HomeButton"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:onClick="onAccept"
                 android:text="@string/txt_accept" />
 
             <Button

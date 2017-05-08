@@ -1,26 +1,30 @@
 package com.unidigital.bicentenario.tbcomplus;
 
+import android.content.Context;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
-
+import com.unidigital.bicentenario.tbcomplus.interfaces.ActionListener;
+import com.unidigital.bicentenario.tbcomplus.widget.AmountEditText;
+import com.unidigital.bicentenario.tbcomplus.widget.FocusableButton;
+import com.unidigital.bicentenario.tbcomplus.widget.IdEditText;
 import com.unidigital.bicentenario.tbcomplus.global.GlobalUtilities;
+
 
 import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 public class WithdrawalActivity extends TransactionActivity {
 
-    EditText fieldAmount;
-    Toast toast;
+    public final Double MAX_AMOUNT = 6000.00;
+    public final Double MIN_AMOUNT = 340.22;
+    Context context;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        context = this;
         selectAccountType();
     }
 
@@ -32,6 +36,24 @@ public class WithdrawalActivity extends TransactionActivity {
             onReturn();
         }else{
             setContentLayout(R.layout.activity_withdrawal);
+
+            FocusableButton executeWithdrawal = (FocusableButton) findViewById(R.id.btn_execute_withdrawal);
+
+            executeWithdrawal.setAction(new ActionListener() {
+                @Override
+                public void onAction() {
+                    AmountEditText amountEditText = (AmountEditText) findViewById(R.id.input_amount);
+                    amountEditText.setMinAmount(MIN_AMOUNT);
+                    amountEditText.setMaxAmount(MAX_AMOUNT);
+                    amountEditText.setCurrentContext(context);
+
+                    IdEditText idEditText = (IdEditText) findViewById(R.id.input_id);
+                    idEditText.setCurrentContext(context);
+
+                    if((amountEditText.validate()) && (idEditText.validate()))
+                        requestCustomerCard();
+                }
+            });
         }
     }
 
@@ -72,24 +94,5 @@ public class WithdrawalActivity extends TransactionActivity {
     @Override
     protected String getBarTitle() {
         return getString(R.string.title_activity_withdrawal);
-    }
-
-    @Override
-    public void onAccept(View view) {
-        fieldAmount = (EditText) findViewById(R.id.txt_amount);
-        String txtAmount = fieldAmount.getText().toString();
-        Toast toast;
-        if(txtAmount.trim().length() == 0){
-            GlobalUtilities.displayMessage(getString(R.string.no_empty_amount), this, MESSAGE_ERROR);
-        }else{
-            float amount= Float.parseFloat(txtAmount);
-
-            if ((amount > MIN_AMOUNT_WITHDRAWAL)&&(amount < MAX_AMOUNT_WITHDRAWAL)){
-                requestCustomerCard();
-            }else{
-                String message = getString(R.string.txt_min) + MIN_AMOUNT_WITHDRAWAL+ "\n" + getString(R.string.txt_max) + MAX_AMOUNT_WITHDRAWAL;
-                GlobalUtilities.displayMessage(message, this, MESSAGE_ERROR);
-            }
-        }
     }
 }

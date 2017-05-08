@@ -38,17 +38,17 @@ public class MenuActivity extends BaseActivity {
         menuOptions.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            MenuOption option = (MenuOption) menuOptions.getItemAtPosition(position);
+                MenuOption option = (MenuOption) menuOptions.getItemAtPosition(position);
 
-            if (option.getActivity() != null) {
-                Intent intent = new Intent(getApplicationContext(), option.getActivity());
-                startActivityForResult(intent, MENU_REQUEST);
-            } else if (option.getCategoryId() != null) {
-                Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
-                intent.putExtra(MENU_CATEGORY_ID, option.getCategoryId());
-                intent.putExtra(EXTRA_TITLE, option.getTitle());
-                startActivityForResult(intent, MENU_REQUEST);
-            }
+                if (option.getActivity() != null) {
+                    Intent intent = new Intent(getApplicationContext(), option.getActivity());
+                    startActivityForResult(intent, MENU_REQUEST);
+                } else if (option.getCategoryId() != null) {
+                    Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                    intent.putExtra(MENU_CATEGORY_ID, option.getCategoryId());
+                    intent.putExtra(EXTRA_TITLE, option.getTitle());
+                    startActivityForResult(intent, MENU_REQUEST);
+                }
             }
         });
     }
