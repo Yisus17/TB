@@ -23,9 +23,13 @@ public abstract class PaymentActivity extends TransactionActivity {
         findViewById(R.id.btn_accept).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle request = buildInquiryRequest();
-                request.putInt(EXTRA_REQUEST_CODE, INQUIRY_HOST_REQUEST);
-                sendHostRequest(request);
+
+                if(onValidate()){
+                    Bundle request = buildInquiryRequest();
+                    request.putInt(EXTRA_REQUEST_CODE, INQUIRY_HOST_REQUEST);
+                    sendHostRequest(request);
+                }
+
             }
         });
     }
@@ -130,6 +134,8 @@ public abstract class PaymentActivity extends TransactionActivity {
     }
 
     protected abstract String getPaymentTitle();
+
+    protected abstract boolean onValidate();
 
     protected abstract int getPaymentView();
 

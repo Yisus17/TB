@@ -32,12 +32,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/action_phone_number" />
 
-            <EditText
-                android:id="@+id/txt_amount"
+            <com.unidigital.bicentenario.tbcomplus.widget.PhoneEditText
+                android:id="@+id/input_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/label_amount"
-                android:inputType="numberDecimal" />
+                android:inputType="phone" />
 
         </LinearLayout>
 

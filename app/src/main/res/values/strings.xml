@@ -127,6 +127,7 @@
     <string name="no_empty_account">Debe ingresar un número de cuenta</string>
     <string name="no_empty_sequence_number">Debe ingresar un número de secuencia</string>
     <string name="no_empty_id">Debe ingresar un número de cédula</string>
+    <string name="no_empty_phone">Debe ingresar un número de teléfono</string>
     <string name="error">Error</string>
     <string name="invalid_account_number">Número de cuenta invalido</string>
     <string name="txt_min">Monto mínimo:&#160;</string>

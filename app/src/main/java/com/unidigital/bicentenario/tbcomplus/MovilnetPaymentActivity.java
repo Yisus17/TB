@@ -32,4 +32,7 @@ public class MovilnetPaymentActivity extends PaymentActivity {
     protected int getLayout() {
         return getPaymentView();
     }
+
+    @Override
+    protected boolean onValidate() {return false;}
 }
