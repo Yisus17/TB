@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.unidigital.bicentenario.tbcomplus.global.GlobalUtilities;
+
 import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 /**
@@ -103,9 +105,7 @@ public class VoidActivity extends TransactionActivity {
         sequenceNumber = inputSequenceNumber.getText().toString();
 
         if(sequenceNumber.trim().length() == 0){
-            alertToast = Toast.makeText(this, getString(R.string.no_empty_sequence_number), Toast.LENGTH_SHORT);
-            alertToast.setGravity(Gravity.CENTER,0,0);
-            alertToast.show();
+            GlobalUtilities.displayMessage(getString(R.string.no_empty_sequence_number), this, MESSAGE_ERROR);
         }else{
             Bundle request = new Bundle();
             request.putInt(EXTRA_REQUEST_CODE, CHECK_SEQUENCE_NUMBER_HOST_REQUEST);
