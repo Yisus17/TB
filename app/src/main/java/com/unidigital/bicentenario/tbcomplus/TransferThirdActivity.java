@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.unidigital.bicentenario.tbcomplus.global.GlobalUtilities;
 import com.unidigital.bicentenario.tbcomplus.interfaces.ActionListener;
 import com.unidigital.bicentenario.tbcomplus.widget.AccountEditText;
 import com.unidigital.bicentenario.tbcomplus.widget.AmountEditText;
@@ -58,6 +59,7 @@ public class TransferThirdActivity extends TransactionActivity {
 
                     if(amountEditText.validate() && accountEditText.validate() && idEditText.validate())
                         requestCustomerCard();
+
                 }
             });
         }

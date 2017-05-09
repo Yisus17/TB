@@ -48,11 +48,10 @@
                 style="@style/Label"
                 android:text="@string/action_amount_enter" />
 
-            <EditText
-                android:id="@+id/txt_amount"
+            <com.unidigital.bicentenario.tbcomplus.widget.AmountEditText
+                android:id="@+id/input_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/lbl_amount"
                 android:inputType="numberDecimal" />
 
             <TextView

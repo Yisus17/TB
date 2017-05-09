@@ -6,6 +6,7 @@ import android.support.v7.widget.AppCompatEditText;
 import android.telephony.PhoneNumberUtils;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.DigitsKeyListener;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.Toast;
@@ -67,6 +68,7 @@ public class PhoneEditText extends AppCompatEditText {
 
     // -------- Transformaciones del telefono --------
     void setTextWatcher(){
+        this.setKeyListener(DigitsKeyListener.getInstance("0123456789"));
         this.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -75,39 +77,20 @@ public class PhoneEditText extends AppCompatEditText {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-
             }
-
             @Override
             public void afterTextChanged(Editable s) {
                 removeTextChangedListener(this);
-
                 try {
                     String originalString = s.toString();
-
                     Long longval;
-
                     longval = Long.parseLong(originalString);
-
-                    DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);
-                    formatter.applyPattern("#,###,###,###");
                     String formattedString= PhoneNumberUtils.formatNumber(longval.toString());
-
-                    //setting text after format to EditText
-
-                    if (formattedString.contains(",") || formattedString.contains(" ")) {
-                        formattedString.replaceAll(",", "");
-                        formattedString.replaceAll(" ", "");
-                        setText(formattedString);
-                    }
-                    Log.i("Formatted",formattedString);
-                    Log.i("original",formattedString);
-
+                    setText(formattedString);
                     setSelection(getText().length());
                 } catch (NumberFormatException nfe) {
                     nfe.printStackTrace();
                 }
-
                 addTextChangedListener(this);
             }
         });
@@ -133,7 +116,7 @@ public class PhoneEditText extends AppCompatEditText {
         }
 
         if(!isValid){
-            GlobalUtilities.displayMessage(msgError, getCurrentContext(), MESSAGE_ERROR);
+            this.setError(msgError);
         }
         return isValid;
     }

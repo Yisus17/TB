@@ -13,12 +13,14 @@ import android.widget.TextView;
 
 
 import com.unidigital.bicentenario.tbcomplus.R;
+import com.unidigital.bicentenario.tbcomplus.global.GlobalUtilities;
 import com.unidigital.bicentenario.tbcomplus.interfaces.KeyboardListener;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.MESSAGE_ERROR;
 
 
 public class AmountEditText extends AppCompatEditText {
@@ -167,7 +169,7 @@ public class AmountEditText extends AppCompatEditText {
         }
 
         if(!isValid){
-            displayError(msgError);
+            this.setError(msgError);
         }
 
         return isValid;
@@ -191,27 +193,5 @@ public class AmountEditText extends AppCompatEditText {
     }
 
     // -------- Mostrar mensaje de error en dialog --------
-    private void displayError(String msgError){
 
-        AlertDialog alertError = null;
-        AlertDialog.Builder alert = new AlertDialog.Builder(this.getCurrentContext(),R.style.AlertDialogCustom);
-
-        LayoutInflater inflater =  LayoutInflater.from(currentContext);
-
-        View view=inflater.inflate(R.layout.dialog_custom_title, null);
-        TextView title=(TextView) view.findViewById(R.id.title);
-        title.setText(getCurrentContext().getString(R.string.error));
-
-        alert.setCustomTitle(view);
-        alert.setMessage(msgError)
-                .setCancelable(false)
-                .setNegativeButton("ACEPTAR", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-        alertError = alert.create();
-        alertError.show();
-    }
 }
