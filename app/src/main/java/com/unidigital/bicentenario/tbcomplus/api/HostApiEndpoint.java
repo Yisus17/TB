@@ -1,23 +1,32 @@
 package com.unidigital.bicentenario.tbcomplus.api;
 
-import com.unidigital.bicentenario.tbcomplus.model.DepositRequest;
-import com.unidigital.bicentenario.tbcomplus.model.HostResponse;
-import com.unidigital.bicentenario.tbcomplus.model.LoginRequest;
-import com.unidigital.bicentenario.tbcomplus.model.LoginResponse;
+import com.unidigital.bicentenario.tbcomplus.api.pojo.DepositRequest;
+import com.unidigital.bicentenario.tbcomplus.api.pojo.DepositResponse;
+import com.unidigital.bicentenario.tbcomplus.api.pojo.HostResponse;
+import com.unidigital.bicentenario.tbcomplus.api.pojo.LoginRequest;
+import com.unidigital.bicentenario.tbcomplus.api.pojo.LoginResponse;
+import com.unidigital.bicentenario.tbcomplus.api.pojo.LogoutRequest;
+import com.unidigital.bicentenario.tbcomplus.api.pojo.LogoutResponse;
+import com.unidigital.bicentenario.tbcomplus.api.pojo.TokenResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 
-/**
- * Created by Alejandro on 5/7/2017.
- */
 public interface HostApiEndpoint {
 
-    @POST("deposit")
-    Call<HostResponse> deposit(@Body DepositRequest request);
+    @POST("/Token")
+    Call<TokenResponse> getToken(@Body TokenResponse request);
 
-    @POST("login")
+    @POST("/api/Afiliacion/Loginmovil")
     Call<LoginResponse> login(@Body LoginRequest request);
+
+    @POST("/api/Account/Logout")
+    Call<LogoutResponse> login(@Body LogoutRequest request);
+
+    @POST("deposit")
+    Call<DepositResponse> deposit(@Body DepositRequest request);
+
+
 
 }

@@ -1,4 +1,4 @@
-package com.unidigital.bicentenario.tbcomplus.model;
+package com.unidigital.bicentenario.tbcomplus.api.pojo;
 
 import java.math.BigDecimal;
 

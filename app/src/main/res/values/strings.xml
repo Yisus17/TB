@@ -27,6 +27,7 @@
     <!-- MENSAJES -->
     <string name="msg_success_login">Su inicio de operaciones fue exitoso</string>
     <string name="msg_success_transaction">Transacción procesada exitosamente</string>
+    <string name="msg_error_transaction">Error en la transacción</string>
 
     <!-- MENU -->
     <string name="menu_sales">Ventas</string>

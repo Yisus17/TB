@@ -3,17 +3,22 @@ package com.unidigital.bicentenario.tbcomplus;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
+import com.unidigital.bicentenario.tbcomplus.api.pojo.DepositResponse;
+import com.unidigital.bicentenario.tbcomplus.api.pojo.PhoneOperator;
 import com.unidigital.bicentenario.tbcomplus.interfaces.ActionListener;
 import com.unidigital.bicentenario.tbcomplus.widget.AccountEditText;
 import com.unidigital.bicentenario.tbcomplus.widget.AmountEditText;
 import com.unidigital.bicentenario.tbcomplus.widget.FocusableButton;
 
 
-import com.unidigital.bicentenario.tbcomplus.global.GlobalConstants;
-import com.unidigital.bicentenario.tbcomplus.model.DepositRequest;
+import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
+import com.unidigital.bicentenario.tbcomplus.api.pojo.DepositRequest;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 
 public class DepositActivity extends TransactionActivity {
 
@@ -58,13 +63,14 @@ public class DepositActivity extends TransactionActivity {
     protected void onUserPinRequestResult(int status, Bundle data) {
         super.onUserPinRequestResult(status, data);
 
+        //Prueba retrofit
         DepositRequest deposit = new DepositRequest();
         deposit.setAccount("1234567890");
         deposit.setAmount(new BigDecimal(1000000.00));
 
         Bundle depositData = new Bundle();
-        depositData.putInt(GlobalConstants.EXTRA_HOST_REQUEST_ACTION, GlobalConstants.HOST_ACTION_DEPOSIT);
-        depositData.putSerializable(GlobalConstants.EXTRA_HOST_REQUEST_DATA, deposit);
+        depositData.putInt(EXTRA_HOST_REQUEST_ACTION, HOST_ACTION_DEPOSIT);
+        depositData.putSerializable(EXTRA_HOST_REQUEST_DATA, deposit);
 
         sendHostRequest(depositData);
     }
@@ -72,7 +78,20 @@ public class DepositActivity extends TransactionActivity {
     @Override
     protected void onHostRequestResult(int status, Bundle data) {
         super.onHostRequestResult(status, data);
-        displayMessage();
+        Bundle messageData = new Bundle();
+
+        if(status == STATUS_ERROR) {
+            messageData.putString(EXTRA_MESSAGE_CONTENT, getString(R.string.msg_error_transaction));
+        }else{
+            DepositResponse responseData = (DepositResponse) data.getSerializable(EXTRA_HOST_RESPONSE_DATA);
+            List<PhoneOperator> operators = responseData.getListaOperadoras();
+
+            for (PhoneOperator operator: operators) {
+                Log.i("TBComPlus",operator.getNombre());
+            }
+        }
+
+        displayMessage(messageData);
     }
 
     @Override

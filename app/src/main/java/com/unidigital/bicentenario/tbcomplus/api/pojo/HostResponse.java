@@ -1,7 +1,8 @@
-package com.unidigital.bicentenario.tbcomplus.model;
+package com.unidigital.bicentenario.tbcomplus.api.pojo;
 
 import java.io.Serializable;
 import java.text.MessageFormat;
+import java.util.List;
 
 /**
  * Created by Alejandro on 5/7/2017.
@@ -9,9 +10,7 @@ import java.text.MessageFormat;
 public class HostResponse implements Serializable {
 
     private Integer code;
-
     private String message;
-
     private Long reference;
 
     public Integer getCode() {
@@ -37,6 +36,7 @@ public class HostResponse implements Serializable {
     public void setReference(Long reference) {
         this.reference = reference;
     }
+
 
     @Override
     public String toString() {

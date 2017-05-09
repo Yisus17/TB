@@ -1,9 +1,10 @@
-package com.unidigital.bicentenario.tbcomplus.model;
+package com.unidigital.bicentenario.tbcomplus.api.pojo;
 
 /**
- * Created by Alejandro on 5/8/2017.
+ * Created by Mercedes Rodriguez on 5/8/2017.
  */
-public class LoginResponse extends HostResponse {
+
+public class LogoutRequest extends HostRequest {
 
     private String token;
 
@@ -14,5 +15,4 @@ public class LoginResponse extends HostResponse {
     public void setToken(String token) {
         this.token = token;
     }
-
 }

@@ -4,11 +4,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.unidigital.bicentenario.tbcomplus.api.HostApiEndpoint;
-import com.unidigital.bicentenario.tbcomplus.model.LoginRequest;
-
-import retrofit2.Call;
-
 import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 

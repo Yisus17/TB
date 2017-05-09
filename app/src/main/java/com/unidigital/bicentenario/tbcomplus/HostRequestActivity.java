@@ -8,15 +8,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.unidigital.bicentenario.tbcomplus.api.HostApiEndpoint;
-import com.unidigital.bicentenario.tbcomplus.model.DepositRequest;
-import com.unidigital.bicentenario.tbcomplus.model.HostRequest;
-import com.unidigital.bicentenario.tbcomplus.model.HostResponse;
-import com.unidigital.bicentenario.tbcomplus.model.LoginRequest;
+import com.unidigital.bicentenario.tbcomplus.api.RestClient;
+import com.unidigital.bicentenario.tbcomplus.api.pojo.DepositRequest;
+import com.unidigital.bicentenario.tbcomplus.api.pojo.DepositResponse;
+import com.unidigital.bicentenario.tbcomplus.api.pojo.LoginRequest;
+import com.unidigital.bicentenario.tbcomplus.api.pojo.PhoneOperator;
 
 import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+import java.util.List;
 import java.util.Random;
 
 import retrofit2.Call;
@@ -27,41 +28,55 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HostRequestActivity extends BaseActivity {
 
-    protected static final String BASE_URL = "http://10.0.2.2:8080/quantum/";
+    protected static final String BASE_URL = "http://10.10.10.100:8080/quantum/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         final Intent intent = new Intent();
-        intent.putExtra(EXTRA_REQUEST_CODE, getIntent().getIntExtra(EXTRA_REQUEST_CODE, 0));
 
-        if (getIntent().getIntExtra(EXTRA_HOST_REQUEST_ACTION, 0) > 0) {
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
+        int actionId = getIntent().getIntExtra(EXTRA_HOST_REQUEST_ACTION, 0);
 
-            HostApiEndpoint api = retrofit.create(HostApiEndpoint.class);
-
-            Call call = getCall(api, getIntent().getIntExtra(EXTRA_HOST_REQUEST_ACTION, 0), getIntent().getSerializableExtra(EXTRA_HOST_REQUEST_DATA));
+        if (actionId > 0) {
+            Serializable requestData = getIntent().getSerializableExtra(EXTRA_HOST_REQUEST_DATA);
+            HostApiEndpoint api = RestClient.getInstance().getApi(); //Retrofit Singleton
+            Call call = getCall(api, actionId, requestData);
 
             call.enqueue(new Callback() {
                 @Override
                 public void onResponse(Call call, Response response) {
-                    Log.d("TBComPlus", response.body().toString());
-                    intent.putExtra(EXTRA_HOST_RESPONSE_DATA, (Serializable) response.body());
+
+                    if (response.isSuccessful()) {
+                        intent.putExtra(EXTRA_HOST_RESPONSE_DATA, (Serializable) response.body());
+                        intent.putExtra(EXTRA_STATUS, STATUS_OK);
+                    } else {
+                        intent.putExtra(EXTRA_STATUS, STATUS_ERROR);
+                    }
+
+                    setResult(RESULT_OK, intent);
+                    finish();
+
                 }
 
                 @Override
                 public void onFailure(Call call, Throwable t) {
                     Log.e("TBComPlus", "ERROR", t);
+
+                    intent.putExtra(EXTRA_STATUS, STATUS_ERROR);
+                    setResult(RESULT_OK, intent);
+                    finish();
                 }
             });
-        }
+        }else{
+            Handler handler = new Handler();
 
-        setResult(RESULT_OK, intent);
-        finish();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    onAccept();
+                }
+            }, new Random().nextInt(2000) + 500);
+        }
     }
 
     @Override
