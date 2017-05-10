@@ -11,6 +11,9 @@ import com.unidigital.bicentenario.tbcomplus.widget.AccountEditText;
 import com.unidigital.bicentenario.tbcomplus.widget.AmountEditText;
 import com.unidigital.bicentenario.tbcomplus.widget.FocusableButton;
 import com.unidigital.bicentenario.tbcomplus.widget.IdEditText;
+import com.unidigital.bicentenario.tbcomplus.widget.fieldValidation;
+
+import java.util.ArrayList;
 
 import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
@@ -57,9 +60,21 @@ public class TransferThirdActivity extends TransactionActivity {
                     IdEditText idEditText = (IdEditText) findViewById(R.id.input_id);
                     idEditText.setCurrentContext(context);
 
-                    if(amountEditText.validate() && accountEditText.validate() && idEditText.validate())
+                    boolean validation=true;
+                    if (!amountEditText.validate().isValid){
+                        amountEditText.setError(amountEditText.validate().msg);
+                        validation=false;
+                    }
+                    if (!accountEditText.validate().isValid){
+                        accountEditText.setError(accountEditText.validate().msg);
+                        validation=false;
+                    }
+                    if (!idEditText.validate().isValid){
+                        idEditText.setError(idEditText.validate().msg);
+                        validation=false;
+                    }
+                    if (validation)
                         requestCustomerCard();
-
                 }
             });
         }

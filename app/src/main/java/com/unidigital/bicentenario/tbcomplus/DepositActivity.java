@@ -29,7 +29,6 @@ public class DepositActivity extends TransactionActivity {
             @Override
             public void onAction() {
                 AmountEditText amountEditText = (AmountEditText) findViewById(R.id.input_amount);
-
                 amountEditText.setMinAmount(MIN_AMOUNT);
                 amountEditText.setMaxAmount(MAX_AMOUNT);
                 amountEditText.setCurrentContext(context);
@@ -37,8 +36,19 @@ public class DepositActivity extends TransactionActivity {
                 AccountEditText accountEditText= (AccountEditText) findViewById(R.id.input_account);
                 accountEditText.setCurrentContext(context);
 
-                if((accountEditText.validate()) && (amountEditText.validate()))
-                    requestUserCard();
+                boolean validation=true;
+                if(!amountEditText.validate().isValid){
+                    amountEditText.setError(amountEditText.validate().msg);
+                    validation=false;
+                }
+                if(!accountEditText.validate().isValid){
+                    accountEditText.setError(accountEditText.validate().msg);
+                    validation=false;
+                }
+                if (validation)
+                    requestCustomerCard();
+
+
             }
         });
     }

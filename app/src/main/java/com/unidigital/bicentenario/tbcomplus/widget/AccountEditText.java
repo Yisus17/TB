@@ -103,7 +103,7 @@ public class AccountEditText extends AppCompatEditText {
         return isValidRange;
     }
 
-    public boolean validate(){
+    public fieldValidation validate(){
         String msgError = "";
         boolean isValid = true;
 
@@ -114,12 +114,8 @@ public class AccountEditText extends AppCompatEditText {
             msgError += resources.getString(R.string.invalid_account_number);
             isValid = !isValid;
         }
-
-        if(!isValid){
-            this.setError(msgError);
-        }
-
-        return isValid;
+        fieldValidation fieldValidation = new fieldValidation(msgError, isValid);
+        return fieldValidation;
     }
 
 

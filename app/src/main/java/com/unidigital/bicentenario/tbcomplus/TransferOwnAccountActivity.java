@@ -53,7 +53,16 @@ public class TransferOwnAccountActivity extends TransactionActivity {
                     IdEditText idEditText = (IdEditText) findViewById(R.id.input_id);
                     idEditText.setCurrentContext(context);
 
-                    if(amountEditText.validate() && idEditText.validate())
+                    boolean validation=true;
+                    if (!amountEditText.validate().isValid){
+                        amountEditText.setError(amountEditText.validate().msg);
+                        validation=false;
+                    }
+                    if (!idEditText.validate().isValid){
+                        idEditText.setError(idEditText.validate().msg);
+                        validation=false;
+                    }
+                    if (validation)
                         requestCustomerCard();
                 }
             });

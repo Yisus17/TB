@@ -1,26 +1,19 @@
 package com.unidigital.bicentenario.tbcomplus.widget;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
 
 
 import com.unidigital.bicentenario.tbcomplus.R;
-import com.unidigital.bicentenario.tbcomplus.global.GlobalUtilities;
 import com.unidigital.bicentenario.tbcomplus.interfaces.KeyboardListener;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
-
-import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.MESSAGE_ERROR;
 
 
 public class AmountEditText extends AppCompatEditText {
@@ -156,7 +149,7 @@ public class AmountEditText extends AppCompatEditText {
     }
 
     //Validacion completa
-    public boolean validate(){
+    public fieldValidation validate(){
         String msgError = "";
         boolean isValid = true;
 
@@ -167,12 +160,8 @@ public class AmountEditText extends AppCompatEditText {
             msgError += resources.getString(R.string.txt_min) + getAmountFormat(minAmount) + "\n" + resources.getString(R.string.txt_max) + getAmountFormat(maxAmount);
             isValid = !isValid;
         }
-
-        if(!isValid){
-            this.setError(msgError);
-        }
-
-        return isValid;
+        fieldValidation fieldValidation = new fieldValidation(msgError, isValid);
+        return fieldValidation;
     }
 
 

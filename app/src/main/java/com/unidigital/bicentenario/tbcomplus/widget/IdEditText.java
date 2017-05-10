@@ -103,7 +103,7 @@ public class IdEditText extends AppCompatEditText {
         return isEmpty;
     }
 
-    public boolean validate(){
+    public fieldValidation validate(){
         String msgError = "";
         boolean isValid = true;
 
@@ -112,11 +112,9 @@ public class IdEditText extends AppCompatEditText {
             isValid = !isValid;
         }
 
-        if(!isValid){
-            this.setError(msgError);
-        }
+        fieldValidation fieldValidation = new fieldValidation(msgError, isValid);
+        return fieldValidation;
 
-        return isValid;
     }
 
     //Al quitar foco, realizar formato de miles en el monto
