@@ -17,6 +17,7 @@ import com.unidigital.bicentenario.tbcomplus.api.pojo.PhoneOperator;
 import static com.unidigital.bicentenario.tbcomplus.global.GlobalConstants.*;
 
 import java.io.Serializable;
+import java.net.SocketTimeoutException;
 import java.util.List;
 import java.util.Random;
 
@@ -44,6 +45,8 @@ public class HostRequestActivity extends BaseActivity {
             Call call = getCall(api, actionId, requestData);
 
             call.enqueue(new Callback() {
+
+
                 @Override
                 public void onResponse(Call call, Response response) {
 
@@ -61,8 +64,9 @@ public class HostRequestActivity extends BaseActivity {
 
                 @Override
                 public void onFailure(Call call, Throwable t) {
-                    Log.e("TBComPlus", "ERROR", t);
-
+                    /*if(t instanceof SocketTimeoutException){
+                        Log.i("PRUEBAS", "TIMEOUT");
+                    }*/
                     intent.putExtra(EXTRA_STATUS, STATUS_ERROR);
                     setResult(RESULT_OK, intent);
                     finish();
