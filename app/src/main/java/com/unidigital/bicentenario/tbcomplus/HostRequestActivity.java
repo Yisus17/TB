@@ -3,6 +3,7 @@ package com.unidigital.bicentenario.tbcomplus;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -40,7 +41,7 @@ public class HostRequestActivity extends BaseActivity {
         int actionId = getIntent().getIntExtra(EXTRA_HOST_REQUEST_ACTION, 0);
 
         if (actionId > 0) {
-            Serializable requestData = getIntent().getSerializableExtra(EXTRA_HOST_REQUEST_DATA);
+            Parcelable requestData = getIntent().getParcelableExtra(EXTRA_HOST_REQUEST_DATA);
             HostApiEndpoint api = RestClient.getInstance().getApi(); //Retrofit Singleton
             Call call = getCall(api, actionId, requestData);
 
@@ -51,7 +52,7 @@ public class HostRequestActivity extends BaseActivity {
                 public void onResponse(Call call, Response response) {
 
                     if (response.isSuccessful()) {
-                        intent.putExtra(EXTRA_HOST_RESPONSE_DATA, (Serializable) response.body());
+                        intent.putExtra(EXTRA_HOST_RESPONSE_DATA, (Parcelable) response.body());
                         intent.putExtra(EXTRA_STATUS, STATUS_OK);
                     } else {
                         intent.putExtra(EXTRA_STATUS, STATUS_ERROR);
@@ -98,7 +99,7 @@ public class HostRequestActivity extends BaseActivity {
         return R.layout.activity_host_request;
     }
 
-    private Call getCall(HostApiEndpoint api, int action, Serializable data) {
+    private Call getCall(HostApiEndpoint api, int action, Parcelable data) {
         switch (action) {
             case HOST_ACTION_LOGIN:
                 return api.login((LoginRequest) data);

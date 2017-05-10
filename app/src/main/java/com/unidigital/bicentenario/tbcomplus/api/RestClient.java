@@ -32,7 +32,7 @@ public class RestClient {
             .connectTimeout(CONNECTION_TIMEOUT, TimeUnit.SECONDS)
             .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
             .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS)
-            .addInterceptor(
+            /*.addInterceptor(
                 new Interceptor() {
                     @Override
                     public Response intercept(Interceptor.Chain chain) throws IOException {
@@ -50,7 +50,7 @@ public class RestClient {
                         return chain.proceed(chain.request());
                     }
                 }
-            )
+            )*/
             .build();
 
 
@@ -82,13 +82,4 @@ public class RestClient {
         return this.api;
     }
 
-    //----
-
-    class CustomException extends Exception
-    {
-        public CustomException(String message)
-        {
-            super(message);
-        }
-    }
 }
