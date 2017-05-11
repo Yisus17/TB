@@ -2,9 +2,12 @@ package com.unidigital.bicentenario.tbcomplus;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.gson.Gson;
 import com.unidigital.bicentenario.tbcomplus.api.pojo.DepositResponse;
 import com.unidigital.bicentenario.tbcomplus.api.pojo.PhoneOperator;
 import com.unidigital.bicentenario.tbcomplus.interfaces.ActionListener;
@@ -66,11 +69,11 @@ public class DepositActivity extends TransactionActivity {
         //Prueba retrofit
         DepositRequest deposit = new DepositRequest();
         deposit.setAccount("1234567890");
-        deposit.setAmount(1000000.00);
+        deposit.setAmount(new BigDecimal(1000000.00));
 
         Bundle depositData = new Bundle();
         depositData.putInt(EXTRA_HOST_REQUEST_ACTION, HOST_ACTION_DEPOSIT);
-        depositData.putParcelable(EXTRA_HOST_REQUEST_DATA, deposit);
+        depositData.putSerializable(EXTRA_HOST_REQUEST_DATA, deposit);
 
         sendHostRequest(depositData);
     }
@@ -83,7 +86,7 @@ public class DepositActivity extends TransactionActivity {
         if(status == STATUS_ERROR) {
             messageData.putString(EXTRA_MESSAGE_CONTENT, getString(R.string.msg_error_transaction));
         }else{
-            DepositResponse responseData = data.getParcelable(EXTRA_HOST_RESPONSE_DATA);
+            DepositResponse responseData = (DepositResponse) data.getSerializable(EXTRA_HOST_RESPONSE_DATA);
             List<PhoneOperator> operators = responseData.getListaOperadoras();
 
             for (PhoneOperator operator: operators) {
